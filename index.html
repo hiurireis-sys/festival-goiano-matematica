@@ -153,7 +153,7 @@
   .brand span{font-size:.72rem; font-weight:700; color:var(--ink-faint); letter-spacing:.03em;}
   .brand small{display:block; font-weight:700;}
   .navlinks{
-    display:flex; align-items:center; gap:26px;
+    display:flex; align-items:center; gap:16px;
     list-style:none; margin:0; padding:0;
   }
   .navlinks a{
@@ -415,8 +415,77 @@
   .aviso-data strong{color:#8A4B00;}
   /* Logo da UFG um pouco maior */
   .logo-card.logo-lg{padding:4px;}
+
+  /* ---------- Qual categoria é a minha? ---------- */
+  .guia-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-bottom:34px;}
+  .guia-item{
+    background:#fff; border:1px solid var(--border); border-radius:16px; padding:18px;
+    display:flex; flex-direction:column; gap:8px; box-shadow:0 10px 22px -18px rgba(13,59,102,0.35);
+  }
+  .guia-item .quem{font-size:.8rem; font-weight:800; text-transform:uppercase; letter-spacing:.05em; color:var(--ink-faint);}
+  .guia-item p{font-size:.93rem; color:var(--ink); font-weight:700; line-height:1.4;}
+  .guia-item .vai{margin-top:auto; font-size:.86rem; font-weight:800; display:inline-flex; align-items:center; gap:6px; padding:7px 12px; border-radius:999px; align-self:flex-start; text-decoration:none;}
+  .vai.v1{background:rgba(30,136,229,0.12); color:var(--blue-deep);}
+  .vai.v2{background:rgba(34,165,103,0.14); color:var(--green-deep);}
+  .vai.v3{background:rgba(246,166,35,0.18); color:#8A4B00;}
+  .vai.v4{background:var(--surface-alt); color:var(--ink-soft);}
+  .comparativo{width:100%; border-collapse:separate; border-spacing:0; background:#fff; border:1px solid var(--border); border-radius:18px; overflow:hidden; font-size:.92rem;}
+  .comparativo th, .comparativo td{padding:14px 16px; text-align:left; vertical-align:top; border-bottom:1px solid var(--border);}
+  .comparativo tr:last-child td{border-bottom:none;}
+  .comparativo thead th{color:#fff; font-size:.98rem;}
+  .comparativo thead th:first-child{background:var(--blue-deep);}
+  .comparativo thead th.c1{background:linear-gradient(120deg,var(--blue),var(--blue-deep));}
+  .comparativo thead th.c2{background:linear-gradient(120deg,var(--green),var(--green-deep));}
+  .comparativo tbody th{width:22%; color:var(--blue-deep); font-weight:800; background:var(--surface-alt);}
+  .comparativo td{color:var(--ink-soft);}
+  .atencao-lista{margin-top:22px; display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+  .atencao{display:flex; gap:10px; align-items:flex-start; background:#FFF4E0; border:1px solid rgba(201,117,20,0.35); border-radius:14px; padding:14px 16px; font-size:.9rem; color:#5A3300;}
+  .atencao b{color:#8A4B00;}
+  .atencao svg{flex:none; margin-top:2px; color:var(--orange-deep);}
+
+  /* ---------- Comissão organizadora ---------- */
+  .comissao-destaque{display:grid; grid-template-columns:1fr 1fr; gap:20px; max-width:760px; margin:0 auto 26px;}
+  .comissao-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:16px;}
+  .membro{
+    background:#fff; border:1px solid var(--border); border-radius:18px; padding:18px 12px;
+    display:flex; flex-direction:column; align-items:center; text-align:center; gap:10px;
+    box-shadow:0 10px 22px -18px rgba(13,59,102,0.35);
+  }
+  .membro .foto{
+    width:96px; height:96px; border-radius:50%; padding:3px;
+    background:linear-gradient(135deg,var(--blue),var(--green) 55%,var(--orange));
+    display:flex; align-items:center; justify-content:center; flex:none;
+  }
+  .membro .foto img, .membro .foto span{
+    width:100%; height:100%; border-radius:50%; border:3px solid #fff; background:var(--surface-alt);
+    object-fit:cover; object-position:center 20%;
+  }
+  .membro .foto span{display:flex; align-items:center; justify-content:center; font-weight:900; font-size:1.5rem; color:var(--blue-deep);}
+  .membro h3{font-size:.95rem; line-height:1.25;}
+  .membro .papel{font-size:.72rem; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:var(--green-deep);}
+  .membro.lider{flex-direction:row; text-align:left; padding:18px; gap:16px;}
+  .membro.lider .foto{width:110px; height:110px;}
+  .membro.lider h3{font-size:1.1rem;}
+  .membro.lider .papel{color:var(--orange-deep);}
+
+  @media (max-width:900px){
+    .guia-grid{grid-template-columns:1fr 1fr;}
+    .atencao-lista{grid-template-columns:1fr;}
+    .comparativo, .comparativo thead, .comparativo tbody, .comparativo tr, .comparativo th, .comparativo td{display:block; width:100%;}
+    .comparativo thead{display:none;}
+    .comparativo tbody th{width:100%;}
+    .comparativo td::before{content:attr(data-label); display:block; font-size:.74rem; font-weight:800; text-transform:uppercase; letter-spacing:.05em; margin-bottom:4px;}
+    .comparativo td.c1::before{color:var(--blue);}
+    .comparativo td.c2::before{color:var(--green-deep);}
+  }
+  @media (max-width:520px){
+    .guia-grid{grid-template-columns:1fr;}
+    .comissao-destaque{grid-template-columns:1fr;}
+    .comissao-grid{grid-template-columns:1fr 1fr;}
+  }
 	
   /* ---------- Responsive ---------- */
+	
   @media (max-width:900px){
     .navlinks, .nav-cta .btn-outline{display:none;}
     .burger{display:flex;}
@@ -468,11 +537,13 @@
 
     <ul class="navlinks">
       <li><a href="#sobre">Sobre</a></li>
+     <li><a href="#entenda">Qual é a minha?</a></li>
       <li><a href="#modalidades">Modalidades</a></li>
       <li><a href="#inscreva-se">Participe</a></li>
       <li><a href="#documentos">Documentos</a></li>
       <li><a href="#contato">Contato</a></li>
-      <li><a href="#apoio">Apoio</a></li>
+    <li><a href="#apoio">Apoio</a></li>
+      <li><a href="#comissao">Comissão</a></li>
     </ul>
 
     <div class="nav-cta">
@@ -483,11 +554,13 @@
   </div>
   <nav class="mobile-panel" id="mobilePanel">
     <a href="#sobre">Sobre</a>
+    <a href="#entenda">Qual categoria é a minha?</a>
     <a href="#modalidades">Modalidades</a>
     <a href="#inscreva-se">Como participar</a>
     <a href="#documentos">Documentos</a>
     <a href="#contato">Contato</a>
-    <a href="#apoio">Apoio</a>
+     <a href="#apoio">Apoio</a>
+    <a href="#comissao">Comissão organizadora</a>
     <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSeGHVFz3LSZ3Un_aQV2isS8X2BnbuooKhaLV29_2bZttRC1Yg/viewform?usp=publish-editor" target="_blank" rel="noopener">Inscrição Visitante do Evento</a>
   </nav>
 </header>
@@ -579,6 +652,92 @@
           <li><span class="dot"></span> O público em geral acessa o Espaço de Popularização livremente, sem inscrição prévia.</li>
         </ul>
         <a class="btn btn-ghost-light" style="margin-top:6px;" href="#modalidades">Conhecer as modalidades</a>
+      </div>
+    </div>
+  </section>
+<!-- ---------------- ENTENDA AS MODALIDADES ---------------- -->
+  <section id="entenda" class="section-pad" style="background:linear-gradient(180deg,#fff 0%,var(--surface-alt) 100%);">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow" style="justify-content:center;">Qual categoria é a minha?</span>
+        <h2>Mostra Científica ou Popularização da Matemática?</h2>
+        <p>O Festival tem duas categorias de apresentação que acontecem ao mesmo tempo. A diferença principal é <strong>quem apresenta</strong>: na Mostra, estudantes da Educação Básica; na Popularização, graduandos, pós-graduandos, professores e pesquisadores.</p>
+      </div>
+
+      <div class="guia-grid">
+        <div class="guia-item">
+          <span class="quem">Sou professor(a) de escola pública</span>
+          <p>Quero levar uma equipe de alunos do Ensino Fundamental II (Grupo A) ou do Ensino Médio (Grupo B) para apresentar um projeto.</p>
+          <a class="vai v1" href="#modalidades">→ Mostra Científica</a>
+        </div>
+        <div class="guia-item">
+          <span class="quem">Sou graduando(a), pós-graduando(a), professor(a) ou pesquisador(a)</span>
+          <p>Quero conduzir um jogo, oficina, roda de conversa ou apresentação cultural.</p>
+          <a class="vai v2" href="#modalidades">→ Popularização da Matemática</a>
+        </div>
+        <div class="guia-item">
+          <span class="quem">Quero só participar</span>
+          <p>Vou visitar o Festival, sem apresentar trabalho, e quero receber certificado.</p>
+          <a class="vai v3" href="#inscreva-se">→ Inscrição de visitante</a>
+        </div>
+        <div class="guia-item">
+          <span class="quem">Público em geral</span>
+          <p>Famílias e comunidade podem visitar o Espaço de Popularização livremente.</p>
+          <span class="vai v4">Entrada livre, sem inscrição</span>
+        </div>
+      </div>
+
+      <table class="comparativo">
+        <thead>
+          <tr>
+            <th></th>
+            <th class="c1">Mostra Científica da Educação Básica</th>
+            <th class="c2">Espaço de Popularização da Matemática</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Quem apresenta</th>
+            <td class="c1" data-label="Mostra Científica">Estudantes de escolas públicas (estaduais e municipais) e institutos federais de Goiás.</td>
+            <td class="c2" data-label="Popularização">Estudantes de graduação e pós-graduação, professores da Educação Básica e do Ensino Superior, pesquisadores e instituições de ensino.</td>
+          </tr>
+          <tr>
+            <th>Quem faz a inscrição</th>
+            <td class="c1" data-label="Mostra Científica">O(a) professor(a) orientador(a), inscrevendo a equipe completa.</td>
+            <td class="c2" data-label="Popularização">O(a) proponente responsável pela atividade.</td>
+          </tr>
+          <tr>
+            <th>Formato</th>
+            <td class="c1" data-label="Mostra Científica">Equipe de 1 professor(a) + 5 estudantes, apresentando um projeto em estande. Grupo A (Ensino Fundamental II) ou Grupo B (Ensino Médio).</td>
+            <td class="c2" data-label="Popularização">Jogos, oficinas, rodas de conversa, exibição de filmes, apresentações culturais e dinâmicas interativas.</td>
+          </tr>
+          <tr>
+            <th>Avaliação</th>
+            <td class="c1" data-label="Mostra Científica">Avaliada por banca externa, com premiação (kit didático) para as 3 melhores equipes de cada grupo (A e B).</td>
+            <td class="c2" data-label="Popularização">Propostas selecionadas pela comissão; não há competição nem premiação.</td>
+          </tr>
+          <tr>
+            <th>Participação remota</th>
+            <td class="c1" data-label="Mostra Científica">Sim, para escolas do campo, comunidades tradicionais e quilombolas (resumo + vídeo de até 15 min).</td>
+            <td class="c2" data-label="Popularização">Não; atividades presenciais no Campus Samambaia.</td>
+          </tr>
+          <tr>
+            <th>Onde se inscrever</th>
+            <td class="c1" data-label="Mostra Científica"><a href="https://docs.google.com/forms/d/e/1FAIpQLSc0a97XYBRXd05Cc9xYHcfQA0e18Uning_PMiAZQEgoGeyX3Q/viewform?usp=header" target="_blank" rel="noopener"><strong>Formulário de inscrição das equipes ↗</strong></a></td>
+            <td class="c2" data-label="Popularização"><a href="https://docs.google.com/forms/d/e/1FAIpQLSec1ZPA4-710EpTZyo5_8Rs9usfWjwOLwWGjAHQQxekxLlbCg/viewform?usp=header" target="_blank" rel="noopener"><strong>Formulário de inscrição de propostas ↗</strong></a></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="atencao-lista">
+        <div class="atencao">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9.5" stroke="currentColor" stroke-width="1.7"/><path d="M12 7.5v5.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="16.4" r="1.1" fill="currentColor"/></svg>
+          <span><b>Estudantes da Educação Básica não se inscrevem sozinhos.</b> A inscrição na Mostra é feita pelo(a) professor(a) orientador(a), com a equipe completa.</span>
+        </div>
+        <div class="atencao">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9.5" stroke="currentColor" stroke-width="1.7"/><path d="M12 7.5v5.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="16.4" r="1.1" fill="currentColor"/></svg>
+          <span><b>Graduandos e pós-graduandos apresentam na Popularização</b>, não na Mostra Científica. Quem já submeteu trabalho ou proposta não precisa fazer a inscrição de visitante.</span>
+        </div>
       </div>
     </div>
   </section>
@@ -813,6 +972,8 @@
     </div>
   </section>
 
+
+	
   <!-- ---------------- APOIO E REALIZAÇÃO ---------------- -->
   <section id="apoio" class="section-pad" style="background:var(--surface-alt);">
     <div class="wrap">
@@ -838,7 +999,34 @@
  <p class="apoio-extra">Também integram a realização: PROEX/UFG e PROGRAD/UFG.</p>      </div>
     </div>
   </section>
-
+ <!-- ---------------- COMISSÃO ORGANIZADORA ---------------- -->
+  <section id="comissao" class="section-pad" style="background:#fff;">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow" style="justify-content:center;">Comissão organizadora</span>
+        <h2>Quem organiza o Festival</h2>
+        <p>Docentes do Instituto de Matemática e Estatística (IME/UFG) à frente do Festival Goiano de Matemática.</p>
+      </div>
+        <div class="comissao-destaque">
+          <div class="membro lider"><div class="foto"><img src="https://files.cercomp.ufg.br/weby/up/29/o/Hiuri_%282%29.png" alt="Foto de Hiuri Reis" loading="lazy" onerror="this.outerHTML='<span>HR</span>'"></div><div><span class="papel">Coordenador</span><h3>Hiuri Reis</h3></div></div>
+          <div class="membro lider"><div class="foto"><img src="https://files.cercomp.ufg.br/weby/up/33/o/Elisabeth.jpeg" alt="Foto de Elisabeth Faria" loading="lazy" onerror="this.outerHTML='<span>EF</span>'"></div><div><span class="papel">Vice-coordenadora</span><h3>Elisabeth Faria</h3></div></div>
+        </div>
+        <div class="comissao-grid">
+          <div class="membro"><div class="foto"><img src="https://files.cercomp.ufg.br/weby/up/29/o/Adriana.jpg" alt="Foto de Adriana Cintra" loading="lazy" onerror="this.outerHTML='<span>AC</span>'"></div><h3>Adriana Cintra</h3></div>
+          <div class="membro"><div class="foto"><img src="https://files.cercomp.ufg.br/weby/up/29/o/WhatsApp_Image_2023-04-20_at_10.08.04.jpeg" alt="Foto de Ana Carolina Andrade" loading="lazy" onerror="this.outerHTML='<span>AA</span>'"></div><h3>Ana Carolina Andrade</h3></div>
+          <div class="membro"><div class="foto"><img src="https://sys.ime.ufg.br/fotos/prof-ana-paula-bauman.png" alt="Foto de Ana Paula Baumann" loading="lazy" onerror="this.outerHTML='<span>AB</span>'"></div><h3>Ana Paula Baumann</h3></div>
+          <div class="membro"><div class="foto"><img src="https://sys.ime.ufg.br/fotos/prof-fabio-vitoriano.png" alt="Foto de Fábio Silva" loading="lazy" onerror="this.outerHTML='<span>FS</span>'"></div><h3>Fábio Silva</h3></div>
+          <div class="membro"><div class="foto"><img src="https://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&amp;id=K4779388D9" alt="Foto de Ivonildes Martins" loading="lazy" onerror="this.outerHTML='<span>IM</span>'"></div><h3>Ivonildes Martins</h3></div>
+          <div class="membro"><div class="foto"><img src="https://files.cercomp.ufg.br/weby/up/29/o/Jos%C3%A9_Pedro.png" alt="Foto de José Pedro Ribeiro" loading="lazy" onerror="this.outerHTML='<span>JR</span>'"></div><h3>José Pedro Ribeiro</h3></div>
+          <div class="membro"><div class="foto"><img src="https://files.cercomp.ufg.br/weby/up/31/o/Kamila_da_Silva_Andrade_002.jpg" alt="Foto de Kamila Andrade" loading="lazy" onerror="this.outerHTML='<span>KA</span>'"></div><h3>Kamila Andrade</h3></div>
+          <div class="membro"><div class="foto"><img src="https://sys.ime.ufg.br/fotos/prof-kelem.png" alt="Foto de Kélem Gomes Lourenço" loading="lazy" onerror="this.outerHTML='<span>KL</span>'"></div><h3>Kélem Gomes Lourenço</h3></div>
+          <div class="membro"><div class="foto"><img src="https://sys.ime.ufg.br/fotos/prof-lidiane.png" alt="Foto de Lidiane Lima" loading="lazy" onerror="this.outerHTML='<span>LL</span>'"></div><h3>Lidiane Lima</h3></div>
+          <div class="membro"><div class="foto"><img src="https://sys.ime.ufg.br/fotos/prof-marcelo-souza.png" alt="Foto de Marcelo Souza" loading="lazy" onerror="this.outerHTML='<span>MS</span>'"></div><h3>Marcelo Souza</h3></div>
+          <div class="membro"><div class="foto"><img src="https://files.cercomp.ufg.br/weby/up/29/o/foto_Martaa-1.jpg" alt="Foto de Marta Bianchi" loading="lazy" onerror="this.outerHTML='<span>MB</span>'"></div><h3>Marta Bianchi</h3></div>
+          <div class="membro"><div class="foto"><img src="https://files.cercomp.ufg.br/weby/up/29/o/IMG_20240311_112945-1.jpg" alt="Foto de Sunamita Silva" loading="lazy" onerror="this.outerHTML='<span>SS</span>'"></div><h3>Sunamita Silva</h3></div>
+        </div>
+    </div>
+  </section>
 </main>
 
 <footer>
