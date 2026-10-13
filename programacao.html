@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Programação completa — Festival Goiano de Matemática</title>
+<meta name="description" content="Programação do Festival Goiano de Matemática 2026: trabalhos da Mostra Científica e atividades de Popularização, com escolas, instituições e equipes.">
+<style>
+  :root{
+    --blue:#1E88E5;
+    --blue-deep:#0D3B66;
+    --green:#22A567;
+    --green-deep:#146339;
+    --orange:#F6A623;
+    --orange-deep:#C97514;
+    --bg:#FBFCFE;
+    --surface:#FFFFFF;
+    --surface-alt:#F0F6FB;
+    --ink:#0F2340;
+    --ink-soft:#4A5B72;
+    --ink-faint:#7488A0;
+    --border:#E2E9F1;
+    --shadow: 0 12px 30px -14px rgba(13,59,102,0.22);
+    --font: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color-scheme: light;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  .justify, .lede, .lede-block p, .aside-card li, .card ul li,
+  .step-text p, .cta-panel p, .section-head p, .footer-orgs{
+    text-align:justify; text-justify:inter-word;
+  }
+  body{
+    margin:0;
+    font-family:var(--font);
+    background:var(--bg);
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+    line-height:1.55;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  .wrap{
+    width:100%;
+    max-width:1120px;
+    margin-inline:auto;
+    padding-inline:20px;
+  }
+  h1,h2,h3{
+    font-family:var(--font);
+    line-height:1.15;
+    letter-spacing:-0.01em;
+    text-wrap:balance;
+    color:var(--blue-deep);
+    margin:0;
+  }
+  h2{font-size:clamp(1.6rem,1.2rem + 1.6vw,2.4rem); font-weight:800;}
+  h3{font-size:1.15rem; font-weight:800;}
+  p{margin:0;}
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-size:.78rem;
+    font-weight:800;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--green-deep);
+  }
+  .eyebrow::before{
+    content:"";
+    width:8px;height:8px;border-radius:50%;
+    background:linear-gradient(135deg,var(--blue),var(--green));
+    flex:none;
+  }
+  section{position:relative;}
+  .section-pad{padding-block: clamp(48px,6vw,84px);}
+
+  /* ---------- Buttons ---------- */
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    font-family:var(--font);
+    font-weight:800;
+    font-size:.98rem;
+    padding:14px 24px;
+    border-radius:999px;
+    text-decoration:none;
+    border:2px solid transparent;
+    cursor:pointer;
+    transition:transform .15s ease, box-shadow .15s ease, background .15s ease, color .15s ease;
+    white-space:nowrap;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn:focus-visible{outline:3px solid var(--blue); outline-offset:2px;}
+  .btn-primary{
+    background:linear-gradient(120deg,var(--orange),var(--orange-deep));
+    color:#3A1F00;
+    box-shadow:0 14px 26px -12px rgba(201,117,20,0.55);
+  }
+  .btn-primary:hover{box-shadow:0 18px 30px -12px rgba(201,117,20,0.65);}
+  .btn-outline{
+    background:#fff;
+    color:var(--blue-deep);
+    border-color:var(--border);
+  }
+  .btn-outline:hover{border-color:var(--blue);}
+  .btn-ghost-light{
+    background:rgba(255,255,255,0.14);
+    color:#fff;
+    border-color:rgba(255,255,255,0.55);
+    backdrop-filter:blur(2px);
+  }
+  .btn-ghost-light:hover{background:rgba(255,255,255,0.24);}
+  .btn-sm{padding:10px 16px; font-size:.86rem; border-radius:10px;}
+  .btn-block-outline{
+    background:#fff;
+    border:1.5px solid var(--border);
+    color:var(--blue-deep);
+    width:100%;
+    justify-content:center;
+  }
+  .btn-block-outline:hover{border-color:var(--green); color:var(--green-deep);}
+  .btn-block-solid{
+    width:100%;
+    justify-content:center;
+    background:var(--blue-deep);
+    color:#fff;
+  }
+  .btn-block-solid:hover{background:var(--blue);}
+
+  /* ---------- Header ---------- */
+  header.site{
+    position:sticky; top:0; z-index:50;
+    background:rgba(251,252,254,0.9);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border);
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding-block:12px;
+    gap:16px;
+  }
+  .brand{
+    display:flex; align-items:center; gap:10px;
+    text-decoration:none;
+    font-weight:800; color:var(--blue-deep);
+    font-size:1rem;
+    letter-spacing:-0.01em;
+  }
+  .brand span{font-size:.72rem; font-weight:700; color:var(--ink-faint); letter-spacing:.03em;}
+  .brand small{display:block; font-weight:700;}
+  .navlinks{
+    display:flex; align-items:center; gap:16px;
+    list-style:none; margin:0; padding:0;
+  }
+  .navlinks a{
+    text-decoration:none; font-weight:700; font-size:.92rem;
+    color:var(--ink-soft);
+    padding-block:4px;
+    border-bottom:2px solid transparent;
+  }
+  .navlinks a:hover{color:var(--blue-deep); border-color:var(--orange);}
+  .nav-cta{display:flex; align-items:center; gap:10px;}
+  .burger{
+    display:none;
+    background:none;border:1.5px solid var(--border); border-radius:10px;
+    width:42px;height:42px; cursor:pointer;
+    align-items:center; justify-content:center;
+  }
+  .burger span, .burger span::before, .burger span::after{
+    content:""; display:block; width:18px; height:2px; background:var(--blue-deep);
+    position:relative; transition:.2s;
+  }
+  .burger span::before{position:absolute; top:-6px;}
+  .burger span::after{position:absolute; top:6px;}
+  .mobile-panel{display:none;}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    overflow:hidden;
+    background:
+      radial-gradient(ellipse 620px 380px at 92% -10%, rgba(246,166,35,0.22), transparent 60%),
+      radial-gradient(ellipse 560px 420px at -8% 8%, rgba(30,136,229,0.20), transparent 60%),
+      radial-gradient(ellipse 640px 460px at 100% 95%, rgba(34,165,103,0.18), transparent 60%),
+      linear-gradient(180deg,#F6FAFE 0%, #FBFCFE 60%);
+  }
+  .hero-dots{
+    position:absolute; inset:0;
+    background-image:radial-gradient(rgba(13,59,102,0.09) 1.4px, transparent 1.4px);
+    background-size:22px 22px;
+    -webkit-mask-image:radial-gradient(ellipse 900px 500px at 15% 20%, black, transparent 70%);
+    mask-image:radial-gradient(ellipse 900px 500px at 15% 20%, black, transparent 70%);
+    pointer-events:none;
+  }
+  .hero-inner{position:relative; padding-block:clamp(28px,4vw,44px) 8px;}
+  .banner-frame{
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:var(--shadow);
+    border:1px solid rgba(13,59,102,0.08);
+  }
+  .banner-frame img{width:100%; height:auto;}
+  .hero-copy{
+    max-width:760px;
+    margin-top:clamp(28px,4vw,40px);
+    display:flex; flex-direction:column; gap:16px;
+  }
+  .hero-copy h1{
+    font-size:clamp(2rem,1.4rem + 2.6vw,3.1rem);
+    font-weight:900;
+  }
+  .hero-copy .gradient-text{
+    background:linear-gradient(100deg,var(--blue) 10%, var(--green) 55%, var(--orange-deep) 95%);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  .hero-copy .lede{font-size:1.08rem; color:var(--ink-soft); max-width:62ch;}
+  .hero-ctas{display:flex; flex-wrap:wrap; gap:14px; margin-top:6px;}
+
+  .pillars{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:16px;
+    margin-top:clamp(34px,5vw,52px);
+  }
+  .pillar{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:18px 16px;
+    text-align:center;
+    display:flex; flex-direction:column; align-items:center; gap:10px;
+    box-shadow:0 10px 22px -18px rgba(13,59,102,0.35);
+  }
+  .pillar .ic{
+    width:44px;height:44px; border-radius:12px;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .pillar h3{font-size:.92rem; letter-spacing:.02em;}
+  .pillar p{font-size:.82rem; color:var(--ink-soft);}
+  .pillar.p1 .ic{background:rgba(30,136,229,0.12); color:var(--blue);}
+  .pillar.p2 .ic{background:rgba(34,165,103,0.13); color:var(--green-deep);}
+  .pillar.p3 .ic{background:rgba(246,166,35,0.16); color:var(--orange-deep);}
+  .pillar.p4 .ic{background:linear-gradient(135deg,rgba(30,136,229,0.15),rgba(34,165,103,0.15)); color:var(--blue-deep);}
+
+  /* ---------- Wave divider ---------- */
+  .wave{display:block; width:100%; height:56px; margin-top:-2px;}
+
+  /* ---------- Sobre ---------- */
+  .sobre-grid{
+    display:grid; grid-template-columns:1.15fr .85fr; gap:44px; align-items:start;
+  }
+  .lede-block p{color:var(--ink-soft); font-size:1.04rem;}
+  .lede-block p + p{margin-top:14px;}
+  .apoio-wrap{max-width:920px; margin-inline:auto;}
+  .apoio-logos{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(104px,1fr));
+    gap:12px;
+  }
+  .logo-card{
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:14px;
+    height:82px;
+    display:flex; align-items:center; justify-content:center;
+    padding:12px;
+    box-shadow:0 8px 18px -16px rgba(13,59,102,0.35);
+  }
+  .logo-card img{max-height:100%; max-width:100%; width:auto; height:auto; object-fit:contain;}
+  .apoio-extra{margin-top:16px; font-size:.8rem; color:var(--ink-faint); text-align:center;}
+  .aside-card{
+    background:linear-gradient(160deg,var(--blue-deep), #123B6B 60%, var(--green-deep));
+    color:#fff; border-radius:20px; padding:26px;
+    box-shadow:var(--shadow);
+  }
+  .aside-card h3{color:#fff; font-size:1.05rem;}
+  .aside-card ul{list-style:none; margin:16px 0 0; padding:0; display:flex; flex-direction:column; gap:14px;}
+  .aside-card li{display:flex; gap:12px; align-items:flex-start; font-size:.92rem; color:rgba(255,255,255,0.92);}
+  .aside-card li .dot{width:8px;height:8px;border-radius:50%; background:var(--orange); margin-top:6px; flex:none;}
+
+  /* ---------- Modalidades ---------- */
+  .section-head{max-width:680px; margin-inline:auto; text-align:center; display:flex; flex-direction:column; gap:12px; margin-bottom:clamp(30px,4vw,46px);}
+  .section-head p{color:var(--ink-soft); font-size:1.02rem;}
+  .cards2{display:grid; grid-template-columns:1fr 1fr; gap:24px;}
+  .card{
+    background:var(--surface); border:1px solid var(--border); border-radius:20px;
+    padding:28px; display:flex; flex-direction:column; gap:16px;
+    box-shadow:0 14px 30px -22px rgba(13,59,102,0.4);
+  }
+  .card-top{display:flex; align-items:flex-start; justify-content:space-between; gap:12px;}
+  .level-tag{
+    font-size:.72rem; font-weight:800; letter-spacing:.06em; text-transform:uppercase;
+    padding:6px 11px; border-radius:8px; color:#fff;
+  }
+  .level-tag.l1{background:linear-gradient(120deg,var(--blue),var(--blue-deep));}
+  .level-tag.l2{background:linear-gradient(120deg,var(--green),var(--green-deep));}
+  .card h3{font-size:1.28rem;}
+  .card .audience{font-size:.85rem; font-weight:700; color:var(--ink-faint);}
+  .card ul{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px;}
+  .card ul li{display:flex; gap:10px; font-size:.92rem; color:var(--ink-soft);}
+  .card ul li svg{flex:none; margin-top:2px;}
+  .card-actions{display:flex; flex-direction:column; gap:9px; margin-top:auto; padding-top:6px;}
+
+  /* ---------- Steps ---------- */
+  .steps-wrap{
+    background:linear-gradient(135deg,var(--surface-alt),#fff 70%);
+    border:1px solid var(--border);
+    border-radius:24px;
+    padding:clamp(28px,4vw,44px);
+    display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center;
+  }
+  .steps{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:22px;}
+  .steps li{display:flex; gap:16px;}
+  .step-num{
+    flex:none; width:38px; height:38px; border-radius:11px;
+    display:flex; align-items:center; justify-content:center;
+    font-weight:900; font-size:1rem; color:#fff;
+  }
+  .steps li:nth-child(1) .step-num{background:var(--blue);}
+  .steps li:nth-child(2) .step-num{background:var(--green);}
+  .steps li:nth-child(3) .step-num{background:var(--orange-deep);}
+  .step-text h3{font-size:1rem; margin-bottom:4px;}
+  .step-text p{color:var(--ink-soft); font-size:.92rem;}
+  .cta-panel{
+    background:#fff; border:1px solid var(--border); border-radius:18px;
+    padding:26px; text-align:center; display:flex; flex-direction:column; gap:14px;
+    box-shadow:var(--shadow);
+  }
+  .cta-panel .eyebrow{justify-content:center;}
+  .cta-panel h3{font-size:1.3rem;}
+  .cta-panel p{color:var(--ink-soft); font-size:.9rem;}
+  .note{
+    font-size:.8rem; color:var(--ink-faint); border-top:1px dashed var(--border); padding-top:12px; margin-top:2px;
+  }
+
+  /* ---------- Documentos ---------- */
+  .docs-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:18px;}
+  .doc-card{
+    background:var(--surface); border:1px solid var(--border); border-radius:16px;
+    padding:20px; display:flex; flex-direction:column; gap:12px;
+    text-decoration:none; color:var(--ink);
+    transition:border-color .15s, transform .15s, box-shadow .15s;
+  }
+  .doc-card:hover{border-color:var(--blue); transform:translateY(-3px); box-shadow:0 16px 28px -20px rgba(13,59,102,0.45);}
+  .doc-ic{
+    width:40px;height:40px;border-radius:10px;
+    display:flex;align-items:center;justify-content:center;
+    background:var(--surface-alt); color:var(--blue-deep);
+  }
+  .doc-card h3{font-size:.94rem;}
+  .doc-card .doc-meta{font-size:.76rem; color:var(--ink-faint); font-weight:700; text-transform:uppercase; letter-spacing:.03em;}
+  .doc-card .doc-link{margin-top:auto; font-size:.82rem; font-weight:800; color:var(--blue); display:flex; align-items:center; gap:6px;}
+
+  /* ---------- Local / Contato ---------- */
+  .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:32px;}
+  .info-card{
+    background:var(--surface); border:1px solid var(--border); border-radius:18px; padding:26px;
+    display:flex; flex-direction:column; gap:18px;
+  }
+  .info-row{display:flex; gap:14px; align-items:flex-start;}
+  .info-ic{
+    flex:none; width:38px; height:38px; border-radius:10px;
+    display:flex; align-items:center; justify-content:center;
+    background:var(--surface-alt); color:var(--blue-deep);
+  }
+  .info-row h4{margin:0 0 4px; font-size:.92rem; color:var(--blue-deep); font-weight:800;}
+  .info-row p, .info-row a{font-size:.9rem; color:var(--ink-soft); text-decoration:none;}
+  .info-row a:hover{color:var(--blue);}
+  .social-row{display:flex; gap:10px; flex-wrap:wrap;}
+  .social-btn{
+    width:40px; height:40px; border-radius:11px; background:var(--surface-alt);
+    display:flex; align-items:center; justify-content:center; color:var(--blue-deep);
+    border:1px solid var(--border); text-decoration:none; transition:.15s;
+  }
+  .social-btn:hover{background:var(--blue); color:#fff; border-color:var(--blue);}
+  .inst-links{display:flex; flex-direction:column; gap:8px;}
+  .inst-links a{font-size:.9rem; font-weight:700; color:var(--blue-deep); text-decoration:none; display:flex; align-items:center; gap:8px;}
+  .inst-links a:hover{color:var(--green-deep);}
+
+  .map-frame{
+    border-radius:16px; overflow:hidden; border:1px solid var(--border);
+    background:linear-gradient(135deg,var(--surface-alt),#fff);
+    padding:0; min-height:220px; display:flex; align-items:center; justify-content:center;
+  }
+
+  /* ---------- Footer ---------- */
+  footer{
+    background:var(--blue-deep);
+    color:rgba(255,255,255,0.85);
+  }
+  .footer-inner{padding-block:36px; display:flex; flex-direction:column; gap:18px;}
+  .footer-top{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;}
+  .footer-brand{display:flex; align-items:center; gap:10px; color:#fff; font-weight:800;}
+  .footer-orgs{font-size:.78rem; color:rgba(255,255,255,0.65); line-height:1.7;}
+  .footer-bottom{
+    border-top:1px solid rgba(255,255,255,0.14); padding-top:16px;
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+    font-size:.78rem; color:rgba(255,255,255,0.6);
+  }
+  .footer-bottom a{color:rgba(255,255,255,0.75); text-decoration:underline;}
+ /* ---------- Aviso de alteração de data ---------- */
+  .aviso-data{
+    display:flex; gap:12px; align-items:flex-start;
+    background:#FFF4E0; border:1px solid rgba(201,117,20,0.45);
+    border-left:5px solid var(--orange-deep);
+    border-radius:14px; padding:14px 16px;
+    color:#5A3300; font-size:.95rem; max-width:760px;
+    text-align:justify; text-justify:inter-word;
+  }
+  .aviso-data svg{flex:none; margin-top:2px; color:var(--orange-deep);}
+  .aviso-data strong{color:#8A4B00;}
+  /* Logo da UFG um pouco maior */
+  .logo-card.logo-lg{padding:4px;}
+  /* Símbolo do LEMAT um pouco maior */
+  .logo-card img[alt="LEMAT"]{transform:scale(1.7);}
+  /* Logo do CNPq um pouco maior */
+  .logo-card img[alt="CNPq"]{transform:scale(1.35);}
+
+  /* ---------- Qual categoria? ---------- */
+  .guia-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-bottom:34px;}
+  .guia-item{
+    background:#fff; border:1px solid var(--border); border-radius:16px; padding:18px;
+    display:flex; flex-direction:column; gap:8px; box-shadow:0 10px 22px -18px rgba(13,59,102,0.35);
+  }
+  .guia-item .quem{font-size:.8rem; font-weight:800; text-transform:uppercase; letter-spacing:.05em; color:var(--ink-faint);}
+  .guia-item p{font-size:.93rem; color:var(--ink); font-weight:700; line-height:1.4;}
+  .guia-item .vai{margin-top:auto; font-size:.86rem; font-weight:800; display:inline-flex; align-items:center; gap:6px; padding:7px 12px; border-radius:999px; align-self:flex-start; text-decoration:none;}
+  .vai.v1{background:rgba(30,136,229,0.12); color:var(--blue-deep);}
+  .vai.v2{background:rgba(34,165,103,0.14); color:var(--green-deep);}
+  .vai.v3{background:rgba(246,166,35,0.18); color:#8A4B00;}
+  .vai.v4{background:var(--surface-alt); color:var(--ink-soft);}
+  .comparativo{width:100%; border-collapse:separate; border-spacing:0; background:#fff; border:1px solid var(--border); border-radius:18px; overflow:hidden; font-size:.92rem;}
+  .comparativo th, .comparativo td{padding:14px 16px; text-align:left; vertical-align:top; border-bottom:1px solid var(--border);}
+  .comparativo tr:last-child td{border-bottom:none;}
+  .comparativo thead th{color:#fff; font-size:.98rem;}
+  .comparativo thead th:first-child{background:var(--blue-deep);}
+  .comparativo thead th.c1{background:linear-gradient(120deg,var(--blue),var(--blue-deep));}
+  .comparativo thead th.c2{background:linear-gradient(120deg,var(--green),var(--green-deep));}
+  .comparativo tbody th{width:22%; color:var(--blue-deep); font-weight:800; background:var(--surface-alt);}
+  .comparativo td{color:var(--ink-soft);}
+  .atencao-lista{margin-top:22px; display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+  .atencao{display:flex; gap:10px; align-items:flex-start; background:#FFF4E0; border:1px solid rgba(201,117,20,0.35); border-radius:14px; padding:14px 16px; font-size:.9rem; color:#5A3300;}
+  .atencao b{color:#8A4B00;}
+  .atencao svg{flex:none; margin-top:2px; color:var(--orange-deep);}
+
+  /* ---------- Comissão organizadora ---------- */
+  .comissao-destaque{display:grid; grid-template-columns:1fr 1fr; gap:20px; max-width:760px; margin:0 auto 26px;}
+  .comissao-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:16px;}
+  .membro{
+    background:#fff; border:1px solid var(--border); border-radius:18px; padding:18px 12px;
+    display:flex; flex-direction:column; align-items:center; text-align:center; gap:10px;
+    box-shadow:0 10px 22px -18px rgba(13,59,102,0.35);
+  }
+  .membro .foto{
+    width:96px; height:96px; border-radius:50%; padding:3px;
+    background:linear-gradient(135deg,var(--blue),var(--green) 55%,var(--orange));
+    display:flex; align-items:center; justify-content:center; flex:none;
+  }
+  .membro .foto img, .membro .foto span{
+    width:100%; height:100%; border-radius:50%; border:3px solid #fff; background:var(--surface-alt);
+    object-fit:cover; object-position:center 20%;
+  }
+  .membro .foto span{display:flex; align-items:center; justify-content:center; font-weight:900; font-size:1.5rem; color:var(--blue-deep);}
+  .membro h3{font-size:.95rem; line-height:1.25;}
+  .membro .papel{font-size:.72rem; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:var(--green-deep);}
+  .membro.lider{flex-direction:row; text-align:left; padding:18px; gap:16px;}
+  .membro.lider .foto{width:110px; height:110px;}
+  .membro.lider h3{font-size:1.1rem;}
+  .membro.lider .papel{color:var(--orange-deep);}
+
+  @media (max-width:900px){
+    .guia-grid{grid-template-columns:1fr 1fr;}
+    .atencao-lista{grid-template-columns:1fr;}
+    .comparativo, .comparativo thead, .comparativo tbody, .comparativo tr, .comparativo th, .comparativo td{display:block; width:100%;}
+    .comparativo thead{display:none;}
+    .comparativo tbody th{width:100%;}
+    .comparativo td::before{content:attr(data-label); display:block; font-size:.74rem; font-weight:800; text-transform:uppercase; letter-spacing:.05em; margin-bottom:4px;}
+    .comparativo td.c1::before{color:var(--blue);}
+    .comparativo td.c2::before{color:var(--green-deep);}
+  }
+  @media (max-width:520px){
+    .guia-grid{grid-template-columns:1fr;}
+    .comissao-destaque{grid-template-columns:1fr;}
+    .comissao-grid{grid-template-columns:1fr 1fr;}
+  }
+
+
+  /* ---------- Responsive ---------- */
+	
+  @media (max-width:900px){
+    .navlinks, .nav-cta .btn-outline{display:none;}
+    .burger{display:flex;}
+    .mobile-panel.open{
+      display:flex; flex-direction:column; gap:2px;
+      padding:10px 20px 18px;
+      border-top:1px solid var(--border);
+    }
+    .mobile-panel a{
+      padding:12px 4px; text-decoration:none; font-weight:700; color:var(--ink-soft);
+      border-bottom:1px solid var(--border);
+    }
+    .mobile-panel .btn{margin-top:10px;}
+    .pillars{grid-template-columns:1fr 1fr;}
+    .sobre-grid{grid-template-columns:1fr;}
+    .cards2{grid-template-columns:1fr;}
+    .steps-wrap{grid-template-columns:1fr;}
+    .docs-grid{grid-template-columns:1fr 1fr;}
+    .contact-grid{grid-template-columns:1fr;}
+  }
+  @media (max-width:520px){
+    .pillars{grid-template-columns:1fr 1fr; gap:10px;}
+    .docs-grid{grid-template-columns:1fr;}
+    .hero-ctas{flex-direction:column; align-items:stretch;}
+    .hero-ctas .btn{justify-content:center;}
+  }
+
+  /* ---------- Programação ---------- */
+  .prog-grid{display:grid; grid-template-columns:1fr 1fr; gap:22px; max-width:960px; margin:0 auto;}
+  .prog-day{background:var(--surface); border:1px solid var(--border); border-radius:18px; box-shadow:var(--shadow); overflow:hidden;}
+  .prog-day-head{display:flex; align-items:baseline; gap:12px; padding:18px 24px; color:#fff; background:linear-gradient(135deg,var(--blue-deep),var(--blue));}
+  .prog-day:nth-child(2) .prog-day-head{background:linear-gradient(135deg,var(--green-deep),var(--green));}
+  .prog-day-head strong{font-size:1.6rem; font-weight:800; line-height:1;}
+  .prog-day-head span{font-size:.9rem; font-weight:600; opacity:.9;}
+  .prog-list{list-style:none; margin:0; padding:6px 24px 14px;}
+  .prog-list li{display:grid; grid-template-columns:118px 1fr; gap:14px; padding:14px 0; border-bottom:1px solid var(--border); align-items:start;}
+  .prog-list li:last-child{border-bottom:0;}
+  .prog-time{font-weight:800; color:var(--blue-deep); font-variant-numeric:tabular-nums; white-space:nowrap;}
+  .prog-act{color:var(--ink-soft); font-size:.97rem;}
+  .prog-act.destaque{color:var(--orange-deep); font-weight:700;}
+  @media (max-width:760px){ .prog-grid{grid-template-columns:1fr;} }
+  /* cabeçalho: evita estouro horizontal com o novo item de menu */
+  @media (max-width:1360px){ .nav-cta .btn-outline{display:none;} }
+  @media (max-width:1180px) and (min-width:901px){ .navlinks{gap:12px;} .navlinks a{font-size:.9rem;} }
+  @media (max-width:420px){ .prog-list li{grid-template-columns:1fr; gap:2px;} }
+</style>
+<style>
+  .pg-hero{padding-block:clamp(36px,5vw,64px) clamp(20px,3vw,32px); background:radial-gradient(120% 90% at 100% 0%, rgba(246,166,35,.12), transparent 55%), radial-gradient(90% 80% at 0% 0%, rgba(30,136,229,.10), transparent 60%);}
+  .pg-hero .section-head{margin-bottom:26px}
+  .pg-hero h1{font-size:clamp(1.9rem,1.3rem + 2.4vw,3rem); font-weight:800; color:var(--blue-deep); line-height:1.1; margin:0}
+  .pg-stats{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; max-width:820px; margin:0 auto}
+  .pg-stat{background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:16px 18px; box-shadow:var(--shadow); text-align:center}
+  .pg-stat b{display:block; font-size:2rem; font-weight:800; line-height:1.05; background:linear-gradient(90deg,var(--blue),var(--green)); -webkit-background-clip:text; background-clip:text; color:transparent}
+  .pg-stat:nth-child(2) b{background:linear-gradient(90deg,var(--orange-deep),var(--orange)); -webkit-background-clip:text; background-clip:text}
+  .pg-stat span{font-size:.86rem; color:var(--ink-soft); font-weight:600}
+  .pg-bar{position:sticky; top:var(--pg-top,72px); z-index:20; background:rgba(251,252,254,.94); backdrop-filter:blur(8px); border-block:1px solid var(--border)}
+  .pg-bar .wrap{display:flex; flex-wrap:wrap; justify-content:center; gap:10px 22px; padding-block:12px}
+  .pg-seg{display:flex; gap:6px; flex-wrap:wrap; justify-content:center}
+  .pg-seg button{font:inherit; font-size:.88rem; font-weight:600; border:1.5px solid var(--border); background:#fff; color:var(--ink-soft); padding:8px 16px; border-radius:999px; cursor:pointer; transition:all .15s}
+  .pg-seg button:hover{border-color:var(--blue)}
+  .pg-seg button[aria-pressed="true"]{background:var(--blue-deep); border-color:var(--blue-deep); color:#fff}
+  .pg-seg button:focus-visible{outline:3px solid var(--blue); outline-offset:2px}
+  .pg-turno{padding-top:clamp(30px,4vw,48px)}
+  .pg-turno-h{display:flex; justify-content:space-between; align-items:center; gap:10px 20px; flex-wrap:wrap; color:#fff; border-radius:18px; padding:18px 24px; margin-bottom:20px; background:linear-gradient(135deg,var(--blue-deep),var(--blue)); box-shadow:var(--shadow)}
+  .pg-turno-h.d27{background:linear-gradient(135deg,var(--green-deep),var(--green))}
+  .pg-turno-h > div:first-child{display:flex; align-items:baseline; gap:12px}
+  .pg-turno-h strong{font-size:1.6rem; font-weight:800; line-height:1}
+  .pg-turno-h span{font-size:.9rem; font-weight:600; opacity:.9}
+  .pg-hora{text-align:right}.pg-hora b{display:block; font-size:1.1rem}.pg-hora small{opacity:.85; font-size:.82rem}
+  .pg-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:18px}
+  .pg-card{background:var(--surface); border:1px solid var(--border); border-radius:18px; padding:22px; box-shadow:var(--shadow); display:flex; flex-direction:column; gap:12px; transition:transform .18s, box-shadow .18s}
+  .pg-card:hover{transform:translateY(-3px); box-shadow:0 18px 34px -16px rgba(13,59,102,.3)}
+  .pg-top{display:flex; justify-content:space-between; align-items:center; gap:8px; flex-wrap:wrap}
+  .pg-grp{font-size:.8rem; color:var(--ink-faint); font-weight:600; display:flex; gap:8px; align-items:center; flex-wrap:wrap}
+  .pg-all{font-size:.7rem; font-weight:800; letter-spacing:.04em; text-transform:uppercase; color:var(--orange-deep); background:#FFF4E0; border:1px solid rgba(201,117,20,.3); border-radius:999px; padding:3px 9px}
+  .pg-card h3{font-size:1.1rem; line-height:1.3; color:var(--blue-deep); margin:0}
+  .pg-din{margin:0; color:var(--ink-soft); font-size:.94rem}
+  .pg-inst{display:flex; gap:10px; align-items:flex-start; background:var(--surface-alt); border-radius:12px; padding:11px 13px}
+  .pg-inst svg{width:20px; height:20px; flex:none; color:var(--blue); margin-top:1px}
+  .pg-card.pop .pg-inst{background:#EAF7F0}.pg-card.pop .pg-inst svg{color:var(--green)}
+  .pg-inst strong{font-size:.93rem; color:var(--blue-deep)}.pg-card.pop .pg-inst strong{color:var(--green-deep)}
+  .pg-team summary{cursor:pointer; list-style:none; display:inline-flex; align-items:center; gap:8px; font-size:.86rem; font-weight:700; color:var(--blue-deep); border:1.5px solid var(--border); border-radius:999px; padding:7px 14px; background:#fff; transition:border-color .15s}
+  .pg-team summary:hover{border-color:var(--blue)}
+  .pg-card.pop .pg-team summary{color:var(--green-deep)}.pg-card.pop .pg-team summary:hover{border-color:var(--green)}
+  .pg-team summary::-webkit-details-marker{display:none}
+  .pg-team summary:after{content:"\25BE"; display:inline-block; transition:transform .2s}
+  .pg-team[open] summary:after{transform:rotate(180deg)}
+  .pg-team summary:focus-visible{outline:3px solid var(--blue); outline-offset:2px}
+  .pg-team .n{font-size:.74rem; background:var(--surface-alt); border-radius:999px; padding:1px 8px; color:var(--ink-soft)}
+  .pg-team ul{list-style:none; margin:12px 0 0; padding:0; display:flex; flex-wrap:wrap; gap:6px}
+  .pg-team li{font-size:.84rem; background:#FFF4E0; color:#6B3D00; border:1px solid rgba(201,117,20,.28); padding:4px 11px; border-radius:999px}
+  .pg-team-fixed{margin:0; font-weight:700; color:var(--green-deep)}
+  .pg-team-fixed span{display:block; font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-faint); margin-bottom:3px}
+  .pg-ori{margin:auto 0 0; font-size:.9rem; color:var(--ink-soft); border-top:1px dashed var(--border); padding-top:10px}
+  .pg-ori span{font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-faint); font-weight:700; margin-right:4px}
+  .pg-marco{display:flex; gap:16px; align-items:center; margin-top:18px; background:#FFF4E0; border:1px solid rgba(201,117,20,.35); border-left:5px solid var(--orange-deep); border-radius:14px; padding:14px 18px}
+  .pg-aviso{margin:0 auto 26px}
+  .pg-upd{display:block;margin-top:4px;font-size:.84rem;font-weight:700;color:#8A4B00}
+  .pg-hide{display:none !important}
+  .pg-back{text-align:center; padding:48px 0 8px}
+  @media (max-width:720px){ .pg-stats{grid-template-columns:1fr 1fr 1fr; gap:8px} .pg-stat{padding:12px 8px} .pg-stat b{font-size:1.5rem} .pg-stat span{font-size:.74rem} .pg-hora{text-align:left} .pg-grid{grid-template-columns:1fr} .pg-card{padding:18px} .pg-bar{position:static} .pg-marco{flex-direction:column; align-items:flex-start; gap:4px}}
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="wrap nav">
+    <a href="./" class="brand">
+      <svg width="30" height="30" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M2 30 C 8 14, 14 14, 20 24 C 26 14, 32 14, 38 30" stroke="url(#gradA)" stroke-width="4.4" stroke-linecap="round" fill="none"/>
+        <defs>
+          <linearGradient id="gradA" x1="0" y1="0" x2="40" y2="0">
+            <stop offset="0" stop-color="#1E88E5"/>
+            <stop offset="0.5" stop-color="#F6A623"/>
+            <stop offset="1" stop-color="#22A567"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      <small>
+        Festival Goiano de Matemática
+        <span style="display:block;font-weight:700;color:#7488A0;font-size:.66rem;letter-spacing:.03em;">IME/UFG · LEMAT</span>
+      </small>
+    </a>
+
+    <ul class="navlinks">
+      <li><a href="./#sobre">Sobre</a></li>
+      <li><a href="programacao.html" aria-current="page" style="color:var(--blue-deep)">Programação</a></li>
+     <li><a href="./#entenda">Categoria</a></li>
+      <li><a href="./#modalidades">Modalidades</a></li>
+      <li><a href="./#inscreva-se">Participe</a></li>
+      <li><a href="./#documentos">Documentos</a></li>
+      <li><a href="./#contato">Contato</a></li>
+    <li><a href="./#apoio">Apoio</a></li>
+      <li><a href="./#comissao">Comissão</a></li>
+    </ul>
+
+    <div class="nav-cta">
+      <a class="btn btn-outline btn-sm" href="./">Página inicial</a>
+      <a class="btn btn-primary btn-sm" href="https://docs.google.com/forms/d/e/1FAIpQLSeGHVFz3LSZ3Un_aQV2isS8X2BnbuooKhaLV29_2bZttRC1Yg/viewform?usp=publish-editor" target="_blank" rel="noopener">Inscreva-se</a>
+      <button class="burger" id="burgerBtn" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobilePanel"><span></span></button>
+    </div>
+  </div>
+  <nav class="mobile-panel" id="mobilePanel">
+    <a href="./#sobre">Sobre</a>
+    <a href="programacao.html">Programação completa</a>
+    <a href="./#entenda">Qual categoria é a minha?</a>
+    <a href="./#modalidades">Modalidades</a>
+    <a href="./#inscreva-se">Como participar</a>
+    <a href="./#documentos">Documentos</a>
+    <a href="./#contato">Contato</a>
+     <a href="./#apoio">Apoio</a>
+    <a href="./#comissao">Comissão organizadora</a>
+    <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSeGHVFz3LSZ3Un_aQV2isS8X2BnbuooKhaLV29_2bZttRC1Yg/viewform?usp=publish-editor" target="_blank" rel="noopener">Inscrição Visitante do Evento</a>
+  </nav>
+</header>
+<main id="topo">
+<section class="pg-hero">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" style="justify-content:center;">Programação completa · 26 e 27 de outubro</span>
+      <h1>Quem faz o Festival acontecer</h1>
+      <p>Estudantes, professores e pesquisadores de escolas e universidades de Goiás e de outros estados mostram o que estão criando com a Matemática. Conheça os trabalhos, as instituições e as equipes.</p>
+    </div>
+    <div class="aviso-data pg-aviso" role="note">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7"/><path d="M12 7.5V12l3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      <p><strong>Programação em construção.</strong> Novas atividades ainda serão incluídas e os horários podem ser ajustados até o Festival. Volte a esta página para conferir a versão mais recente. <span class="pg-upd">Atualizada em 13/10/2026.</span></p>
+    </div>
+    <div class="pg-stats">
+      <div class="pg-stat"><b>40</b><span>estudantes da Educação Básica</span></div>
+      <div class="pg-stat"><b>8</b><span>escolas públicas na Mostra</span></div>
+      <div class="pg-stat"><b>17</b><span>atividades de Popularização</span></div>
+    </div>
+  </div>
+</section>
+<nav class="pg-bar" aria-label="Filtrar programação"><div class="wrap">
+  <div class="pg-seg" role="group" aria-label="Dia"><button aria-pressed="true" data-f="dia" data-v="all">Os dois dias</button><button aria-pressed="false" data-f="dia" data-v="26">Segunda 26/10</button><button aria-pressed="false" data-f="dia" data-v="27">Terça 27/10</button></div>
+  <div class="pg-seg" role="group" aria-label="Categoria"><button aria-pressed="true" data-f="tipo" data-v="all">Tudo</button><button aria-pressed="false" data-f="tipo" data-v="mostra">Mostra Científica</button><button aria-pressed="false" data-f="tipo" data-v="pop">Popularização</button></div>
+</div></nav>
+<div class="wrap"><section class="pg-turno" data-dia="26" id="t26M">
+  <header class="pg-turno-h d26"><div><strong>26/10</strong><span>Segunda-feira</span></div><div class="pg-hora"><b>Manhã · 8h – 12h</b><small>1 na Mostra · 8 de Popularização</small></div></header>
+  <div class="pg-grid"><article class="pg-card mostra" data-tipo="mostra">
+  <div class="pg-top"><span class="level-tag l1">Mostra Científica</span><span class="pg-grp">Ensino Médio</span></div>
+  <h3>Recorte Matemático: do cotidiano ao digital</h3>
+  <p class="pg-din">Os estudantes mostram vídeos curtos que roteirizaram, gravaram e editaram para as redes sociais. Neles, a Matemática aparece em situações do dia a dia.</p>
+  <div class="pg-inst"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10 12 4l9 6M5 10v9h14v-9M9 19v-5h6v5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg><strong>CEPMG Dr. José Feliciano Ferreira · Guapó</strong></div>
+  <details class="pg-team"><summary>Ver estudantes <span class="n">5</span></summary><ul><li>Nathalia Gomes Novaes</li><li>Sayma Gonçalves de Brito</li><li>Sofia Gonçalves de Deus Campos</li><li>Isa Sarah dos Santos da Silva</li><li>Ana Luiza Cardoso do Nascimento</li></ul></details><p class="pg-ori"><span>Orientação</span> Jordana Martins Gonçalves</p>
+</article><article class="pg-card pop" data-tipo="pop">
+  <div class="pg-top"><span class="level-tag l2">Popularização</span><span class="pg-grp">Oficina</span></div>
+  <h3>Equilibrando Poderes: uma aventura matemática de RPG</h3>
+  <p class="pg-din">Oficina de RPG em grupos, cada um conduzido por um mestre. Para avançar na aventura, os jogadores resolvem equações e inequações do 1º grau.</p>
+  <div class="pg-inst"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10 12 4l9 6M5 10v9h14v-9M9 19v-5h6v5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg><strong>UFG · CEPAE e Licenciatura em Matemática</strong></div>
+  <details class="pg-team"><summary>Ver equipe <span class="n">4</span></summary><ul><li>Thomas Candido Oliveira Silva</li><li>Edison Ribeiro da Silva Neto</li><li>Thalles Fernandes Dias</li><li>Lucas Secundino H. S. Jacó</li></ul></details>
+</article><article class="pg-card pop" data-tipo="pop">
+  <div class="pg-top"><span class="level-tag l2">Popularização</span><span class="pg-grp">Oficina</span></div>
+  <h3>Oficinas de Robótica: XRP na prática</h3>
+  <p class="pg-din">Futebol de robôs em alianças e um desafio de percurso. Os visitantes controlam robôs XRP e exploram direção, coordenação e raciocínio lógico.</p>
+  <div class="pg-inst"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10 12 4l9 6M5 10v9h14v-9M9 19v-5h6v5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg><strong>SESI Planalto · Equipe Justice</strong></div>
+  <details class="pg-team"><summary>Ver equipe <span class="n">2</span></summary><ul><li>Gabriel Feitosa da Silva Ribeiro</li><li>Equipe Justice</li></ul></details>
+</article><article class="pg-card pop" data-tipo="pop">
+  <div class="pg-top"><span class="level-tag l2">Popularização</span><span class="pg-grp">Competição lúdica</span></div>
+  <h3>Olimpíada para Todos: desafios, jogos e sorrisos</h3>
+  <p class="pg-din">Um circuito de desafios em três níveis, do &quot;Aquecimento Acessível&quot; ao &quot;Nível Olímpico&quot;, com problemas de olimpíada adaptados para manipular.</p>
+  <div class="pg-inst"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10 12 4l9 6M5 10v9h14v-9M9 19v-5h6v5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg><strong>PROFMAT · UFG</strong></div>
+  <details class="pg-team"><summary>Ver equipe <span class="n">2</span></summary><ul><li>Luana de Oliveira Santos Ribeiro</li><li>Tainara Rodrigues Borges</li></ul></details>
+</article><article class="pg-card pop" data-tipo="pop">
+  <div class="pg-top"><span class="level-tag l2">Popularização</span><span class="pg-grp">Oficina</span></div>
+  <h3>Manuseando e explorando o Algoritmo de Euclides com Feijões</h3>
+  <p class="pg-din">Com feijões e um tabuleiro didático, os participantes formam agrupamentos e descobrem divisores, o MDC e o Algoritmo de Euclides.</p>
+  <div class="pg-inst"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10 12 4l9 6M5 10v9h14v-9M9 19v-5h6v5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg><strong>SEEDF · CEM 01 de Sobradinho e IME/UFG</strong></div>
+  <details class="pg-team"><summary>Ver equipe <span class="n">2</span></summary><ul><li>Rafael Urzêdo Pinto</li><li>Mário José de Souza</li></ul></details>
+</article><article class="pg-card pop" data-tipo="pop">
+  <div class="pg-top"><span class="level-tag l2">Popularização</span><span class="pg-grp">Oficina</span></div>
+  <h3>O Ensino de Geometria com materiais manipuláveis</h3>
+  <p class="pg-din">Quatro investigações com peças de MDF cortadas a laser: soma dos ângulos do triângulo, áreas por decomposição, áreas de contorno irregular e Teorema de Pitágoras.</p>
+  <div class="pg-inst"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10 12 4l9 6M5 10v9h14v-9M9 19v-5h6v5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg><strong>UFMT · Campus Araguaia</strong></div>
+  <details class="pg-team"><summary>Ver quem apresenta <span class="n">1</span></summary><ul><li>Hudson Pina de Oliveira</li></ul></details>
+</article><article class="pg-card pop" data-tipo="pop">
+  <div class="pg-top"><span class="level-tag l2">Popularização</span><span class="pg-grp"><span class="pg-all">Todos os turnos</span>Escape room</span></div>
+  <h3>Escape Room: a Confraria Secreta da Geometria</h3>
+  <p class="pg-din">Uma aventura cooperativa de até 40 minutos, com ambientação imersiva, narrativa teatral e três etapas de enigmas de geometria e lógica.</p>
+  <div class="pg-inst"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10 12 4l9 6M5 10v9h14v-9M9 19v-5h6v5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg><strong>LEMAT · IME/UFG</strong></div>
+  <details class="pg-team"><summary>Ver equipe <span class="n">4</span></summary><ul><li>Geovanna Mendanha Ferreira</li><li>Pedro Gabriel</li><li>Gabriel Feitosa</li><li>Kaike Vinicius</li></ul></details>
+</article><article class="pg-card pop" data-tipo="pop">
+  <div class="pg-top"><span class="level-tag l2">Popularização</span><span class="pg-grp"><span class="pg-all">Todos os turnos</span>Circuito</span></div>
+  <h3>Circuito PETMAT</h3>
+  <p class="pg-din">Circuito com cinco espaços simultâneos: 1) Clube de Matemática Ensino Médio, 2) Clube de Matemática Ensino Fundamental, 3) Matemática Básica em Perspectiva, 4) Erê e 5) Conhecendo o PETMAT.</p>
+  <div class="pg-inst"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10 12 4l9 6M5 10v9h14v-9M9 19v-5h6v5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg><strong>PETMAT · Licenciatura em Matemática · UFG</strong></div>
+  <details class="pg-team"><summary>Ver equipe <span class="n">14</span></summary><ul><li>Andreia Campelo Guimarães</li><li>Beatriz Melo de Oliveira</li><li>Clara Gabriella Agda Ferreira Teixeira</li><li>Gabriel Filipe Vaz Pires</li><li>Geovana Dias Nascimento</li><li>Hemilly Cristhiny Mendes Coelho da Fonseca</li><li>João Manoel Rodrigues Dias</li><li>Júls Martins da Conceição</li><li>Kaiky Fagundes de Souza</li><li>Laura Pereira Araújo</li><li>Lucas Secundino H. S. Jacó</li><li>Mayline Regina Silva</li><li>Rebeka Guimarães Reis</li><li>Vinícius Rodovalho Vidal Costa</li></ul></details><p class="pg-ori"><span>Tutoria</span> Wellington Lima Cedro</p>
+</article><article class="pg-card pop" data-tipo="pop">
+  <div class="pg-top"><span class="level-tag l2">Popularização</span><span class="pg-grp"><span class="pg-all">Todos os turnos</span>Circuito</span></div>
+  <h3>Circuito LEMAT</h3>
+  <p class="pg-din">Circuito com três estações: 1) Conhecendo o LEMAT, 2) Jogos Pedagógicos e 3) Xadrez Gigante.</p>
+  <div class="pg-inst"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10 12 4l9 6M5 10v9h14v-9M9 19v-5h6v5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg><strong>LEMAT · Laboratório de Educação Matemática · IME/UFG</strong></div>
+  <p class="pg-team-fixed"><span>Equipe</span>Equipe LEMAT</p>
+</article></div><div class="pg-marco d26"><span class="prog-time">13h – 14h</span><span class="prog-act destaque">Mesa de abertura do evento</span></div></section><section class="pg-turno" data-dia="26" id="t26T">
+  <header class="pg-turno-h d26"><div><strong>26/10</strong><span>Segunda-feira</span></div><div class="pg-hora"><b>Tarde · 14h – 17h</b><small>2 na Mostra · 7 de Popularização</small></div></header>
+  <div class="pg-grid"><article class="pg-card mostra" data-tipo="mostra">
+  <div class="pg-top"><span class="level-tag l1">Mostra Científica</span><span class="pg-grp">Ensino Médio</span></div>
+  <h3>Do Rótulo ao Carrinho: Matemática para o Consumo Consciente</h3>
+  <p class="pg-din">Um mercadinho interativo em que o visitante compara produtos pelo preço por quilo, litro, metro e tempo de uso para fazer a compra mais esperta.</p>
+  <div class="pg-inst"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10 12 4l9 6M5 10v9h14v-9M9 19v-5h6v5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg><strong>Colégio Estadual Jornalista Luiz Gonzaga Contart · Goiânia</strong></div>
+  <details class="pg-team"><summary>Ver estudantes <span class="n">5</span></summary><ul><li>Emanuely Rodrigues de Moraes</li><li>Geovanna Gabriele Nunes Oliveira</li><li>Giovanna Lopes</li><li>Pedro Lucas Gomes de Sousa Britto</li><li>Sâmella Gabrielly Costa Silva Menezes</li></ul></details><p class="pg-ori"><span>Orientação</span> Uemerson Fernandes Nunes</p>
+</article><article class="pg-card mostra" data-tipo="mostra">
+  <div class="pg-top"><span class="level-tag l1">Mostra Científica</span><span class="pg-grp">Ensino Médio</span></div>
+  <h3>A Matemática na Prática Artística: Geometria, Harmonia e Proporção</h3>
+  <p class="pg-din">Proporção áurea na pintura, simetria no crochê, cimática para ver o som, Disco de Newton e padrões geométricos no cinema.</p>
+  <div class="pg-inst"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10 12 4l9 6M5 10v9h14v-9M9 19v-5h6v5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg><strong>CEPMG Ayrton Senna · Goiânia</strong></div>
+  <details class="pg-team"><summary>Ver estudantes <span class="n">5</span></summary><ul><li>Lara Marques Almeida</li><li>Weslley Vieira da Silva</li><li>Felipe Gomes Freitas</li><li>Nicholas Camilo de Almeida</li><li>Ana Luiza Lacerda dos Santos</li></ul></details><p class="pg-ori"><span>Orientação</span> Rosélia José da Silva Carvalho</p>
+</article><article class="pg-card pop" data-tipo="pop">
+  <div class="pg-top"><span class="level-tag l2">Popularização</span><span class="pg-grp">Oficina</span></div>
+  <h3>Mosaicos do Hexágono: arte, geometria e investigação mão na massa</h3>
+  <p class="pg-din">Oficina de fluxo contínuo no pátio. Cada visitante divide um hexágono em seis peças congruentes, monta seu mosaico e o coloca num mural coletivo.</p>
+  <div class="pg-inst"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10 12 4l9 6M5 10v9h14v-9M9 19v-5h6v5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg><strong>Universidade Federal de Goiás</strong></div>
+  <details class="pg-team"><summary>Ver equipe <span class="n">2</span></summary><ul><li>Mônica Mosonowa</li><li>Simino Borges Santana Junior</li></ul></details>
+</article><article class="pg-card pop" data-tipo="pop">
+  <div class="pg-top"><span class="level-tag l2">Popularização</span><span class="pg-grp">Apresentação</span></div>
+  <h3>Educação Financeira no Ensino Médio</h3>
+  <p class="pg-din">Atividades contextualizadas que articulam Educação Financeira e Matemática Financeira para decisões do dia a dia.</p>
+  <div class="pg-inst"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10 12 4l9 6M5 10v9h14v-9M9 19v-5h6v5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg><strong>IME · UFG</strong></div>
+  <details class="pg-team"><summary>Ver quem apresenta <span class="n">1</span></summary><ul><li>Johnny Carlos Silva</li></ul></details>
+</article><article class="pg-card pop" data-tipo="pop">
+  <div class="pg-top"><span class="level-tag l2">Popularização</span><span class="pg-grp">Oficina</span></div>
+  <h3>A Matemática dos Fractais: da Pipa Tetraédrica ao Triângulo de Sierpinski</h3>
+  <p class="pg-din">A partir da pipa tetraédrica de Graham Bell, o público constrói em conjunto o Triângulo de Sierpinski com dobraduras.</p>
+  <div class="pg-inst"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10 12 4l9 6M5 10v9h14v-9M9 19v-5h6v5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg><strong>PROFMAT · UFG</strong></div>
+  <details class="pg-team"><summary>Ver equipe <span class="n">4</span></summary><ul><li>Tainara Rodrigues Borges</li><li>Luana de Oliveira Santos Ribeiro</li><li>Mirian Cristianne da Silva</li><li>Mattheus Vinícius Monteiro Barbosa</li></ul></details>
+</article><article class="pg-card pop" data-tipo="pop">
+  <div class="pg-top"><span class="level-tag l2">Popularização</span><span class="pg-grp">Roda de conversa</span></div>
+  <h3>Aprendizagem Matemática e Cultura Popular: práticas inovadoras do LEPEP</h3>
+  <p class="pg-din">Roda de conversa de 60 minutos sobre a festa da &quot;Entrada da Rainha&quot;, de Jaraguá, como ponto de partida para a Etnomatemática.</p>
+  <div class="pg-inst"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10 12 4l9 6M5 10v9h14v-9M9 19v-5h6v5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg><strong>UEG · Unidade Jaraguá · LEPEP</strong></div>
+  <details class="pg-team"><summary>Ver quem apresenta <span class="n">1</span></summary><ul><li>Leide Dayanne Silva de Sousa</li></ul></details>
+</article><article class="pg-card pop" data-tipo="pop">
+  <div class="pg-top"><span class="level-tag l2">Popularização</span><span class="pg-grp"><span class="pg-all">Todos os turnos</span>Escape room</span></div>
+  <h3>Escape Room: a Confraria Secreta da Geometria</h3>
+  <p class="pg-din">Uma aventura cooperativa de até 40 minutos, com ambientação imersiva, narrativa teatral e três etapas de enigmas de geometria e lógica.</p>
+  <div class="pg-inst"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10 12 4l9 6M5 10v9h14v-9M9 19v-5h6v5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg><strong>LEMAT · IME/UFG</strong></div>
+  <details class="pg-team"><summary>Ver equipe <span class="n">4</span></summary><ul><li>Geovanna Mendanha Ferreira</li><li>Pedro Gabriel</li><li>Gabriel Feitosa</li><li>Kaike Vinicius</li></ul></details>
+</article><article class="pg-card pop" data-tipo="pop">
+  <div class="pg-top"><span class="level-tag l2">Popularização</span><span class="pg-grp"><span class="pg-all">Todos os turnos</span>Circuito</span></div>
+  <h3>Circuito PETMAT</h3>
+  <p class="pg-din">Circuito com cinco espaços simultâneos: 1) Clube de Matemática Ensino Médio, 2) Clube de Matemática Ensino Fundamental, 3) Matemática Básica em Perspectiva, 4) Erê e 5) Conhecendo o PETMAT.</p>
+  <div class="pg-inst"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10 12 4l9 6M5 10v9h14v-9M9 19v-5h6v5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg><strong>PETMAT · Licenciatura em Matemática · UFG</strong></div>
+  <details class="pg-team"><summary>Ver equipe <span class="n">14</span></summary><ul><li>Andreia Campelo Guimarães</li><li>Beatriz Melo de Oliveira</li><li>Clara Gabriella Agda Ferreira Teixeira</li><li>Gabriel Filipe Vaz Pires</li><li>Geovana Dias Nascimento</li><li>Hemilly Cristhiny Mendes Coelho da Fonseca</li><li>João Manoel Rodrigues Dias</li><li>Júls Martins da Conceição</li><li>Kaiky Fagundes de Souza</li><li>Laura Pereira Araújo</li><li>Lucas Secundino H. S. Jacó</li><li>Mayline Regina Silva</li><li>Rebeka Guimarães Reis</li><li>Vinícius Rodovalho Vidal Costa</li></ul></details><p class="pg-ori"><span>Tutoria</span> Wellington Lima Cedro</p>
+</article><article class="pg-card pop" data-tipo="pop">
+  <div class="pg-top"><span class="level-tag l2">Popularização</span><span class="pg-grp"><span class="pg-all">Todos os turnos</span>Circuito</span></div>
+  <h3>Circuito LEMAT</h3>
+  <p class="pg-din">Circuito com três estações: 1) Conhecendo o LEMAT, 2) Jogos Pedagógicos e 3) Xadrez Gigante.</p>
+  <div class="pg-inst"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10 12 4l9 6M5 10v9h14v-9M9 19v-5h6v5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg><strong>LEMAT · Laboratório de Educação Matemática · IME/UFG</strong></div>
+  <p class="pg-team-fixed"><span>Equipe</span>Equipe LEMAT</p>
+</article></div></section><section class="pg-turno" data-dia="27" id="t27M">
+  <header class="pg-turno-h d27"><div><strong>27/10</strong><span>Terça-feira</span></div><div class="pg-hora"><b>Manhã · 8h – 12h</b><small>5 na Mostra · 7 de Popularização</small></div></header>
+  <div class="pg-grid"><article class="pg-card mostra" data-tipo="mostra">
+  <div class="pg-top"><span class="level-tag l1">Mostra Científica</span><span class="pg-grp">Ensino Médio</span></div>
+  <h3>Matemática que Desenha com Funções de 1º e 2º Grau no GeoGebra</h3>
+  <p class="pg-din">Paisagens e logotipos feitos só com retas e parábolas. No estande, o público mexe nos controles e vê o desenho mudar na hora.</p>
+  <div class="pg-inst"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10 12 4l9 6M5 10v9h14v-9M9 19v-5h6v5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg><strong>Colégio Estadual José Bonifácio da Silva · Aparecida de Goiânia</strong></div>
+  <details class="pg-team"><summary>Ver estudantes <span class="n">5</span></summary><ul><li>Augusto Praxedes de Almeida</li><li>Celso Posthole Caldeira Barbosa</li><li>Fernanda Camargo do Carmo Santos</li><li>Gabriel Silva Souza</li><li>Rhay Pires Morais</li></ul></details><p class="pg-ori"><span>Orientação</span> Hypatia Indira Calderón Rojas</p>
+</article><article class="pg-card mostra" data-tipo="mostra">
+  <div class="pg-top"><span class="level-tag l1">Mostra Científica</span><span class="pg-grp">Ensino Fundamental II</span></div>
+  <h3>Quanto vale o Cerrado? Matemática, economia e sustentabilidade</h3>
+  <p class="pg-din">Pesquisa de preços de pequi, cagaita e baru, com porcentagens, médias e gráficos para discutir economia e preservação do Cerrado.</p>
+  <div class="pg-inst"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10 12 4l9 6M5 10v9h14v-9M9 19v-5h6v5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg><strong>Escola Municipal Professor Trajano de Sá Guimarães · Goiânia</strong></div>
+  <details class="pg-team"><summary>Ver estudantes <span class="n">5</span></summary><ul><li>Fernanda Teixeira Sales</li><li>Heloanne Gabrielly Gonçalves Nunes</li><li>Hitalo Costa Nery</li><li>Lara Gabrielly Brandão Rodrigues</li><li>Nycolas Donato Bonini Barbosa</li></ul></details><p class="pg-ori"><span>Orientação</span> Kelly Keith de Souza Oliveira Morais</p>
+</article><article class="pg-card mostra" data-tipo="mostra">
+  <div class="pg-top"><span class="level-tag l1">Mostra Científica</span><span class="pg-grp">Ensino Médio</span></div>
+  <h3>Calculadora per capita de merenda escolar com Python</h3>
+  <p class="pg-din">Um programa em Python criado pelos estudantes que calcula as porções da merenda a partir do número de alunos presentes no dia.</p>
+  <div class="pg-inst"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10 12 4l9 6M5 10v9h14v-9M9 19v-5h6v5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg><strong>CEPI Juvenal José Pedroso · Goiânia</strong></div>
+  <details class="pg-team"><summary>Ver estudantes <span class="n">5</span></summary><ul><li>Ana Beatriz Benício dos Santos</li><li>Cleuan Lucas Gonçalves Ferreira</li><li>Eduardo Sousa Borba</li><li>Kaio Rodrigo Rocha de Brito</li><li>Maria Fernanda Silveira</li></ul></details><p class="pg-ori"><span>Orientação</span> Marco Antonio Silva Santos</p>
+</article><article class="pg-card mostra" data-tipo="mostra">
+  <div class="pg-top"><span class="level-tag l1">Mostra Científica</span><span class="pg-grp">Ensino Fundamental II</span></div>
+  <h3>Fisgando o Resultado: o problema da barraca de pescaria</h3>
+  <p class="pg-din">Uma barraca de pescaria de verdade. O visitante pesca três peixes, soma os pontos e descobre na árvore de possibilidades qual prêmio sai mais.</p>
+  <div class="pg-inst"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10 12 4l9 6M5 10v9h14v-9M9 19v-5h6v5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg><strong>CEPAE · Universidade Federal de Goiás</strong></div>
+  <details class="pg-team"><summary>Ver estudantes <span class="n">5</span></summary><ul><li>Alice Gomes Belisário</li><li>Isadora Purcina Baumann</li><li>Isabelle Nogueira Magalhães</li><li>Levi Faria Patrocínio</li><li>Peri Reis de Lavor</li></ul></details><p class="pg-ori"><span>Orientação</span> Miriam do Rocio Guadagnini</p>
+</article><article class="pg-card mostra" data-tipo="mostra">
+  <div class="pg-top"><span class="level-tag l1">Mostra Científica</span><span class="pg-grp">Ensino Médio</span></div>
+  <h3>Minecraft: construindo uma sociedade sustentável por meio do pensamento computacional</h3>
+  <p class="pg-din">Uma cidade sustentável construída no Minecraft para explorar pensamento computacional e Matemática.</p>
+  <div class="pg-inst"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10 12 4l9 6M5 10v9h14v-9M9 19v-5h6v5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg><strong>CEPI Maria Joana de Jesus · Aparecida de Goiânia</strong></div>
+  <details class="pg-team"><summary>Ver estudantes <span class="n">5</span></summary><ul><li>Victor Vinícius Leão de Sousa</li><li>Arcanjo Eduardo Pereira Teixeira</li><li>Adriano Martins Reis</li><li>Paulo Henrique Alves dos Santos</li><li>André Júnior Lima dos Santos</li></ul></details><p class="pg-ori"><span>Orientação</span> Claiton Cabral Soares Filho</p>
+</article><article class="pg-card pop" data-tipo="pop">
+  <div class="pg-top"><span class="level-tag l2">Popularização</span><span class="pg-grp">Oficina</span></div>
+  <h3>A Matemática da Ponte de Leonardo: rigidez, equilíbrio e estrutura</h3>
+  <p class="pg-din">Primeiro, miniaturas para entender a rigidez do triângulo. Depois, a montagem de uma ponte de eucalipto em tamanho real, sem pregos nem amarras.</p>
+  <div class="pg-inst"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10 12 4l9 6M5 10v9h14v-9M9 19v-5h6v5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg><strong>PROFMAT · UFG</strong></div>
+  <details class="pg-team"><summary>Ver equipe <span class="n">4</span></summary><ul><li>Tainara Rodrigues Borges</li><li>Luana de Oliveira Santos Ribeiro</li><li>Mirian Cristianne da Silva</li><li>Mattheus Vinícius Monteiro Barbosa</li></ul></details>
+</article><article class="pg-card pop" data-tipo="pop">
+  <div class="pg-top"><span class="level-tag l2">Popularização</span><span class="pg-grp">Jogos</span></div>
+  <h3>Shogi: Matemática, estratégia e cultura japonesa</h3>
+  <p class="pg-din">Breve história do xadrez japonês, partidas orientadas e desafios de posição sobre contagem, padrões e planejamento.</p>
+  <div class="pg-inst"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10 12 4l9 6M5 10v9h14v-9M9 19v-5h6v5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg><strong>IME · UFG</strong></div>
+  <details class="pg-team"><summary>Ver quem apresenta <span class="n">1</span></summary><ul><li>Thiago Leite Franco</li></ul></details>
+</article><article class="pg-card pop" data-tipo="pop">
+  <div class="pg-top"><span class="level-tag l2">Popularização</span><span class="pg-grp">Oficina-exposição</span></div>
+  <h3>Fios da Geometria: do mini-tear circular à Matemática interativa</h3>
+  <p class="pg-din">Três estações: desenhos com fios no mini-tear, cartões-desafio e um simulador digital para investigar padrões e aritmética modular.</p>
+  <div class="pg-inst"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10 12 4l9 6M5 10v9h14v-9M9 19v-5h6v5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg><strong>PROFMAT · UFG</strong></div>
+  <details class="pg-team"><summary>Ver quem apresenta <span class="n">1</span></summary><ul><li>Rosiane da Costa Toledo</li></ul></details>
+</article><article class="pg-card pop" data-tipo="pop">
+  <div class="pg-top"><span class="level-tag l2">Popularização</span><span class="pg-grp">Jogo digital</span></div>
+  <h3>Duelo Matemático: criação de jogos eletrônicos na educação</h3>
+  <p class="pg-din">Dois jogadores se enfrentam num app feito no MIT App Inventor, resolvendo operações com rapidez e precisão.</p>
+  <div class="pg-inst"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10 12 4l9 6M5 10v9h14v-9M9 19v-5h6v5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg><strong>Escola Municipal Vicente Rodrigues do Prado</strong></div>
+  <details class="pg-team"><summary>Ver quem apresenta <span class="n">1</span></summary><ul><li>Rafael Azevedo Braz</li></ul></details>
+</article><article class="pg-card pop" data-tipo="pop">
+  <div class="pg-top"><span class="level-tag l2">Popularização</span><span class="pg-grp"><span class="pg-all">Todos os turnos</span>Escape room</span></div>
+  <h3>Escape Room: a Confraria Secreta da Geometria</h3>
+  <p class="pg-din">Uma aventura cooperativa de até 40 minutos, com ambientação imersiva, narrativa teatral e três etapas de enigmas de geometria e lógica.</p>
+  <div class="pg-inst"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10 12 4l9 6M5 10v9h14v-9M9 19v-5h6v5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg><strong>LEMAT · IME/UFG</strong></div>
+  <details class="pg-team"><summary>Ver equipe <span class="n">4</span></summary><ul><li>Geovanna Mendanha Ferreira</li><li>Pedro Gabriel</li><li>Gabriel Feitosa</li><li>Kaike Vinicius</li></ul></details>
+</article><article class="pg-card pop" data-tipo="pop">
+  <div class="pg-top"><span class="level-tag l2">Popularização</span><span class="pg-grp"><span class="pg-all">Todos os turnos</span>Circuito</span></div>
+  <h3>Circuito PETMAT</h3>
+  <p class="pg-din">Circuito com cinco espaços simultâneos: 1) Clube de Matemática Ensino Médio, 2) Clube de Matemática Ensino Fundamental, 3) Matemática Básica em Perspectiva, 4) Erê e 5) Conhecendo o PETMAT.</p>
+  <div class="pg-inst"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10 12 4l9 6M5 10v9h14v-9M9 19v-5h6v5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg><strong>PETMAT · Licenciatura em Matemática · UFG</strong></div>
+  <details class="pg-team"><summary>Ver equipe <span class="n">14</span></summary><ul><li>Andreia Campelo Guimarães</li><li>Beatriz Melo de Oliveira</li><li>Clara Gabriella Agda Ferreira Teixeira</li><li>Gabriel Filipe Vaz Pires</li><li>Geovana Dias Nascimento</li><li>Hemilly Cristhiny Mendes Coelho da Fonseca</li><li>João Manoel Rodrigues Dias</li><li>Júls Martins da Conceição</li><li>Kaiky Fagundes de Souza</li><li>Laura Pereira Araújo</li><li>Lucas Secundino H. S. Jacó</li><li>Mayline Regina Silva</li><li>Rebeka Guimarães Reis</li><li>Vinícius Rodovalho Vidal Costa</li></ul></details><p class="pg-ori"><span>Tutoria</span> Wellington Lima Cedro</p>
+</article><article class="pg-card pop" data-tipo="pop">
+  <div class="pg-top"><span class="level-tag l2">Popularização</span><span class="pg-grp"><span class="pg-all">Todos os turnos</span>Circuito</span></div>
+  <h3>Circuito LEMAT</h3>
+  <p class="pg-din">Circuito com três estações: 1) Conhecendo o LEMAT, 2) Jogos Pedagógicos e 3) Xadrez Gigante.</p>
+  <div class="pg-inst"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10 12 4l9 6M5 10v9h14v-9M9 19v-5h6v5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg><strong>LEMAT · Laboratório de Educação Matemática · IME/UFG</strong></div>
+  <p class="pg-team-fixed"><span>Equipe</span>Equipe LEMAT</p>
+</article></div></section><section class="pg-turno" data-dia="27" id="t27T">
+  <header class="pg-turno-h d27"><div><strong>27/10</strong><span>Terça-feira</span></div><div class="pg-hora"><b>Tarde · 14h – 16h</b><small>4 de Popularização</small></div></header>
+  <div class="pg-grid"><article class="pg-card pop" data-tipo="pop">
+  <div class="pg-top"><span class="level-tag l2">Popularização</span><span class="pg-grp">Oficina</span></div>
+  <h3>Matemática como ferramenta para brincar, superar e interagir</h3>
+  <p class="pg-din">Um percurso livre de jogos, brincadeiras e desafios pensado principalmente para as crianças.</p>
+  <div class="pg-inst"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10 12 4l9 6M5 10v9h14v-9M9 19v-5h6v5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg><strong>Colégio Marista Goiânia · PUC Goiás</strong></div>
+  <details class="pg-team"><summary>Ver quem apresenta <span class="n">1</span></summary><ul><li>Otávio Tavares Ribeiro</li></ul></details>
+</article><article class="pg-card pop" data-tipo="pop">
+  <div class="pg-top"><span class="level-tag l2">Popularização</span><span class="pg-grp"><span class="pg-all">Todos os turnos</span>Escape room</span></div>
+  <h3>Escape Room: a Confraria Secreta da Geometria</h3>
+  <p class="pg-din">Uma aventura cooperativa de até 40 minutos, com ambientação imersiva, narrativa teatral e três etapas de enigmas de geometria e lógica.</p>
+  <div class="pg-inst"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10 12 4l9 6M5 10v9h14v-9M9 19v-5h6v5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg><strong>LEMAT · IME/UFG</strong></div>
+  <details class="pg-team"><summary>Ver equipe <span class="n">4</span></summary><ul><li>Geovanna Mendanha Ferreira</li><li>Pedro Gabriel</li><li>Gabriel Feitosa</li><li>Kaike Vinicius</li></ul></details>
+</article><article class="pg-card pop" data-tipo="pop">
+  <div class="pg-top"><span class="level-tag l2">Popularização</span><span class="pg-grp"><span class="pg-all">Todos os turnos</span>Circuito</span></div>
+  <h3>Circuito PETMAT</h3>
+  <p class="pg-din">Circuito com cinco espaços simultâneos: 1) Clube de Matemática Ensino Médio, 2) Clube de Matemática Ensino Fundamental, 3) Matemática Básica em Perspectiva, 4) Erê e 5) Conhecendo o PETMAT.</p>
+  <div class="pg-inst"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10 12 4l9 6M5 10v9h14v-9M9 19v-5h6v5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg><strong>PETMAT · Licenciatura em Matemática · UFG</strong></div>
+  <details class="pg-team"><summary>Ver equipe <span class="n">14</span></summary><ul><li>Andreia Campelo Guimarães</li><li>Beatriz Melo de Oliveira</li><li>Clara Gabriella Agda Ferreira Teixeira</li><li>Gabriel Filipe Vaz Pires</li><li>Geovana Dias Nascimento</li><li>Hemilly Cristhiny Mendes Coelho da Fonseca</li><li>João Manoel Rodrigues Dias</li><li>Júls Martins da Conceição</li><li>Kaiky Fagundes de Souza</li><li>Laura Pereira Araújo</li><li>Lucas Secundino H. S. Jacó</li><li>Mayline Regina Silva</li><li>Rebeka Guimarães Reis</li><li>Vinícius Rodovalho Vidal Costa</li></ul></details><p class="pg-ori"><span>Tutoria</span> Wellington Lima Cedro</p>
+</article><article class="pg-card pop" data-tipo="pop">
+  <div class="pg-top"><span class="level-tag l2">Popularização</span><span class="pg-grp"><span class="pg-all">Todos os turnos</span>Circuito</span></div>
+  <h3>Circuito LEMAT</h3>
+  <p class="pg-din">Circuito com três estações: 1) Conhecendo o LEMAT, 2) Jogos Pedagógicos e 3) Xadrez Gigante.</p>
+  <div class="pg-inst"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10 12 4l9 6M5 10v9h14v-9M9 19v-5h6v5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg><strong>LEMAT · Laboratório de Educação Matemática · IME/UFG</strong></div>
+  <p class="pg-team-fixed"><span>Equipe</span>Equipe LEMAT</p>
+</article></div><div class="pg-marco d27"><span class="prog-time">16h – 17h</span><span class="prog-act destaque">Encerramento e premiação das Mostras Científicas destaque</span></div></section>
+  <div class="pg-back"><a class="btn btn-outline" href="./">← Voltar à página inicial</a></div>
+</div>
+</main>
+<div style="height:48px"></div>
+<footer>
+  <div class="wrap footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <svg width="24" height="24" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M2 30 C 8 14, 14 14, 20 24 C 26 14, 32 14, 38 30" stroke="url(#gradB)" stroke-width="4.4" stroke-linecap="round" fill="none"/><defs><linearGradient id="gradB" x1="0" y1="0" x2="40" y2="0"><stop offset="0" stop-color="#5FB6FF"/><stop offset="0.5" stop-color="#F6A623"/><stop offset="1" stop-color="#4DE0A0"/></linearGradient></defs></svg>
+        Festival Goiano de Matemática
+      </div>
+      <a class="btn btn-ghost-light btn-sm" href="https://docs.google.com/forms/d/e/1FAIpQLSeGHVFz3LSZ3Un_aQV2isS8X2BnbuooKhaLV29_2bZttRC1Yg/viewform?usp=publish-editor" target="_blank" rel="noopener">Inscreva-se agora</a>
+    </div>
+    <p class="footer-orgs">Realização: IME/UFG · LEMAT · PETMAT/UFG · ProfMat/UFG · PROEX/UFG · PROGRAD/UFG · CNPq · FNDCT · MCTI · MEC · Programa Pop Ciência · Programa Escola em Tempo Integral</p>
+    <div class="footer-bottom">
+      <span>© 2026 Festival Goiano de Matemática — IME/UFG</span>
+      <a href="https://ime.ufg.br/n/204623-inscricoes-e-submissoes-para-o-festival-goianio-de-matematica" target="_blank" rel="noopener">Página oficial em ime.ufg.br</a>
+    </div>
+  </div>
+</footer>
+<script>
+  (function(){
+    var burger = document.getElementById('burgerBtn');
+    var panel = document.getElementById('mobilePanel');
+    if(!burger || !panel) return;
+    burger.addEventListener('click', function(){
+      var open = panel.classList.toggle('open');
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    panel.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        panel.classList.remove('open');
+        burger.setAttribute('aria-expanded','false');
+      });
+    });
+
+    var header = document.querySelector('header.site');
+    if(header){
+      window.addEventListener('scroll', function(){
+        if(window.scrollY > 6){
+          header.style.boxShadow = '0 8px 20px -16px rgba(13,59,102,0.5)';
+        } else {
+          header.style.boxShadow = 'none';
+        }
+      }, {passive:true});
+    }
+  })();
+</script>
+<script>
+(function(){var st={dia:'all',tipo:'all'};
+var h=document.querySelector('header.site');if(h)document.documentElement.style.setProperty('--pg-top',h.offsetHeight+'px');
+function apply(){document.querySelectorAll('.pg-turno').forEach(function(s){var any=0;
+s.querySelectorAll('.pg-card').forEach(function(c){var ok=(st.tipo==='all'||c.dataset.tipo===st.tipo);c.classList.toggle('pg-hide',!ok);if(ok)any++;});
+s.classList.toggle('pg-hide',!(st.dia==='all'||s.dataset.dia===st.dia)||!any);});}
+document.querySelectorAll('.pg-seg button').forEach(function(b){b.addEventListener('click',function(){st[b.dataset.f]=b.dataset.v;
+b.parentNode.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});apply();});});})();
+</script>
+</body>
+</html>
