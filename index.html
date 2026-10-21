@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Festival Goiano de Matemática — Inscrições e Submissões</title>
-<meta name="description" content="Inscrições e submissões para o Festival Goiano de Matemática — IME/UFG e LEMAT. Mostra Científica da Educação Básica e Espaço de Popularização da Matemática.">
+<title>Festival Goiano de Matemática — 26 e 27 de outubro de 2026</title>
+<meta name="description" content="Festival Goiano de Matemática — IME/UFG e LEMAT, 26 e 27 de outubro de 2026. Programação, inscrição de visitantes, fotos e certificados.">
 <style>
   :root{
     --blue:#1E88E5;
@@ -536,6 +536,19 @@
   @media (max-width:1360px){ .nav-cta .btn-outline{display:none;} }
   @media (max-width:1180px) and (min-width:901px){ .navlinks{gap:12px;} .navlinks a{font-size:.9rem;} }
   @media (max-width:420px){ .prog-list li{grid-template-columns:1fr; gap:2px;} }
+
+  /* ---------- Fotos e certificados (em breve) ---------- */
+  .breve-grid{display:grid; grid-template-columns:1fr 1fr; gap:22px; max-width:880px; margin:0 auto;}
+  .breve-card{background:var(--surface); border:1px dashed var(--border); border-radius:18px; padding:24px; display:flex; gap:16px; align-items:flex-start; color:var(--ink); cursor:default;}
+  .breve-card .doc-ic{width:48px;height:48px;border-radius:12px;flex:none;}
+  .breve-card h3{font-size:1.05rem; display:flex; align-items:center; gap:10px; flex-wrap:wrap;}
+  .breve-card p{margin-top:6px; font-size:.92rem; color:var(--ink-soft,#4A5A6E);}
+  .breve-tag{font-size:.7rem; font-weight:800; letter-spacing:.04em; text-transform:uppercase; color:#8A4B00; background:#FFF4E0; border:1px solid rgba(201,117,20,.45); padding:3px 9px; border-radius:999px;}
+  .btn-breve{background:#F1F4F8; color:#7488A0; border-color:var(--border); cursor:not-allowed;}
+  .btn-breve:hover{transform:none;}
+  .btn-breve small{font-weight:700; font-size:.78em;}
+  .encerrado{display:inline-flex; align-items:center; gap:8px; font-weight:800; color:#7488A0;}
+  @media (max-width:720px){ .breve-grid{grid-template-columns:1fr;} .btn{white-space:normal; text-align:center; justify-content:center;} }
 </style>
 </head>
 <body>
@@ -572,7 +585,7 @@
     </ul>
 
     <div class="nav-cta">
-      <a class="btn btn-outline btn-sm" href="#modalidades">Ver modalidades</a>
+      <a class="btn btn-outline btn-sm" href="programacao.html">Programação</a>
       <a class="btn btn-primary btn-sm" href="https://docs.google.com/forms/d/e/1FAIpQLSeGHVFz3LSZ3Un_aQV2isS8X2BnbuooKhaLV29_2bZttRC1Yg/viewform?usp=publish-editor" target="_blank" rel="noopener">Inscreva-se</a>
       <button class="burger" id="burgerBtn" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobilePanel"><span></span></button>
     </div>
@@ -583,6 +596,7 @@
     <a href="#entenda">Qual categoria é a minha?</a>
     <a href="#modalidades">Modalidades</a>
     <a href="#inscreva-se">Como participar</a>
+    <a href="#fotos-certificados">Fotos e certificados (em breve)</a>
     <a href="#documentos">Documentos</a>
     <a href="#contato">Contato</a>
      <a href="#apoio">Apoio</a>
@@ -601,22 +615,24 @@
       </div>
 
       <div class="hero-copy">
-        <span class="eyebrow">Inscrições &amp; Submissões · 21 de setembro a 20 de outubro de 2026</span>
+        <span class="eyebrow">Inscrições de visitantes abertas · entrada gratuita</span>
 		 <span class="eyebrow">Data do Festival · 26 e 27 de outubro de 2026</span>
-		  <div class="aviso-data" role="note"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3 2.5 20h19L12 3Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M12 10v4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="17.2" r="1.1" fill="currentColor"/></svg><p><strong>Prazo prorrogado!</strong> As submissões de trabalhos para a Mostra Científica e para o Espaço de Popularização da Matemática foram prorrogadas até <strong>20 de outubro de 2026</strong>.</p></div>
+		  <div class="aviso-data" role="note"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7"/><path d="M8 12.5l2.7 2.7L16.5 9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><p><strong>Submissões encerradas.</strong> O prazo para submissão de trabalhos na Mostra Científica e no Espaço de Popularização terminou em <strong>20 de outubro de 2026</strong>. Confira os trabalhos aceitos na <a href="programacao.html" style="color:#8A4B00;font-weight:800;">programação completa</a>. A inscrição de visitantes continua aberta.</p></div>
         <div class="aviso-data" role="note">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3 2.5 20h19L12 3Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M12 10v4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="17.2" r="1.1" fill="currentColor"/></svg>
           <p><strong>Atenção — nova data!</strong> Em razão da transferência, pelo Governo do Estado de Goiás, do feriado do Dia do Servidor Público de 28/10 para 30/10, o Festival foi remarcado para <strong>26 e 27 de outubro de 2026</strong>, de modo a possibilitar a participação de todos.</p>
         </div>
-        <h1>Inscreva sua escola, sua pesquisa ou sua ideia no <span class="gradient-text">Festival Goiano de Matemática</span></h1>
+        <h1>Venha viver a Matemática no <span class="gradient-text">Festival Goiano de Matemática</span></h1>
         <p class="lede">O Festival Goiano de Matemática é uma iniciativa do IME/UFG e do LEMAT para popularizar a Matemática na Educação Básica pública de Goiás, unindo iniciação científica, formação de professores e divulgação científica aberta a todos.</p>
         <div class="hero-ctas">
           <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSeGHVFz3LSZ3Un_aQV2isS8X2BnbuooKhaLV29_2bZttRC1Yg/viewform?usp=publish-editor" target="_blank" rel="noopener">
             Inscrição de visitante do evento
           </a>
-          <a class="btn btn-outline" href="#modalidades">
-            Ver modalidades de submissão
+          <a class="btn btn-outline" href="programacao.html">
+            Ver programação completa
           </a>
+          <a class="btn btn-breve" href="#fotos-certificados" aria-disabled="true">Fotos <small>(em breve)</small></a>
+          <a class="btn btn-breve" href="#fotos-certificados" aria-disabled="true">Certificados <small>(em breve)</small></a>
         </div>
       </div>
 
@@ -674,11 +690,32 @@
         <span class="eyebrow" style="color:#FFD37A;">Duas frentes, um festival</span>
         <h3 style="margin-top:10px;">Participe do jeito certo para você</h3>
         <ul>
-          <li><span class="dot"></span> <strong>Categoria 1</strong> — equipes de escolas públicas submetem projetos para a Mostra Científica.</li>
-          <li><span class="dot"></span> <strong>Categoria 2</strong> — graduandos, pós-graduandos e professores propõem atividades no Espaço de Popularização.</li>
+          <li><span class="dot"></span> <strong>Categoria 1</strong> — equipes de escolas públicas apresentam projetos na Mostra Científica.</li>
+          <li><span class="dot"></span> <strong>Categoria 2</strong> — graduandos, pós-graduandos e professores conduzem atividades no Espaço de Popularização.</li>
           <li><span class="dot"></span> O público em geral acessa o Espaço de Popularização livremente, sem inscrição prévia.</li>
         </ul>
         <a class="btn btn-ghost-light" style="margin-top:6px;" href="#modalidades">Conhecer as modalidades</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------------- FOTOS E CERTIFICADOS ---------------- -->
+  <section id="fotos-certificados" class="section-pad" style="background:var(--surface-alt); border-top:1px solid var(--border);">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow" style="justify-content:center;">Depois do Festival</span>
+        <h2>Fotos e certificados</h2>
+        <p>As fotos do evento e os certificados de participação serão disponibilizados aqui após o Festival.</p>
+      </div>
+      <div class="breve-grid">
+        <div class="breve-card" aria-disabled="true">
+          <div class="doc-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="6" width="18" height="14" rx="2.5" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 6l1.4-2.2h4.2L15.5 6" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="13" r="3.6" stroke="currentColor" stroke-width="1.6"/></svg></div>
+          <div><h3>Fotos do Festival <span class="breve-tag">Em breve</span></h3><p>Galeria com os registros da Mostra Científica e do Espaço de Popularização.</p></div>
+        </div>
+        <div class="breve-card" aria-disabled="true">
+          <div class="doc-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M7 8.5h10M7 12h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="16.5" cy="17.5" r="2.5" stroke="currentColor" stroke-width="1.6"/><path d="M15.2 19.6 14.5 22l2-1 2 1-.7-2.4" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg></div>
+          <div><h3>Certificados <span class="breve-tag">Em breve</span></h3><p>Certificados de participação para apresentadores, orientadores e visitantes inscritos.</p></div>
+        </div>
       </div>
     </div>
   </section>
@@ -703,7 +740,7 @@
           <ul class="prog-list">
             <li><span class="prog-time">8h – 12h</span><span class="prog-act">Mostra Científica e Popularização da Matemática</span></li>
             <li><span class="prog-time">14h – 16h</span><span class="prog-act">Popularização da Matemática</span></li>
-            <li><span class="prog-time">16h – 17h</span><span class="prog-act destaque">href="programacao.html" das Mostras Científicas destaque</span></li>
+            <li><span class="prog-time">16h – 17h</span><span class="prog-act destaque">Encerramento e premiação das Mostras Científicas destaque</span></li>
           </ul>
         </article>
       </div>
@@ -759,7 +796,7 @@
             <td class="c2" data-label="Popularização">Estudantes de graduação e pós-graduação, professores da Educação Básica e do Ensino Superior, pesquisadores e instituições de ensino.</td>
           </tr>
           <tr>
-            <th>Quem faz a inscrição</th>
+            <th>Quem fez a inscrição</th>
             <td class="c1" data-label="Mostra Científica">O(a) professor(a) orientador(a), inscrevendo a equipe completa.</td>
             <td class="c2" data-label="Popularização">O(a) proponente responsável pela atividade.</td>
           </tr>
@@ -779,9 +816,9 @@
             <td class="c2" data-label="Popularização">Não; atividades presenciais no IME/UFG.</td>
           </tr>
           <tr>
-            <th>Onde se inscrever</th>
-            <td class="c1" data-label="Mostra Científica"><a href="https://docs.google.com/forms/d/e/1FAIpQLSc0a97XYBRXd05Cc9xYHcfQA0e18Uning_PMiAZQEgoGeyX3Q/viewform?usp=header" target="_blank" rel="noopener"><strong>Formulário de inscrição das equipes ↗</strong></a></td>
-            <td class="c2" data-label="Popularização"><a href="https://docs.google.com/forms/d/e/1FAIpQLSec1ZPA4-710EpTZyo5_8Rs9usfWjwOLwWGjAHQQxekxLlbCg/viewform?usp=header" target="_blank" rel="noopener"><strong>Formulário de inscrição de propostas ↗</strong></a></td>
+            <th>Submissões</th>
+            <td class="c1" data-label="Mostra Científica"><span class="encerrado">Encerradas em 20/10/2026</span></td>
+            <td class="c2" data-label="Popularização"><span class="encerrado">Encerradas em 20/10/2026</span></td>
           </tr>
         </tbody>
       </table>
@@ -800,37 +837,12 @@
   </section>
 
   <!-- ---------------- MODALIDADES ---------------- -->
-    <!-- ===== Tutorial: participação remota (escolas do campo e povos tradicionais) ===== -->
-  <section id="participacao-remota" class="section-pad" style="background:var(--surface-alt); border-top:1px solid var(--border);">
-    <div class="wrap">
-      <div class="section-head">
-        <span class="eyebrow" style="justify-content:center;">Mostra Científica · Participação remota</span>
-        <h2>Sua escola está longe? Participe a distância</h2>
-        <p>Escolas do campo, indígenas, quilombolas e de povos e comunidades tradicionais de Goiás podem apresentar seu projeto na Mostra Científica sem sair da comunidade: basta enviar o resumo e um vídeo de até 15 minutos. Assista ao tutorial com o passo a passo.</p>
-      </div>
-      <div style="max-width:880px; margin:0 auto;">
-        <div style="position:relative; border-radius:18px; overflow:hidden; box-shadow:var(--shadow); border:1px solid var(--border); background:#0D3B66; aspect-ratio:16/9;">
-          <video controls preload="metadata" playsinline poster="tutorial-participacao-remota.jpg"
-                 style="display:block; width:100%; height:100%; object-fit:contain;">
-            <source src="tutorial-participacao-remota.mp4" type="video/mp4">
-            Seu navegador não reproduz vídeos. <a href="tutorial-participacao-remota.mp4" style="color:#fff">Baixe o tutorial aqui</a>.
-          </video>
-        </div>
-        <div style="display:flex; flex-wrap:wrap; gap:12px; justify-content:center; margin-top:22px;">
-          <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSc0a97XYBRXd05Cc9xYHcfQA0e18Uning_PMiAZQEgoGeyX3Q/viewform?usp=header" target="_blank" rel="noopener">Inscrever minha escola</a>
-          <a class="btn btn-outline" href="tutorial-participacao-remota.mp4" download>Baixar o vídeo (17 MB)</a>
-          <a class="btn btn-outline" href="https://files.cercomp.ufg.br/weby/up/29/o/Chamada_Submissao_Mostra_Cientifica_FESTMAT-GO.pdf" target="_blank" rel="noopener">Ler a chamada (PDF)</a>
-        </div>
-        <p style="text-align:center; color:var(--ink-faint); font-size:.88rem; margin-top:14px;">Duração: cerca de 5 minutos. Dúvidas? Fale com o LEMAT pelo e-mail <a href="mailto:lematufg@gmail.com">lematufg@gmail.com</a>.</p>
-      </div>
-    </div>
-  </section>
 	<section id="modalidades" class="section-pad" style="background:var(--surface-alt);">
     <div class="wrap">
       <div class="section-head">
-        <span class="eyebrow" style="justify-content:center;">Modalidades de submissão</span>
+        <span class="eyebrow" style="justify-content:center;">Modalidades</span>
         <h2>Duas formas de participar do Festival </h2>
-        <p>Escolha a modalidade que combina com seu perfil — escola da Educação Básica ou graduação, pós-graduação e docência.</p>
+        <p>As submissões foram encerradas em 20 de outubro de 2026. Veja os trabalhos aceitos em cada modalidade na programação completa.</p>
       </div>
 
       <div class="cards2">
@@ -859,8 +871,8 @@
             </li>
           </ul>
           <div class="card-actions">
-            <a class="btn btn-block-solid" href="https://docs.google.com/forms/d/e/1FAIpQLSc0a97XYBRXd05Cc9xYHcfQA0e18Uning_PMiAZQEgoGeyX3Q/viewform?usp=header" target="_blank" rel="noopener">Inscrição das equipes</a>
-            <a class="btn btn-block-outline" href="https://files.cercomp.ufg.br/weby/up/29/o/Chamada_Submissao_Mostra_Cientifica_FESTMAT-GO.pdf" target="_blank" rel="noopener">Ler chamada de submissão (PDF)</a>
+            <a class="btn btn-block-solid" href="programacao.html">Ver trabalhos da Mostra</a>
+            <a class="btn btn-block-outline" href="https://files.cercomp.ufg.br/weby/up/29/o/Chamada_Submissao_Mostra_Cientifica_FESTMAT-GO.pdf" target="_blank" rel="noopener">Ler a chamada (PDF)</a>
             <a class="btn btn-block-outline" href="https://drive.google.com/file/d/1FATrEmpCu0tHWZfewf57U7WqdY3pU_cF/view?usp=drive_link" target="_blank" rel="noopener">Termo de autorização</a>
           </div>
         </article>
@@ -890,8 +902,8 @@
             </li>
           </ul>
           <div class="card-actions">
-            <a class="btn btn-block-solid" href="https://docs.google.com/forms/d/e/1FAIpQLSec1ZPA4-710EpTZyo5_8Rs9usfWjwOLwWGjAHQQxekxLlbCg/viewform?usp=header" target="_blank" rel="noopener">Inscrição de propostas</a>
-            <a class="btn btn-block-outline" href="https://files.cercomp.ufg.br/weby/up/29/o/Chamada_Submissao_Espaco_Popularizacao_FESTMAT-GO.pdf" target="_blank" rel="noopener">Ler chamada de submissão (PDF)</a>
+            <a class="btn btn-block-solid" href="programacao.html">Ver atividades de Popularização</a>
+            <a class="btn btn-block-outline" href="https://files.cercomp.ufg.br/weby/up/29/o/Chamada_Submissao_Espaco_Popularizacao_FESTMAT-GO.pdf" target="_blank" rel="noopener">Ler a chamada (PDF)</a>
             <a class="btn btn-block-outline" href="https://drive.google.com/file/d/1hgIEVByuLH89Ke-zFSplIDGfRU7jLgdw/view?usp=drive_link" target="_blank" rel="noopener">Termo de autorização</a>
           </div>
         </article>
@@ -903,8 +915,8 @@
   <section id="inscreva-se" class="section-pad" style="background:#fff;">
     <div class="wrap">
       <div class="section-head">
-        <span class="eyebrow" style="justify-content:center;">Como se inscrever</span>
-        <h2>Três passos até sua vaga garantida</h2>
+        <span class="eyebrow" style="justify-content:center;">Inscrição de visitantes</span>
+        <h2>Como participar como visitante</h2>
       </div>
 
       <div class="steps-wrap">
@@ -912,22 +924,22 @@
           <li>
             <span class="step-num">1</span>
             <div class="step-text">
-              <h3>Leia a chamada da sua modalidade</h3>
-              <p>Confira critérios, grupos e formato de participação no PDF correspondente ao Categoria 1 ou Categoria 2.</p>
+              <h3>Faça a inscrição de visitante</h3>
+              <p>Preencha o formulário gratuito para garantir o seu certificado de participação.</p>
             </div>
           </li>
           <li>
             <span class="step-num">2</span>
             <div class="step-text">
-              <h3>Baixe e assine o termo de autorização</h3>
-              <p>Documento obrigatório para participantes da Mostra Científica e do Espaço de Popularização.</p>
+              <h3>Venha ao IME/UFG nos dias 26 e 27 de outubro</h3>
+              <p>Visite os estandes da Mostra Científica e participe das atividades do Espaço de Popularização, das 8h às 12h e das 14h às 17h.</p>
             </div>
           </li>
           <li>
             <span class="step-num">3</span>
             <div class="step-text">
-              <h3>Envie sua inscrição pelo formulário</h3>
-              <p>Preencha o formulário da sua modalidade.</p>
+              <h3>Receba seu certificado</h3>
+              <p>Os certificados serão disponibilizados neste site após o Festival (em breve).</p>
             </div>
           </li>
         </ol>
@@ -949,7 +961,7 @@
   </p>
 </div>
           <a class="btn btn-primary" style="justify-content:center;" href="https://docs.google.com/forms/d/e/1FAIpQLSeGHVFz3LSZ3Un_aQV2isS8X2BnbuooKhaLV29_2bZttRC1Yg/viewform?usp=publish-editor" target="_blank" rel="noopener">Inscrever agora</a>
-          <p class="note">Consulte a chamada de cada modalidade para prazos, critérios e datas atualizadas do evento.</p>
+          <p class="note">A inscrição de visitante é gratuita. O público em geral também pode visitar o Espaço de Popularização sem inscrição, mas sem certificado.</p>
         </div>
       </div>
     </div>
@@ -960,7 +972,7 @@
     <div class="wrap">
       <div class="section-head">
         <span class="eyebrow" style="justify-content:center;">Documentos e editais</span>
-        <h2>Tudo o que você precisa para submeter</h2>
+        <h2>Editais e termos do Festival</h2>
       </div>
 
       <div class="docs-grid">
