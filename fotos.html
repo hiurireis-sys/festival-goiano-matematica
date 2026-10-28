@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fotos — Festival Goiano de Matemática</title>
+<meta name="description" content="Galeria de fotos do Festival Goiano de Matemática 2026 — IME/UFG e LEMAT, 26 e 27 de outubro.">
+<style>
+  :root{
+    --blue:#1E88E5;
+    --blue-deep:#0D3B66;
+    --green:#22A567;
+    --green-deep:#146339;
+    --orange:#F6A623;
+    --orange-deep:#C97514;
+    --bg:#FBFCFE;
+    --surface:#FFFFFF;
+    --surface-alt:#F0F6FB;
+    --ink:#0F2340;
+    --ink-soft:#4A5B72;
+    --ink-faint:#7488A0;
+    --border:#E2E9F1;
+    --shadow: 0 12px 30px -14px rgba(13,59,102,0.22);
+    --font: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color-scheme: light;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  .justify, .lede, .lede-block p, .aside-card li, .card ul li,
+  .step-text p, .cta-panel p, .section-head p, .footer-orgs{
+    text-align:justify; text-justify:inter-word;
+  }
+  body{
+    margin:0;
+    font-family:var(--font);
+    background:var(--bg);
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+    line-height:1.55;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  .wrap{
+    width:100%;
+    max-width:1120px;
+    margin-inline:auto;
+    padding-inline:20px;
+  }
+  h1,h2,h3{
+    font-family:var(--font);
+    line-height:1.15;
+    letter-spacing:-0.01em;
+    text-wrap:balance;
+    color:var(--blue-deep);
+    margin:0;
+  }
+  h2{font-size:clamp(1.6rem,1.2rem + 1.6vw,2.4rem); font-weight:800;}
+  h3{font-size:1.15rem; font-weight:800;}
+  p{margin:0;}
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-size:.78rem;
+    font-weight:800;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--green-deep);
+  }
+  .eyebrow::before{
+    content:"";
+    width:8px;height:8px;border-radius:50%;
+    background:linear-gradient(135deg,var(--blue),var(--green));
+    flex:none;
+  }
+  section{position:relative;}
+  .section-pad{padding-block: clamp(48px,6vw,84px);}
+
+  /* ---------- Buttons ---------- */
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    font-family:var(--font);
+    font-weight:800;
+    font-size:.98rem;
+    padding:14px 24px;
+    border-radius:999px;
+    text-decoration:none;
+    border:2px solid transparent;
+    cursor:pointer;
+    transition:transform .15s ease, box-shadow .15s ease, background .15s ease, color .15s ease;
+    white-space:nowrap;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn:focus-visible{outline:3px solid var(--blue); outline-offset:2px;}
+  .btn-primary{
+    background:linear-gradient(120deg,var(--orange),var(--orange-deep));
+    color:#3A1F00;
+    box-shadow:0 14px 26px -12px rgba(201,117,20,0.55);
+  }
+  .btn-primary:hover{box-shadow:0 18px 30px -12px rgba(201,117,20,0.65);}
+  .btn-outline{
+    background:#fff;
+    color:var(--blue-deep);
+    border-color:var(--border);
+  }
+  .btn-outline:hover{border-color:var(--blue);}
+  .btn-ghost-light{
+    background:rgba(255,255,255,0.14);
+    color:#fff;
+    border-color:rgba(255,255,255,0.55);
+    backdrop-filter:blur(2px);
+  }
+  .btn-ghost-light:hover{background:rgba(255,255,255,0.24);}
+  .btn-sm{padding:10px 16px; font-size:.86rem; border-radius:10px;}
+  .btn-block-outline{
+    background:#fff;
+    border:1.5px solid var(--border);
+    color:var(--blue-deep);
+    width:100%;
+    justify-content:center;
+  }
+  .btn-block-outline:hover{border-color:var(--green); color:var(--green-deep);}
+  .btn-block-solid{
+    width:100%;
+    justify-content:center;
+    background:var(--blue-deep);
+    color:#fff;
+  }
+  .btn-block-solid:hover{background:var(--blue);}
+
+  /* ---------- Header ---------- */
+  header.site{
+    position:sticky; top:0; z-index:50;
+    background:rgba(251,252,254,0.9);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border);
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding-block:12px;
+    gap:16px;
+  }
+  .brand{
+    display:flex; align-items:center; gap:10px;
+    text-decoration:none;
+    font-weight:800; color:var(--blue-deep);
+    font-size:1rem;
+    letter-spacing:-0.01em;
+  }
+  .brand span{font-size:.72rem; font-weight:700; color:var(--ink-faint); letter-spacing:.03em;}
+  .brand small{display:block; font-weight:700;}
+  .navlinks{
+    display:flex; align-items:center; gap:16px;
+    list-style:none; margin:0; padding:0;
+  }
+  .navlinks a{
+    text-decoration:none; font-weight:700; font-size:.92rem;
+    color:var(--ink-soft);
+    padding-block:4px;
+    border-bottom:2px solid transparent;
+  }
+  .navlinks a:hover{color:var(--blue-deep); border-color:var(--orange);}
+  .nav-cta{display:flex; align-items:center; gap:10px;}
+  .burger{
+    display:none;
+    background:none;border:1.5px solid var(--border); border-radius:10px;
+    width:42px;height:42px; cursor:pointer;
+    align-items:center; justify-content:center;
+  }
+  .burger span, .burger span::before, .burger span::after{
+    content:""; display:block; width:18px; height:2px; background:var(--blue-deep);
+    position:relative; transition:.2s;
+  }
+  .burger span::before{position:absolute; top:-6px;}
+  .burger span::after{position:absolute; top:6px;}
+  .mobile-panel{display:none;}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    overflow:hidden;
+    background:
+      radial-gradient(ellipse 620px 380px at 92% -10%, rgba(246,166,35,0.22), transparent 60%),
+      radial-gradient(ellipse 560px 420px at -8% 8%, rgba(30,136,229,0.20), transparent 60%),
+      radial-gradient(ellipse 640px 460px at 100% 95%, rgba(34,165,103,0.18), transparent 60%),
+      linear-gradient(180deg,#F6FAFE 0%, #FBFCFE 60%);
+  }
+  .hero-dots{
+    position:absolute; inset:0;
+    background-image:radial-gradient(rgba(13,59,102,0.09) 1.4px, transparent 1.4px);
+    background-size:22px 22px;
+    -webkit-mask-image:radial-gradient(ellipse 900px 500px at 15% 20%, black, transparent 70%);
+    mask-image:radial-gradient(ellipse 900px 500px at 15% 20%, black, transparent 70%);
+    pointer-events:none;
+  }
+  .hero-inner{position:relative; padding-block:clamp(28px,4vw,44px) 8px;}
+  .banner-frame{
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:var(--shadow);
+    border:1px solid rgba(13,59,102,0.08);
+  }
+  .banner-frame img{width:100%; height:auto;}
+  .hero-copy{
+    max-width:760px;
+    margin-top:clamp(28px,4vw,40px);
+    display:flex; flex-direction:column; gap:16px;
+  }
+  .hero-copy h1{
+    font-size:clamp(2rem,1.4rem + 2.6vw,3.1rem);
+    font-weight:900;
+  }
+  .hero-copy .gradient-text{
+    background:linear-gradient(100deg,var(--blue) 10%, var(--green) 55%, var(--orange-deep) 95%);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  .hero-copy .lede{font-size:1.08rem; color:var(--ink-soft); max-width:62ch;}
+  .hero-ctas{display:flex; flex-wrap:wrap; gap:14px; margin-top:6px;}
+
+  .pillars{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:16px;
+    margin-top:clamp(34px,5vw,52px);
+  }
+  .pillar{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:18px 16px;
+    text-align:center;
+    display:flex; flex-direction:column; align-items:center; gap:10px;
+    box-shadow:0 10px 22px -18px rgba(13,59,102,0.35);
+  }
+  .pillar .ic{
+    width:44px;height:44px; border-radius:12px;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .pillar h3{font-size:.92rem; letter-spacing:.02em;}
+  .pillar p{font-size:.82rem; color:var(--ink-soft);}
+  .pillar.p1 .ic{background:rgba(30,136,229,0.12); color:var(--blue);}
+  .pillar.p2 .ic{background:rgba(34,165,103,0.13); color:var(--green-deep);}
+  .pillar.p3 .ic{background:rgba(246,166,35,0.16); color:var(--orange-deep);}
+  .pillar.p4 .ic{background:linear-gradient(135deg,rgba(30,136,229,0.15),rgba(34,165,103,0.15)); color:var(--blue-deep);}
+
+  /* ---------- Wave divider ---------- */
+  .wave{display:block; width:100%; height:56px; margin-top:-2px;}
+
+  /* ---------- Sobre ---------- */
+  .sobre-grid{
+    display:grid; grid-template-columns:1.15fr .85fr; gap:44px; align-items:start;
+  }
+  .lede-block p{color:var(--ink-soft); font-size:1.04rem;}
+  .lede-block p + p{margin-top:14px;}
+  .apoio-wrap{max-width:920px; margin-inline:auto;}
+  .apoio-logos{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(104px,1fr));
+    gap:12px;
+  }
+  .logo-card{
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:14px;
+    height:82px;
+    display:flex; align-items:center; justify-content:center;
+    padding:12px;
+    box-shadow:0 8px 18px -16px rgba(13,59,102,0.35);
+  }
+  .logo-card img{max-height:100%; max-width:100%; width:auto; height:auto; object-fit:contain;}
+  .apoio-extra{margin-top:16px; font-size:.8rem; color:var(--ink-faint); text-align:center;}
+  .aside-card{
+    background:linear-gradient(160deg,var(--blue-deep), #123B6B 60%, var(--green-deep));
+    color:#fff; border-radius:20px; padding:26px;
+    box-shadow:var(--shadow);
+  }
+  .aside-card h3{color:#fff; font-size:1.05rem;}
+  .aside-card ul{list-style:none; margin:16px 0 0; padding:0; display:flex; flex-direction:column; gap:14px;}
+  .aside-card li{display:flex; gap:12px; align-items:flex-start; font-size:.92rem; color:rgba(255,255,255,0.92);}
+  .aside-card li .dot{width:8px;height:8px;border-radius:50%; background:var(--orange); margin-top:6px; flex:none;}
+
+  /* ---------- Modalidades ---------- */
+  .section-head{max-width:680px; margin-inline:auto; text-align:center; display:flex; flex-direction:column; gap:12px; margin-bottom:clamp(30px,4vw,46px);}
+  .section-head p{color:var(--ink-soft); font-size:1.02rem;}
+  .cards2{display:grid; grid-template-columns:1fr 1fr; gap:24px;}
+  .card{
+    background:var(--surface); border:1px solid var(--border); border-radius:20px;
+    padding:28px; display:flex; flex-direction:column; gap:16px;
+    box-shadow:0 14px 30px -22px rgba(13,59,102,0.4);
+  }
+  .card-top{display:flex; align-items:flex-start; justify-content:space-between; gap:12px;}
+  .level-tag{
+    font-size:.72rem; font-weight:800; letter-spacing:.06em; text-transform:uppercase;
+    padding:6px 11px; border-radius:8px; color:#fff;
+  }
+  .level-tag.l1{background:linear-gradient(120deg,var(--blue),var(--blue-deep));}
+  .level-tag.l2{background:linear-gradient(120deg,var(--green),var(--green-deep));}
+  .card h3{font-size:1.28rem;}
+  .card .audience{font-size:.85rem; font-weight:700; color:var(--ink-faint);}
+  .card ul{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px;}
+  .card ul li{display:flex; gap:10px; font-size:.92rem; color:var(--ink-soft);}
+  .card ul li svg{flex:none; margin-top:2px;}
+  .card-actions{display:flex; flex-direction:column; gap:9px; margin-top:auto; padding-top:6px;}
+
+  /* ---------- Steps ---------- */
+  .steps-wrap{
+    background:linear-gradient(135deg,var(--surface-alt),#fff 70%);
+    border:1px solid var(--border);
+    border-radius:24px;
+    padding:clamp(28px,4vw,44px);
+    display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center;
+  }
+  .steps{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:22px;}
+  .steps li{display:flex; gap:16px;}
+  .step-num{
+    flex:none; width:38px; height:38px; border-radius:11px;
+    display:flex; align-items:center; justify-content:center;
+    font-weight:900; font-size:1rem; color:#fff;
+  }
+  .steps li:nth-child(1) .step-num{background:var(--blue);}
+  .steps li:nth-child(2) .step-num{background:var(--green);}
+  .steps li:nth-child(3) .step-num{background:var(--orange-deep);}
+  .step-text h3{font-size:1rem; margin-bottom:4px;}
+  .step-text p{color:var(--ink-soft); font-size:.92rem;}
+  .cta-panel{
+    background:#fff; border:1px solid var(--border); border-radius:18px;
+    padding:26px; text-align:center; display:flex; flex-direction:column; gap:14px;
+    box-shadow:var(--shadow);
+  }
+  .cta-panel .eyebrow{justify-content:center;}
+  .cta-panel h3{font-size:1.3rem;}
+  .cta-panel p{color:var(--ink-soft); font-size:.9rem;}
+  .note{
+    font-size:.8rem; color:var(--ink-faint); border-top:1px dashed var(--border); padding-top:12px; margin-top:2px;
+  }
+
+  /* ---------- Documentos ---------- */
+  .docs-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:18px;}
+  .doc-card{
+    background:var(--surface); border:1px solid var(--border); border-radius:16px;
+    padding:20px; display:flex; flex-direction:column; gap:12px;
+    text-decoration:none; color:var(--ink);
+    transition:border-color .15s, transform .15s, box-shadow .15s;
+  }
+  .doc-card:hover{border-color:var(--blue); transform:translateY(-3px); box-shadow:0 16px 28px -20px rgba(13,59,102,0.45);}
+  .doc-ic{
+    width:40px;height:40px;border-radius:10px;
+    display:flex;align-items:center;justify-content:center;
+    background:var(--surface-alt); color:var(--blue-deep);
+  }
+  .doc-card h3{font-size:.94rem;}
+  .doc-card .doc-meta{font-size:.76rem; color:var(--ink-faint); font-weight:700; text-transform:uppercase; letter-spacing:.03em;}
+  .doc-card .doc-link{margin-top:auto; font-size:.82rem; font-weight:800; color:var(--blue); display:flex; align-items:center; gap:6px;}
+
+  /* ---------- Local / Contato ---------- */
+  .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:32px;}
+  .info-card{
+    background:var(--surface); border:1px solid var(--border); border-radius:18px; padding:26px;
+    display:flex; flex-direction:column; gap:18px;
+  }
+  .info-row{display:flex; gap:14px; align-items:flex-start;}
+  .info-ic{
+    flex:none; width:38px; height:38px; border-radius:10px;
+    display:flex; align-items:center; justify-content:center;
+    background:var(--surface-alt); color:var(--blue-deep);
+  }
+  .info-row h4{margin:0 0 4px; font-size:.92rem; color:var(--blue-deep); font-weight:800;}
+  .info-row p, .info-row a{font-size:.9rem; color:var(--ink-soft); text-decoration:none;}
+  .info-row a:hover{color:var(--blue);}
+  .social-row{display:flex; gap:10px; flex-wrap:wrap;}
+  .social-btn{
+    width:40px; height:40px; border-radius:11px; background:var(--surface-alt);
+    display:flex; align-items:center; justify-content:center; color:var(--blue-deep);
+    border:1px solid var(--border); text-decoration:none; transition:.15s;
+  }
+  .social-btn:hover{background:var(--blue); color:#fff; border-color:var(--blue);}
+  .inst-links{display:flex; flex-direction:column; gap:8px;}
+  .inst-links a{font-size:.9rem; font-weight:700; color:var(--blue-deep); text-decoration:none; display:flex; align-items:center; gap:8px;}
+  .inst-links a:hover{color:var(--green-deep);}
+
+  .map-frame{
+    border-radius:16px; overflow:hidden; border:1px solid var(--border);
+    background:linear-gradient(135deg,var(--surface-alt),#fff);
+    padding:0; min-height:220px; display:flex; align-items:center; justify-content:center;
+  }
+
+  /* ---------- Footer ---------- */
+  footer{
+    background:var(--blue-deep);
+    color:rgba(255,255,255,0.85);
+  }
+  .footer-inner{padding-block:36px; display:flex; flex-direction:column; gap:18px;}
+  .footer-top{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;}
+  .footer-brand{display:flex; align-items:center; gap:10px; color:#fff; font-weight:800;}
+  .footer-orgs{font-size:.78rem; color:rgba(255,255,255,0.65); line-height:1.7;}
+  .footer-bottom{
+    border-top:1px solid rgba(255,255,255,0.14); padding-top:16px;
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+    font-size:.78rem; color:rgba(255,255,255,0.6);
+  }
+  .footer-bottom a{color:rgba(255,255,255,0.75); text-decoration:underline;}
+ /* ---------- Aviso de alteração de data ---------- */
+  .aviso-data{
+    display:flex; gap:12px; align-items:flex-start;
+    background:#FFF4E0; border:1px solid rgba(201,117,20,0.45);
+    border-left:5px solid var(--orange-deep);
+    border-radius:14px; padding:14px 16px;
+    color:#5A3300; font-size:.95rem; max-width:760px;
+    text-align:justify; text-justify:inter-word;
+  }
+  .aviso-data svg{flex:none; margin-top:2px; color:var(--orange-deep);}
+  .aviso-data strong{color:#8A4B00;}
+  /* Logo da UFG um pouco maior */
+  .logo-card.logo-lg{padding:4px;}
+  /* Símbolo do LEMAT um pouco maior */
+  .logo-card img[alt="LEMAT"]{transform:scale(1.7);}
+  /* Logo do CNPq um pouco maior */
+  .logo-card img[alt="CNPq"]{transform:scale(1.35);}
+
+  /* ---------- Qual categoria? ---------- */
+  .guia-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-bottom:34px;}
+  .guia-item{
+    background:#fff; border:1px solid var(--border); border-radius:16px; padding:18px;
+    display:flex; flex-direction:column; gap:8px; box-shadow:0 10px 22px -18px rgba(13,59,102,0.35);
+  }
+  .guia-item .quem{font-size:.8rem; font-weight:800; text-transform:uppercase; letter-spacing:.05em; color:var(--ink-faint);}
+  .guia-item p{font-size:.93rem; color:var(--ink); font-weight:700; line-height:1.4;}
+  .guia-item .vai{margin-top:auto; font-size:.86rem; font-weight:800; display:inline-flex; align-items:center; gap:6px; padding:7px 12px; border-radius:999px; align-self:flex-start; text-decoration:none;}
+  .vai.v1{background:rgba(30,136,229,0.12); color:var(--blue-deep);}
+  .vai.v2{background:rgba(34,165,103,0.14); color:var(--green-deep);}
+  .vai.v3{background:rgba(246,166,35,0.18); color:#8A4B00;}
+  .vai.v4{background:var(--surface-alt); color:var(--ink-soft);}
+  .comparativo{width:100%; border-collapse:separate; border-spacing:0; background:#fff; border:1px solid var(--border); border-radius:18px; overflow:hidden; font-size:.92rem;}
+  .comparativo th, .comparativo td{padding:14px 16px; text-align:left; vertical-align:top; border-bottom:1px solid var(--border);}
+  .comparativo tr:last-child td{border-bottom:none;}
+  .comparativo thead th{color:#fff; font-size:.98rem;}
+  .comparativo thead th:first-child{background:var(--blue-deep);}
+  .comparativo thead th.c1{background:linear-gradient(120deg,var(--blue),var(--blue-deep));}
+  .comparativo thead th.c2{background:linear-gradient(120deg,var(--green),var(--green-deep));}
+  .comparativo tbody th{width:22%; color:var(--blue-deep); font-weight:800; background:var(--surface-alt);}
+  .comparativo td{color:var(--ink-soft);}
+  .atencao-lista{margin-top:22px; display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+  .atencao{display:flex; gap:10px; align-items:flex-start; background:#FFF4E0; border:1px solid rgba(201,117,20,0.35); border-radius:14px; padding:14px 16px; font-size:.9rem; color:#5A3300;}
+  .atencao b{color:#8A4B00;}
+  .atencao svg{flex:none; margin-top:2px; color:var(--orange-deep);}
+
+  /* ---------- Comissão organizadora ---------- */
+  .comissao-destaque{display:grid; grid-template-columns:1fr 1fr; gap:20px; max-width:760px; margin:0 auto 26px;}
+  .comissao-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:16px;}
+  .membro{
+    background:#fff; border:1px solid var(--border); border-radius:18px; padding:18px 12px;
+    display:flex; flex-direction:column; align-items:center; text-align:center; gap:10px;
+    box-shadow:0 10px 22px -18px rgba(13,59,102,0.35);
+  }
+  .membro .foto{
+    width:96px; height:96px; border-radius:50%; padding:3px;
+    background:linear-gradient(135deg,var(--blue),var(--green) 55%,var(--orange));
+    display:flex; align-items:center; justify-content:center; flex:none;
+  }
+  .membro .foto img, .membro .foto span{
+    width:100%; height:100%; border-radius:50%; border:3px solid #fff; background:var(--surface-alt);
+    object-fit:cover; object-position:center 20%;
+  }
+  .membro .foto span{display:flex; align-items:center; justify-content:center; font-weight:900; font-size:1.5rem; color:var(--blue-deep);}
+  .membro h3{font-size:.95rem; line-height:1.25;}
+  .membro .papel{font-size:.72rem; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:var(--green-deep);}
+  .membro.lider{flex-direction:row; text-align:left; padding:18px; gap:16px;}
+  .membro.lider .foto{width:110px; height:110px;}
+  .membro.lider h3{font-size:1.1rem;}
+  .membro.lider .papel{color:var(--orange-deep);}
+
+  @media (max-width:900px){
+    .guia-grid{grid-template-columns:1fr 1fr;}
+    .atencao-lista{grid-template-columns:1fr;}
+    .comparativo, .comparativo thead, .comparativo tbody, .comparativo tr, .comparativo th, .comparativo td{display:block; width:100%;}
+    .comparativo thead{display:none;}
+    .comparativo tbody th{width:100%;}
+    .comparativo td::before{content:attr(data-label); display:block; font-size:.74rem; font-weight:800; text-transform:uppercase; letter-spacing:.05em; margin-bottom:4px;}
+    .comparativo td.c1::before{color:var(--blue);}
+    .comparativo td.c2::before{color:var(--green-deep);}
+  }
+  @media (max-width:520px){
+    .guia-grid{grid-template-columns:1fr;}
+    .comissao-destaque{grid-template-columns:1fr;}
+    .comissao-grid{grid-template-columns:1fr 1fr;}
+  }
+
+
+  /* ---------- Responsive ---------- */
+	
+  @media (max-width:900px){
+    .navlinks, .nav-cta .btn-outline{display:none;}
+    .burger{display:flex;}
+    .mobile-panel.open{
+      display:flex; flex-direction:column; gap:2px;
+      padding:10px 20px 18px;
+      border-top:1px solid var(--border);
+    }
+    .mobile-panel a{
+      padding:12px 4px; text-decoration:none; font-weight:700; color:var(--ink-soft);
+      border-bottom:1px solid var(--border);
+    }
+    .mobile-panel .btn{margin-top:10px;}
+    .pillars{grid-template-columns:1fr 1fr;}
+    .sobre-grid{grid-template-columns:1fr;}
+    .cards2{grid-template-columns:1fr;}
+    .steps-wrap{grid-template-columns:1fr;}
+    .docs-grid{grid-template-columns:1fr 1fr;}
+    .contact-grid{grid-template-columns:1fr;}
+  }
+  @media (max-width:520px){
+    .pillars{grid-template-columns:1fr 1fr; gap:10px;}
+    .docs-grid{grid-template-columns:1fr;}
+    .hero-ctas{flex-direction:column; align-items:stretch;}
+    .hero-ctas .btn{justify-content:center;}
+  }
+
+  /* ---------- Programação ---------- */
+  .prog-grid{display:grid; grid-template-columns:1fr 1fr; gap:22px; max-width:960px; margin:0 auto;}
+  .prog-day{background:var(--surface); border:1px solid var(--border); border-radius:18px; box-shadow:var(--shadow); overflow:hidden;}
+  .prog-day-head{display:flex; align-items:baseline; gap:12px; padding:18px 24px; color:#fff; background:linear-gradient(135deg,var(--blue-deep),var(--blue));}
+  .prog-day:nth-child(2) .prog-day-head{background:linear-gradient(135deg,var(--green-deep),var(--green));}
+  .prog-day-head strong{font-size:1.6rem; font-weight:800; line-height:1;}
+  .prog-day-head span{font-size:.9rem; font-weight:600; opacity:.9;}
+  .prog-list{list-style:none; margin:0; padding:6px 24px 14px;}
+  .prog-list li{display:grid; grid-template-columns:118px 1fr; gap:14px; padding:14px 0; border-bottom:1px solid var(--border); align-items:start;}
+  .prog-list li:last-child{border-bottom:0;}
+  .prog-time{font-weight:800; color:var(--blue-deep); font-variant-numeric:tabular-nums; white-space:nowrap;}
+  .prog-act{color:var(--ink-soft); font-size:.97rem;}
+  .prog-act.destaque{color:var(--orange-deep); font-weight:700;}
+  @media (max-width:760px){ .prog-grid{grid-template-columns:1fr;} }
+  /* cabeçalho: evita estouro horizontal com o novo item de menu */
+  @media (max-width:1360px){ .nav-cta .btn-outline{display:none;} }
+  @media (max-width:1180px) and (min-width:901px){ .navlinks{gap:12px;} .navlinks a{font-size:.9rem;} }
+  @media (max-width:420px){ .prog-list li{grid-template-columns:1fr; gap:2px;} }
+
+.pg-card.has-loc{border-top:5px solid var(--lc)}
+.pg-loc{display:flex; align-items:center; gap:10px; background:var(--lb); border:1px solid color-mix(in srgb,var(--lc) 30%,transparent); border-radius:12px; padding:9px 12px; color:var(--lc)}
+.pg-loc svg{width:18px;height:18px;flex:none}
+.pg-loc span{display:flex; flex-direction:column; line-height:1.2}
+.pg-loc b{font-size:.92rem}
+.pg-loc small{font-size:.74rem; font-weight:600; opacity:.85}
+.pg-loc .pg-loc-h{margin-left:auto; flex-direction:row; align-items:center; gap:5px; font-weight:800; font-size:.86rem; background:#fff; border-radius:999px; padding:4px 10px; white-space:nowrap}
+.pg-loc .pg-loc-h svg{width:15px;height:15px}
+.pg-dot{display:inline-block; width:10px; height:10px; border-radius:50%; background:var(--lc); margin-right:6px; vertical-align:middle}
+.pg-seg button[data-f="local"][aria-pressed="true"]{background:var(--lc,var(--blue-deep)); border-color:var(--lc,var(--blue-deep)); color:#fff}
+.pg-seg button[data-f="local"][aria-pressed="true"] .pg-dot{background:#fff}
+.pg-mapa{margin-top:clamp(30px,4vw,48px); background:var(--surface); border:1px solid var(--border); border-radius:20px; padding:clamp(18px,3vw,28px); box-shadow:var(--shadow)}
+.pg-mapa-head h2{margin:0 0 6px; color:var(--blue-deep); font-size:clamp(1.4rem,1.1rem + 1vw,1.9rem)}
+.pg-mapa-head p{margin:0 0 18px; color:var(--ink-soft)}
+.pg-map-scroll{overflow-x:auto; -webkit-overflow-scrolling:touch}
+.pg-map{width:100%; min-width:920px; border-collapse:separate; border-spacing:6px; font-size:.86rem}
+.pg-map thead th{text-align:left; font-weight:800; color:var(--lc,var(--blue-deep)); padding:6px 8px; vertical-align:bottom}
+.pg-map thead th small{display:block; font-weight:600; font-size:.7rem; color:var(--ink-faint)}
+.pg-map tbody th{text-align:left; font-weight:800; color:var(--blue-deep); white-space:nowrap; padding:8px}
+.pg-map td{background:var(--lb); border-left:4px solid var(--lc); border-radius:10px; padding:8px 10px; vertical-align:top; width:13%}
+.pg-map-item{display:block; font-weight:700; color:var(--ink); margin-bottom:6px; line-height:1.25}
+.pg-map-item:last-child{margin-bottom:0}
+.pg-map-item i{display:block; font-style:normal; font-weight:800; font-size:.74rem; color:var(--lc)}
+.pg-map-n{display:block; font-size:1.05rem; color:var(--lc)}
+.pg-map-link{font-size:.78rem; font-weight:700; color:var(--lc)}
+.pg-map-free{color:var(--ink-faint); font-style:italic}
+.pg-map-note{margin:14px 0 0; font-size:.86rem; color:var(--ink-soft)}
+.pg-map-note a{color:var(--blue-deep); font-weight:700}
+@media (max-width:720px){ .pg-loc .pg-loc-h{margin-left:0} .pg-loc{flex-wrap:wrap} .pg-bar{position:static} }
+
+#pg-leaflet{height:440px; border-radius:16px; border:1px solid var(--border); overflow:hidden; z-index:0}
+.pg-mk span{display:block; width:26px; height:26px; border-radius:50%; border:3px solid #fff; box-shadow:0 2px 8px rgba(0,0,0,.45)}
+.pg-tt{font-weight:800; font-size:.78rem; color:var(--blue-deep); border-radius:8px; padding:3px 8px}
+.pg-pp strong{display:block; font-size:1rem; color:var(--blue-deep)}
+.pg-pp small{display:block; color:var(--ink-faint); margin-bottom:6px}
+.pg-pp ul{list-style:none; margin:0 0 8px; padding:0; max-height:190px; overflow:auto}
+.pg-pp li{font-size:.84rem; padding:4px 0; border-top:1px dashed var(--border)}
+.pg-pp li b{display:block; font-size:.74rem; color:var(--ink-soft)}
+.pg-pp a{font-weight:800; color:var(--blue)}
+.pg-pp-empty{margin:4px 0 8px; color:var(--ink-faint); font-style:italic}
+.pg-pins{display:flex; flex-wrap:wrap; gap:8px; margin:14px 0 6px}
+.pg-pin-btn{font:inherit; font-size:.85rem; font-weight:700; display:inline-flex; align-items:center; gap:8px; background:#fff; border:1.5px solid var(--border); border-radius:999px; padding:6px 12px; cursor:pointer; color:var(--blue-deep)}
+.pg-pin-btn:hover{border-color:var(--blue)}
+.pg-pin-sw{width:14px; height:14px; border-radius:50%; display:inline-block}
+.pg-map-sub{margin:22px 0 8px; font-size:1.05rem; color:var(--blue-deep)}
+@media (max-width:720px){ #pg-leaflet{height:360px} }
+.pg-maplink{font-size:.88rem; font-weight:700; color:var(--blue-deep); padding:8px 6px; text-decoration:underline}
+</style>
+<style>
+  .pg-hero{padding-block:clamp(36px,5vw,64px) clamp(20px,3vw,32px); background:radial-gradient(120% 90% at 100% 0%, rgba(246,166,35,.12), transparent 55%), radial-gradient(90% 80% at 0% 0%, rgba(30,136,229,.10), transparent 60%);}
+  .pg-hero .section-head{margin-bottom:26px}
+  .pg-hero h1{font-size:clamp(1.9rem,1.3rem + 2.4vw,3rem); font-weight:800; color:var(--blue-deep); line-height:1.1; margin:0}
+  .pg-stats{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; max-width:820px; margin:0 auto}
+  .pg-stat{background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:16px 18px; box-shadow:var(--shadow); text-align:center}
+  .pg-stat b{display:block; font-size:2rem; font-weight:800; line-height:1.05; background:linear-gradient(90deg,var(--blue),var(--green)); -webkit-background-clip:text; background-clip:text; color:transparent}
+  .pg-stat:nth-child(2) b{background:linear-gradient(90deg,var(--orange-deep),var(--orange)); -webkit-background-clip:text; background-clip:text}
+  .pg-stat span{font-size:.86rem; color:var(--ink-soft); font-weight:600}
+  .pg-bar{position:sticky; top:var(--pg-top,72px); z-index:20; background:rgba(251,252,254,.94); backdrop-filter:blur(8px); border-block:1px solid var(--border)}
+  .pg-bar .wrap{display:flex; flex-wrap:wrap; justify-content:center; gap:10px 22px; padding-block:12px}
+  .pg-seg{display:flex; gap:6px; flex-wrap:wrap; justify-content:center}
+  .pg-seg button{font:inherit; font-size:.88rem; font-weight:600; border:1.5px solid var(--border); background:#fff; color:var(--ink-soft); padding:8px 16px; border-radius:999px; cursor:pointer; transition:all .15s}
+  .pg-seg button:hover{border-color:var(--blue)}
+  .pg-seg button[aria-pressed="true"]{background:var(--blue-deep); border-color:var(--blue-deep); color:#fff}
+  .pg-seg button:focus-visible{outline:3px solid var(--blue); outline-offset:2px}
+  .pg-turno{padding-top:clamp(30px,4vw,48px)}
+  .pg-turno-h{display:flex; justify-content:space-between; align-items:center; gap:10px 20px; flex-wrap:wrap; color:#fff; border-radius:18px; padding:18px 24px; margin-bottom:20px; background:linear-gradient(135deg,var(--blue-deep),var(--blue)); box-shadow:var(--shadow)}
+  .pg-turno-h.d27{background:linear-gradient(135deg,var(--green-deep),var(--green))}
+  .pg-turno-h > div:first-child{display:flex; align-items:baseline; gap:12px}
+  .pg-turno-h strong{font-size:1.6rem; font-weight:800; line-height:1}
+  .pg-turno-h span{font-size:.9rem; font-weight:600; opacity:.9}
+  .pg-hora{text-align:right}.pg-hora b{display:block; font-size:1.1rem}.pg-hora small{opacity:.85; font-size:.82rem}
+  .pg-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:18px}
+  .pg-card{background:var(--surface); border:1px solid var(--border); border-radius:18px; padding:22px; box-shadow:var(--shadow); display:flex; flex-direction:column; gap:12px; transition:transform .18s, box-shadow .18s}
+  .pg-card:hover{transform:translateY(-3px); box-shadow:0 18px 34px -16px rgba(13,59,102,.3)}
+  .pg-top{display:flex; justify-content:space-between; align-items:center; gap:8px; flex-wrap:wrap}
+  .pg-grp{font-size:.8rem; color:var(--ink-faint); font-weight:600; display:flex; gap:8px; align-items:center; flex-wrap:wrap}
+  .pg-all{font-size:.7rem; font-weight:800; letter-spacing:.04em; text-transform:uppercase; color:var(--orange-deep); background:#FFF4E0; border:1px solid rgba(201,117,20,.3); border-radius:999px; padding:3px 9px}
+  .pg-card h3{font-size:1.1rem; line-height:1.3; color:var(--blue-deep); margin:0}
+  .pg-din{margin:0; color:var(--ink-soft); font-size:.94rem}
+  .pg-inst{display:flex; gap:10px; align-items:flex-start; background:var(--surface-alt); border-radius:12px; padding:11px 13px}
+  .pg-inst svg{width:20px; height:20px; flex:none; color:var(--blue); margin-top:1px}
+  .pg-card.pop .pg-inst{background:#EAF7F0}.pg-card.pop .pg-inst svg{color:var(--green)}
+  .pg-inst strong{font-size:.93rem; color:var(--blue-deep)}.pg-card.pop .pg-inst strong{color:var(--green-deep)}
+  .pg-team summary{cursor:pointer; list-style:none; display:inline-flex; align-items:center; gap:8px; font-size:.86rem; font-weight:700; color:var(--blue-deep); border:1.5px solid var(--border); border-radius:999px; padding:7px 14px; background:#fff; transition:border-color .15s}
+  .pg-team summary:hover{border-color:var(--blue)}
+  .pg-card.pop .pg-team summary{color:var(--green-deep)}.pg-card.pop .pg-team summary:hover{border-color:var(--green)}
+  .pg-team summary::-webkit-details-marker{display:none}
+  .pg-team summary:after{content:"\25BE"; display:inline-block; transition:transform .2s}
+  .pg-team[open] summary:after{transform:rotate(180deg)}
+  .pg-team summary:focus-visible{outline:3px solid var(--blue); outline-offset:2px}
+  .pg-team .n{font-size:.74rem; background:var(--surface-alt); border-radius:999px; padding:1px 8px; color:var(--ink-soft)}
+  .pg-team ul{list-style:none; margin:12px 0 0; padding:0; display:flex; flex-wrap:wrap; gap:6px}
+  .pg-team li{font-size:.84rem; background:#FFF4E0; color:#6B3D00; border:1px solid rgba(201,117,20,.28); padding:4px 11px; border-radius:999px}
+  .pg-team-fixed{margin:0; font-weight:700; color:var(--green-deep)}
+  .pg-team-fixed span{display:block; font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-faint); margin-bottom:3px}
+  .pg-ori{margin:auto 0 0; font-size:.9rem; color:var(--ink-soft); border-top:1px dashed var(--border); padding-top:10px}
+  .pg-ori span{font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-faint); font-weight:700; margin-right:4px}
+  .pg-boxes .pg-marco{margin:0 0 10px}
+  .pg-boxes{margin:0 0 18px}
+  .pg-marco{display:flex; gap:16px; align-items:center; margin-top:18px; background:#FFF4E0; border:1px solid rgba(201,117,20,.35); border-left:5px solid var(--orange-deep); border-radius:14px; padding:14px 18px}
+  .pg-aviso{margin:0 auto 26px}
+  .pg-upd{display:block;margin-top:4px;font-size:.84rem;font-weight:700;color:#8A4B00}
+  .pg-hide{display:none !important}
+  .pg-back{text-align:center; padding:48px 0 8px}
+  @media (max-width:720px){ .pg-stats{grid-template-columns:1fr 1fr 1fr; gap:8px} .pg-stat{padding:12px 8px} .pg-stat b{font-size:1.5rem} .pg-stat span{font-size:.74rem} .pg-hora{text-align:left} .pg-grid{grid-template-columns:1fr} .pg-card{padding:18px} .pg-bar{position:static} .pg-marco{flex-direction:column; align-items:flex-start; gap:4px}}
+</style>
+<style>
+  .gl-hero{padding:clamp(40px,6vw,72px) 0 20px;background:linear-gradient(180deg,#fff 0%,var(--surface-alt) 100%);text-align:center}
+  .gl-hero h1{font-size:clamp(1.9rem,1.3rem + 2.4vw,3rem);font-weight:800;margin-top:10px}
+  .gl-hero p{max-width:680px;margin:14px auto 0;color:var(--ink-soft)}
+  .gl-note{display:inline-flex;gap:8px;align-items:center;margin-top:16px;font-size:.86rem;color:var(--ink-soft);background:#fff;border:1px solid var(--border);border-radius:999px;padding:7px 14px}
+  .gl-bar{position:sticky;top:var(--gl-top,64px);z-index:20;background:rgba(251,252,254,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+  .gl-chips{display:flex;gap:8px;overflow-x:auto;padding:12px 0;scrollbar-width:none}
+  .gl-chips::-webkit-scrollbar{display:none}
+  .gl-chip{flex:none;font:inherit;font-weight:800;font-size:.86rem;padding:8px 14px;border-radius:999px;border:1.5px solid var(--border);background:#fff;color:var(--ink-soft);cursor:pointer;text-decoration:none;white-space:nowrap}
+  .gl-chip:hover{border-color:var(--blue);color:var(--blue-deep)}
+  .gl-chip[aria-pressed="true"]{background:var(--blue-deep);border-color:var(--blue-deep);color:#fff}
+  .gl-chip small{font-weight:700;opacity:.7;margin-left:4px}
+  .gl-sec{padding:34px 0 8px;scroll-margin-top:130px}
+  .gl-sec[hidden]{display:none}
+  .gl-sec-h{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;margin-bottom:16px}
+  .gl-sec-h h2{font-size:clamp(1.3rem,1.1rem + .8vw,1.75rem)}
+  .gl-sec-h p{color:var(--ink-soft);font-size:.95rem}
+  .gl-sec-h .n{font-size:.8rem;font-weight:800;color:var(--green-deep);background:#E5F5EC;border-radius:999px;padding:3px 10px}
+  .gl-grid{display:flex;flex-wrap:wrap;gap:10px}.gl-grid::after{content:"";flex-grow:999}
+  .gl-item{display:block;position:relative;flex-grow:var(--r);flex-basis:calc(var(--r) * 210px);max-width:calc(var(--r) * 420px);border-radius:12px;overflow:hidden;background:#E8EEF5;cursor:zoom-in;border:0;padding:0;width:100%}
+  .gl-item img{width:100%;height:100%;object-fit:cover;aspect-ratio:var(--r);transition:transform .35s ease}
+  .gl-item:hover img{transform:scale(1.03)}
+  .gl-item:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+  .lb{position:fixed;inset:0;z-index:100;background:rgba(8,18,34,.94);display:none;align-items:center;justify-content:center}
+  .lb.open{display:flex}
+  .lb img{max-width:94vw;max-height:84vh;border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+  .lb button{position:absolute;background:rgba(255,255,255,.12);color:#fff;border:0;border-radius:999px;width:48px;height:48px;font-size:1.5rem;cursor:pointer}
+  .lb button:hover{background:rgba(255,255,255,.25)}
+  .lb .x{top:16px;right:16px}.lb .pv{left:16px;top:50%;transform:translateY(-50%)}.lb .nx{right:16px;top:50%;transform:translateY(-50%)}
+  .lb .cap{position:absolute;bottom:16px;left:0;right:0;text-align:center;color:#D5E1EE;font-size:.9rem;padding:0 70px}
+  .lb .cap a{color:#fff;font-weight:700}
+  @media (max-width:640px){.gl-grid{gap:6px}.gl-item{flex-basis:calc(var(--r) * 120px);border-radius:8px}.lb .pv,.lb .nx{top:auto;bottom:56px;transform:none}.lb .cap{bottom:18px;padding:0 16px}}
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="wrap nav">
+    <a href="./" class="brand">
+      <svg width="30" height="30" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M2 30 C 8 14, 14 14, 20 24 C 26 14, 32 14, 38 30" stroke="url(#gradA)" stroke-width="4.4" stroke-linecap="round" fill="none"/>
+        <defs>
+          <linearGradient id="gradA" x1="0" y1="0" x2="40" y2="0">
+            <stop offset="0" stop-color="#1E88E5"/>
+            <stop offset="0.5" stop-color="#F6A623"/>
+            <stop offset="1" stop-color="#22A567"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      <small>
+        Festival Goiano de Matemática
+        <span style="display:block;font-weight:700;color:#7488A0;font-size:.66rem;letter-spacing:.03em;">IME/UFG · LEMAT</span>
+      </small>
+    </a>
+
+    <ul class="navlinks">
+      <li><a href="./#sobre">Sobre</a></li>
+      <li><a href="programacao.html">Programação</a></li>
+      <li><a href="fotos.html" aria-current="page" style="color:var(--blue-deep)">Fotos</a></li>
+     <li><a href="./#entenda">Categoria</a></li>
+      <li><a href="./#modalidades">Modalidades</a></li>
+      <li><a href="./#inscreva-se">Participe</a></li>
+      <li><a href="./#documentos">Documentos</a></li>
+      <li><a href="./#contato">Contato</a></li>
+    <li><a href="./#apoio">Apoio</a></li>
+      <li><a href="./#comissao">Comissão</a></li>
+    </ul>
+
+    <div class="nav-cta">
+      <a class="btn btn-outline btn-sm" href="./">Página inicial</a>
+      <a class="btn btn-primary btn-sm" href="https://docs.google.com/forms/d/e/1FAIpQLSeGHVFz3LSZ3Un_aQV2isS8X2BnbuooKhaLV29_2bZttRC1Yg/viewform?usp=publish-editor" target="_blank" rel="noopener">Inscreva-se</a>
+      <button class="burger" id="burgerBtn" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobilePanel"><span></span></button>
+    </div>
+  </div>
+  <nav class="mobile-panel" id="mobilePanel">
+    <a href="./#sobre">Sobre</a>
+    <a href="programacao.html">Programação completa</a>
+    <a href="fotos.html">Fotos do Festival</a>
+    <a href="./#entenda">Qual categoria é a minha?</a>
+    <a href="./#modalidades">Modalidades</a>
+    <a href="./#inscreva-se">Como participar</a>
+    <a href="./#documentos">Documentos</a>
+    <a href="./#contato">Contato</a>
+     <a href="./#apoio">Apoio</a>
+    <a href="./#comissao">Comissão organizadora</a>
+    <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSeGHVFz3LSZ3Un_aQV2isS8X2BnbuooKhaLV29_2bZttRC1Yg/viewform?usp=publish-editor" target="_blank" rel="noopener">Inscrição Visitante do Evento</a>
+  </nav>
+</header>
+<main id="topo">
+<section class="gl-hero"><div class="wrap">
+  <span class="eyebrow" style="justify-content:center;">Fotos · 26 e 27 de outubro de 2026</span>
+  <h1>O Festival em imagens</h1>
+  <p>Dois dias de Matemática no IME/UFG: xadrez gigante, jogos, a Mostra Científica da Educação Básica, o Espaço de Popularização e muitas bolhas de sabão.</p>
+  <span class="gl-note"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 8v5M12 16.5v.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Para proteger as crianças, os rostos delas foram desfocados.</span>
+</div></section>
+<nav class="gl-bar" aria-label="Filtrar fotos"><div class="wrap"><div class="gl-chips"><button class="gl-chip" data-f="all" aria-pressed="true">Todas<small>189</small></button><button class="gl-chip" data-f="abertura" aria-pressed="false">Abertura<small>6</small></button><button class="gl-chip" data-f="xadrez26" aria-pressed="false">Xadrez gigante · 26/10<small>23</small></button><button class="gl-chip" data-f="escolas" aria-pressed="false">Escolas no Festival · 27/10<small>29</small></button><button class="gl-chip" data-f="jogos" aria-pressed="false">Jogos e desafios<small>16</small></button><button class="gl-chip" data-f="mostra" aria-pressed="false">Mostra e Espaço de Popularização<small>40</small></button><button class="gl-chip" data-f="bolhas" aria-pressed="false">Bolhas de sabão e superfícies mínimas<small>31</small></button><button class="gl-chip" data-f="roda" aria-pressed="false">Roda de conversa no quiosque<small>13</small></button><button class="gl-chip" data-f="equipes" aria-pressed="false">Equipes e encontros<small>15</small></button><button class="gl-chip" data-f="arena" aria-pressed="false">Arena e espaço externo<small>9</small></button><button class="gl-chip" data-f="feira" aria-pressed="false">Feira de artesanato<small>7</small></button></div></div></nav>
+<section class="gl-sec" id="abertura" data-key="abertura"><div class="wrap">
+  <div class="gl-sec-h"><h2>Abertura</h2><span class="n">6 fotos</span><p>Mesa de abertura e público no auditório do IME/UFG, 26/10.</p></div>
+  <div class="gl-grid"><button class="gl-item" style="--r:1.3333" data-full="fotos/abertura-01.jpg" data-sec="Abertura"><img src="fotos/thumbs/abertura-01.jpg" width="640" height="480" loading="lazy" decoding="async" alt="Abertura — foto 1"></button><button class="gl-item" style="--r:1.3333" data-full="fotos/abertura-02.jpg" data-sec="Abertura"><img src="fotos/thumbs/abertura-02.jpg" width="640" height="480" loading="lazy" decoding="async" alt="Abertura — foto 2"></button><button class="gl-item" style="--r:1.3333" data-full="fotos/abertura-03.jpg" data-sec="Abertura"><img src="fotos/thumbs/abertura-03.jpg" width="640" height="480" loading="lazy" decoding="async" alt="Abertura — foto 3"></button><button class="gl-item" style="--r:1.3333" data-full="fotos/abertura-04.jpg" data-sec="Abertura"><img src="fotos/thumbs/abertura-04.jpg" width="640" height="480" loading="lazy" decoding="async" alt="Abertura — foto 4"></button><button class="gl-item" style="--r:1.3333" data-full="fotos/abertura-05.jpg" data-sec="Abertura"><img src="fotos/thumbs/abertura-05.jpg" width="640" height="480" loading="lazy" decoding="async" alt="Abertura — foto 5"></button><button class="gl-item" style="--r:1.3333" data-full="fotos/abertura-06.jpg" data-sec="Abertura"><img src="fotos/thumbs/abertura-06.jpg" width="640" height="480" loading="lazy" decoding="async" alt="Abertura — foto 6"></button></div>
+</div></section><section class="gl-sec" id="xadrez26" data-key="xadrez26"><div class="wrap">
+  <div class="gl-sec-h"><h2>Xadrez gigante · 26/10</h2><span class="n">23 fotos</span><p>Montagem do tabuleiro e as primeiras partidas com os estudantes.</p></div>
+  <div class="gl-grid"><button class="gl-item" style="--r:1.3333" data-full="fotos/xadrez26-01.jpg" data-sec="Xadrez gigante · 26/10"><img src="fotos/thumbs/xadrez26-01.jpg" width="640" height="480" loading="lazy" decoding="async" alt="Xadrez gigante · 26/10 — foto 1"></button><button class="gl-item" style="--r:1.3333" data-full="fotos/xadrez26-02.jpg" data-sec="Xadrez gigante · 26/10"><img src="fotos/thumbs/xadrez26-02.jpg" width="640" height="480" loading="lazy" decoding="async" alt="Xadrez gigante · 26/10 — foto 2"></button><button class="gl-item" style="--r:1.3333" data-full="fotos/xadrez26-03.jpg" data-sec="Xadrez gigante · 26/10"><img src="fotos/thumbs/xadrez26-03.jpg" width="640" height="480" loading="lazy" decoding="async" alt="Xadrez gigante · 26/10 — foto 3"></button><button class="gl-item" style="--r:1.3333" data-full="fotos/xadrez26-04.jpg" data-sec="Xadrez gigante · 26/10"><img src="fotos/thumbs/xadrez26-04.jpg" width="640" height="480" loading="lazy" decoding="async" alt="Xadrez gigante · 26/10 — foto 4"></button><button class="gl-item" style="--r:1.3333" data-full="fotos/xadrez26-05.jpg" data-sec="Xadrez gigante · 26/10"><img src="fotos/thumbs/xadrez26-05.jpg" width="640" height="480" loading="lazy" decoding="async" alt="Xadrez gigante · 26/10 — foto 5"></button><button class="gl-item" style="--r:1.3333" data-full="fotos/xadrez26-06.jpg" data-sec="Xadrez gigante · 26/10"><img src="fotos/thumbs/xadrez26-06.jpg" width="640" height="480" loading="lazy" decoding="async" alt="Xadrez gigante · 26/10 — foto 6"></button><button class="gl-item" style="--r:1.3333" data-full="fotos/xadrez26-07.jpg" data-sec="Xadrez gigante · 26/10"><img src="fotos/thumbs/xadrez26-07.jpg" width="640" height="480" loading="lazy" decoding="async" alt="Xadrez gigante · 26/10 — foto 7"></button><button class="gl-item" style="--r:1.3333" data-full="fotos/xadrez26-08.jpg" data-sec="Xadrez gigante · 26/10"><img src="fotos/thumbs/xadrez26-08.jpg" width="640" height="480" loading="lazy" decoding="async" alt="Xadrez gigante · 26/10 — foto 8"></button><button class="gl-item" style="--r:1.3333" data-full="fotos/xadrez26-09.jpg" data-sec="Xadrez gigante · 26/10"><img src="fotos/thumbs/xadrez26-09.jpg" width="640" height="480" loading="lazy" decoding="async" alt="Xadrez gigante · 26/10 — foto 9"></button><button class="gl-item" style="--r:1.3333" data-full="fotos/xadrez26-10.jpg" data-sec="Xadrez gigante · 26/10"><img src="fotos/thumbs/xadrez26-10.jpg" width="640" height="480" loading="lazy" decoding="async" alt="Xadrez gigante · 26/10 — foto 10"></button><button class="gl-item" style="--r:1.3333" data-full="fotos/xadrez26-11.jpg" data-sec="Xadrez gigante · 26/10"><img src="fotos/thumbs/xadrez26-11.jpg" width="640" height="480" loading="lazy" decoding="async" alt="Xadrez gigante · 26/10 — foto 11"></button><button class="gl-item" style="--r:1.3333" data-full="fotos/xadrez26-12.jpg" data-sec="Xadrez gigante · 26/10"><img src="fotos/thumbs/xadrez26-12.jpg" width="640" height="480" loading="lazy" decoding="async" alt="Xadrez gigante · 26/10 — foto 12"></button><button class="gl-item" style="--r:0.7500" data-full="fotos/xadrez26-13.jpg" data-sec="Xadrez gigante · 26/10"><img src="fotos/thumbs/xadrez26-13.jpg" width="480" height="640" loading="lazy" decoding="async" alt="Xadrez gigante · 26/10 — foto 13"></button><button class="gl-item" style="--r:0.7500" data-full="fotos/xadrez26-14.jpg" data-sec="Xadrez gigante · 26/10"><img src="fotos/thumbs/xadrez26-14.jpg" width="480" height="640" loading="lazy" decoding="async" alt="Xadrez gigante · 26/10 — foto 14"></button><button class="gl-item" style="--r:0.7500" data-full="fotos/xadrez26-15.jpg" data-sec="Xadrez gigante · 26/10"><img src="fotos/thumbs/xadrez26-15.jpg" width="480" height="640" loading="lazy" decoding="async" alt="Xadrez gigante · 26/10 — foto 15"></button><button class="gl-item" style="--r:0.7500" data-full="fotos/xadrez26-16.jpg" data-sec="Xadrez gigante · 26/10"><img src="fotos/thumbs/xadrez26-16.jpg" width="480" height="640" loading="lazy" decoding="async" alt="Xadrez gigante · 26/10 — foto 16"></button><button class="gl-item" style="--r:0.7500" data-full="fotos/xadrez26-17.jpg" data-sec="Xadrez gigante · 26/10"><img src="fotos/thumbs/xadrez26-17.jpg" width="480" height="640" loading="lazy" decoding="async" alt="Xadrez gigante · 26/10 — foto 17"></button><button class="gl-item" style="--r:0.7500" data-full="fotos/xadrez26-18.jpg" data-sec="Xadrez gigante · 26/10"><img src="fotos/thumbs/xadrez26-18.jpg" width="480" height="640" loading="lazy" decoding="async" alt="Xadrez gigante · 26/10 — foto 18"></button><button class="gl-item" style="--r:1.3333" data-full="fotos/xadrez26-19.jpg" data-sec="Xadrez gigante · 26/10"><img src="fotos/thumbs/xadrez26-19.jpg" width="640" height="480" loading="lazy" decoding="async" alt="Xadrez gigante · 26/10 — foto 19"></button><button class="gl-item" style="--r:1.3333" data-full="fotos/xadrez26-20.jpg" data-sec="Xadrez gigante · 26/10"><img src="fotos/thumbs/xadrez26-20.jpg" width="640" height="480" loading="lazy" decoding="async" alt="Xadrez gigante · 26/10 — foto 20"></button><button class="gl-item" style="--r:1.3333" data-full="fotos/xadrez26-21.jpg" data-sec="Xadrez gigante · 26/10"><img src="fotos/thumbs/xadrez26-21.jpg" width="640" height="480" loading="lazy" decoding="async" alt="Xadrez gigante · 26/10 — foto 21"></button><button class="gl-item" style="--r:1.3333" data-full="fotos/xadrez26-22.jpg" data-sec="Xadrez gigante · 26/10"><img src="fotos/thumbs/xadrez26-22.jpg" width="640" height="480" loading="lazy" decoding="async" alt="Xadrez gigante · 26/10 — foto 22"></button><button class="gl-item" style="--r:1.3333" data-full="fotos/xadrez26-23.jpg" data-sec="Xadrez gigante · 26/10"><img src="fotos/thumbs/xadrez26-23.jpg" width="640" height="480" loading="lazy" decoding="async" alt="Xadrez gigante · 26/10 — foto 23"></button></div>
+</div></section><section class="gl-sec" id="escolas" data-key="escolas"><div class="wrap">
+  <div class="gl-sec-h"><h2>Escolas no Festival · 27/10</h2><span class="n">29 fotos</span><p>A visita das turmas: fila, xadrez gigante e corredores do IME.</p></div>
+  <div class="gl-grid"><button class="gl-item" style="--r:1.3333" data-full="fotos/escolas-01.jpg" data-sec="Escolas no Festival · 27/10"><img src="fotos/thumbs/escolas-01.jpg" width="640" height="480" loading="lazy" decoding="async" alt="Escolas no Festival · 27/10 — foto 1"></button><button class="gl-item" style="--r:1.3333" data-full="fotos/escolas-02.jpg" data-sec="Escolas no Festival · 27/10"><img src="fotos/thumbs/escolas-02.jpg" width="640" height="480" loading="lazy" decoding="async" alt="Escolas no Festival · 27/10 — foto 2"></button><button class="gl-item" style="--r:1.3333" data-full="fotos/escolas-03.jpg" data-sec="Escolas no Festival · 27/10"><img src="fotos/thumbs/escolas-03.jpg" width="640" height="480" loading="lazy" decoding="async" alt="Escolas no Festival · 27/10 — foto 3"></button><button class="gl-item" style="--r:1.3333" data-full="fotos/escolas-04.jpg" data-sec="Escolas no Festival · 27/10"><img src="fotos/thumbs/escolas-04.jpg" width="640" height="480" loading="lazy" decoding="async" alt="Escolas no Festival · 27/10 — foto 4"></button><button class="gl-item" style="--r:0.7500" data-full="fotos/escolas-05.jpg" data-sec="Escolas no Festival · 27/10"><img src="fotos/thumbs/escolas-05.jpg" width="480" height="640" loading="lazy" decoding="async" alt="Escolas no Festival · 27/10 — foto 5"></button><button class="gl-item" style="--r:1.3333" data-full="fotos/escolas-06.jpg" data-sec="Escolas no Festival · 27/10"><img src="fotos/thumbs/escolas-06.jpg" width="640" height="480" loading="lazy" decoding="async" alt="Escolas no Festival · 27/10 — foto 6"></button><button class="gl-item" style="--r:1.3333" data-full="fotos/escolas-07.jpg" data-sec="Escolas no Festival · 27/10"><img src="fotos/thumbs/escolas-07.jpg" width="640" height="480" loading="lazy" decoding="async" alt="Escolas no Festival · 27/10 — foto 7"></button><button class="gl-item" style="--r:1.3333" data-full="fotos/escolas-08.jpg" data-sec="Escolas no Festival · 27/10"><img src="fotos/thumbs/escolas-08.jpg" width="640" height="480" loading="lazy" decoding="async" alt="Escolas no Festival · 27/10 — foto 8"></button><button class="gl-item" style="--r:1.3333" data-full="fotos/escolas-09.jpg" data-sec="Escolas no Festival · 27/10"><img src="fotos/thumbs/escolas-09.jpg" width="640" height="480" loading="lazy" decoding="async" alt="Escolas no Festival · 27/10 — foto 9"></button><button class="gl-item" style="--r:1.3333" data-full="fotos/escolas-10.jpg" data-sec="Escolas no Festival · 27/10"><img src="fotos/thumbs/escolas-10.jpg" width="640" height="480" loading="lazy" decoding="async" alt="Escolas no Festival · 27/10 — foto 10"></button><button class="gl-item" style="--r:0.7500" data-full="fotos/escolas-11.jpg" data-sec="Escolas no Festival · 27/10"><img src="fotos/thumbs/escolas-11.jpg" width="480" height="640" loading="lazy" decoding="async" alt="Escolas no Festival · 27/10 — foto 11"></button><button class="gl-item" style="--r:0.7500" data-full="fotos/escolas-12.jpg" data-sec="Escolas no Festival · 27/10"><img src="fotos/thumbs/escolas-12.jpg" width="480" height="640" loading="lazy" decoding="async" alt="Escolas no Festival · 27/10 — foto 12"></button><button class="gl-item" style="--r:1.3333" data-full="fotos/escolas-13.jpg" data-sec="Escolas no Festival · 27/10"><img src="fotos/thumbs/escolas-13.jpg" width="640" height="480" loading="lazy" decoding="async" alt="Escolas no Festival · 27/10 — foto 13"></button><button class="gl-item" style="--r:1.3333" data-full="fotos/escolas-14.jpg" data-sec="Escolas no Festival · 27/10"><img src="fotos/thumbs/escolas-14.jpg" width="640" height="480" loading="lazy" decoding="async" alt="Escolas no Festival · 27/10 — foto 14"></button><button class="gl-item" style="--r:1.3333" data-full="fotos/escolas-15.jpg" data-sec="Escolas no Festival · 27/10"><img src="fotos/thumbs/escolas-15.jpg" width="640" height="480" loading="lazy" decoding="async" alt="Escolas no Festival · 27/10 — foto 15"></button><button class="gl-item" style="--r:1.3333" data-full="fotos/escolas-16.jpg" data-sec="Escolas no Festival · 27/10"><img src="fotos/thumbs/escolas-16.jpg" width="640" height="480" loading="lazy" decoding="async" alt="Escolas no Festival · 27/10 — foto 16"></button><button class="gl-item" style="--r:1.3333" data-full="fotos/escolas-17.jpg" data-sec="Escolas no Festival · 27/10"><img src="fotos/thumbs/escolas-17.jpg" width="640" height="480" loading="lazy" decoding="async" alt="Escolas no Festival · 27/10 — foto 17"></button><button class="gl-item" style="--r:2.1122" data-full="fotos/escolas-18.jpg" data-sec="Escolas no Festival · 27/10"><img src="fotos/thumbs/escolas-18.jpg" width="640" height="303" loading="lazy" decoding="async" alt="Escolas no Festival · 27/10 — foto 18"></button><button class="gl-item" style="--r:0.7500" data-full="fotos/escolas-19.jpg" data-sec="Escolas no Festival · 27/10"><img src="fotos/thumbs/escolas-19.jpg" width="480" height="640" loading="lazy" decoding="async" alt="Escolas no Festival · 27/10 — foto 19"></button><button class="gl-item" style="--r:0.7500" data-full="fotos/escolas-20.jpg" data-sec="Escolas no Festival · 27/10"><img src="fotos/thumbs/escolas-20.jpg" width="480" height="640" loading="lazy" decoding="async" alt="Escolas no Festival · 27/10 — foto 20"></button><button class="gl-item" style="--r:0.7500" data-full="fotos/escolas-21.jpg" data-sec="Escolas no Festival · 27/10"><img src="fotos/thumbs/escolas-21.jpg" width="480" height="640" loading="lazy" decoding="async" alt="Escolas no Festival · 27/10 — foto 21"></button><button class="gl-item" style="--r:0.7500" data-full="fotos/escolas-22.jpg" data-sec="Escolas no Festival · 27/10"><img src="fotos/thumbs/escolas-22.jpg" width="480" height="640" loading="lazy" decoding="async" alt="Escolas no Festival · 27/10 — foto 22"></button><button class="gl-item" style="--r:1.3333" data-full="fotos/escolas-23.jpg" data-sec="Escolas no Festival · 27/10"><img src="fotos/thumbs/escolas-23.jpg" width="640" height="480" loading="lazy" decoding="async" alt="Escolas no Festival · 27/10 — foto 23"></button><button class="gl-item" style="--r:1.3333" data-full="fotos/escolas-24.jpg" data-sec="Escolas no Festival · 27/10"><img src="fotos/thumbs/escolas-24.jpg" width="640" height="480" loading="lazy" decoding="async" alt="Escolas no Festival · 27/10 — foto 24"></button><button class="gl-item" style="--r:2.1122" data-full="fotos/escolas-25.jpg" data-sec="Escolas no Festival · 27/10"><img src="fotos/thumbs/escolas-25.jpg" width="640" height="303" loading="lazy" decoding="async" alt="Escolas no Festival · 27/10 — foto 25"></button><button class="gl-item" style="--r:2.1122" data-full="fotos/escolas-26.jpg" data-sec="Escolas no Festival · 27/10"><img src="fotos/thumbs/escolas-26.jpg" width="640" height="303" loading="lazy" decoding="async" alt="Escolas no Festival · 27/10 — foto 26"></button><button class="gl-item" style="--r:1.3333" data-full="fotos/escolas-27.jpg" data-sec="Escolas no Festival · 27/10"><img src="fotos/thumbs/escolas-27.jpg" width="640" height="480" loading="lazy" decoding="async" alt="Escolas no Festival · 27/10 — foto 27"></button><button class="gl-item" style="--r:1.3333" data-full="fotos/escolas-28.jpg" data-sec="Escolas no Festival · 27/10"><img src="fotos/thumbs/escolas-28.jpg" width="640" height="480" loading="lazy" decoding="async" alt="Escolas no Festival · 27/10 — foto 28"></button><button class="gl-item" style="--r:0.7500" data-full="fotos/escolas-29.jpg" data-sec="Escolas no Festival · 27/10"><img src="fotos/thumbs/escolas-29.jpg" width="480" height="640" loading="lazy" decoding="async" alt="Escolas no Festival · 27/10 — foto 29"></button></div>
+</div></section><section class="gl-sec" id="jogos" data-key="jogos"><div class="wrap">
+  <div class="gl-sec-h"><h2>Jogos e desafios</h2><span class="n">16 fotos</span><p>Mesas de jogos matemáticos: tangram, pentaminós, resta um, conecta 4 e outros.</p></div>
+  <div class="gl-grid"><button class="gl-item" style="--r:1.3333" data-full="fotos/jogos-01.jpg" data-sec="Jogos e desafios"><img src="fotos/thumbs/jogos-01.jpg" width="640" height="480" loading="lazy" decoding="async" alt="Jogos e desafios — foto 1"></button><button class="gl-item" style="--r:0.7500" data-full="fotos/jogos-02.jpg" data-sec="Jogos e desafios"><img src="fotos/thumbs/jogos-02.jpg" width="480" height="640" loading="lazy" decoding="async" alt="Jogos e desafios — foto 2"></button><button class="gl-item" style="--r:0.7500" data-full="fotos/jogos-03.jpg" data-sec="Jogos e desafios"><img src="fotos/thumbs/jogos-03.jpg" width="480" height="640" loading="lazy" decoding="async" alt="Jogos e desafios — foto 3"></button><button class="gl-item" style="--r:0.7500" data-full="fotos/jogos-04.jpg" data-sec="Jogos e desafios"><img src="fotos/thumbs/jogos-04.jpg" width="480" height="640" loading="lazy" decoding="async" alt="Jogos e desafios — foto 4"></button><button class="gl-item" style="--r:0.7500" data-full="fotos/jogos-05.jpg" data-sec="Jogos e desafios"><img src="fotos/thumbs/jogos-05.jpg" width="480" height="640" loading="lazy" decoding="async" alt="Jogos e desafios — foto 5"></button><button class="gl-item" style="--r:0.7500" data-full="fotos/jogos-06.jpg" data-sec="Jogos e desafios"><img src="fotos/thumbs/jogos-06.jpg" width="480" height="640" loading="lazy" decoding="async" alt="Jogos e desafios — foto 6"></button><button class="gl-item" style="--r:0.7500" data-full="fotos/jogos-07.jpg" data-sec="Jogos e desafios"><img src="fotos/thumbs/jogos-07.jpg" width="480" height="640" loading="lazy" decoding="async" alt="Jogos e desafios — foto 7"></button><button class="gl-item" style="--r:1.3333" data-full="fotos/jogos-08.jpg" data-sec="Jogos e desafios"><img src="fotos/thumbs/jogos-08.jpg" width="640" height="480" loading="lazy" decoding="async" alt="Jogos e desafios — foto 8"></button><button class="gl-item" style="--r:1.3333" data-full="fotos/jogos-09.jpg" data-sec="Jogos e desafios"><img src="fotos/thumbs/jogos-09.jpg" width="640" height="480" loading="lazy" decoding="async" alt="Jogos e desafios — foto 9"></button><button class="gl-item" style="--r:0.7500" data-full="fotos/jogos-10.jpg" data-sec="Jogos e desafios"><img src="fotos/thumbs/jogos-10.jpg" width="480" height="640" loading="lazy" decoding="async" alt="Jogos e desafios — foto 10"></button><button class="gl-item" style="--r:0.7500" data-full="fotos/jogos-11.jpg" data-sec="Jogos e desafios"><img src="fotos/thumbs/jogos-11.jpg" width="480" height="640" loading="lazy" decoding="async" alt="Jogos e desafios — foto 11"></button><button class="gl-item" style="--r:0.7500" data-full="fotos/jogos-12.jpg" data-sec="Jogos e desafios"><img src="fotos/thumbs/jogos-12.jpg" width="480" height="640" loading="lazy" decoding="async" alt="Jogos e desafios — foto 12"></button><button class="gl-item" style="--r:0.7500" data-full="fotos/jogos-13.jpg" data-sec="Jogos e desafios"><img src="fotos/thumbs/jogos-13.jpg" width="480" height="640" loading="lazy" decoding="async" alt="Jogos e desafios — foto 13"></button><button class="gl-item" style="--r:0.7500" data-full="fotos/jogos-14.jpg" data-sec="Jogos e desafios"><img src="fotos/thumbs/jogos-14.jpg" width="480" height="640" loading="lazy" decoding="async" alt="Jogos e desafios — foto 14"></button><button class="gl-item" style="--r:0.7500" data-full="fotos/jogos-15.jpg" data-sec="Jogos e desafios"><img src="fotos/thumbs/jogos-15.jpg" width="480" height="640" loading="lazy" decoding="async" alt="Jogos e desafios — foto 15"></button><button class="gl-item" style="--r:0.7500" data-full="fotos/jogos-16.jpg" data-sec="Jogos e desafios"><img src="fotos/thumbs/jogos-16.jpg" width="480" height="640" loading="lazy" decoding="async" alt="Jogos e desafios — foto 16"></button></div>
+</div></section><section class="gl-sec" id="mostra" data-key="mostra"><div class="wrap">
+  <div class="gl-sec-h"><h2>Mostra e Espaço de Popularização</h2><span class="n">40 fotos</span><p>Os trabalhos apresentados no quiosque e nas salas do IME.</p></div>
+  <div class="gl-grid"><button class="gl-item" style="--r:1.3333" data-full="fotos/mostra-01.jpg" data-sec="Mostra e Espaço de Popularização"><img src="fotos/thumbs/mostra-01.jpg" width="640" height="480" loading="lazy" decoding="async" alt="Mostra e Espaço de Popularização — foto 1"></button><button class="gl-item" style="--r:0.5625" data-full="fotos/mostra-02.jpg" data-sec="Mostra e Espaço de Popularização"><img src="fotos/thumbs/mostra-02.jpg" width="360" height="640" loading="lazy" decoding="async" alt="Mostra e Espaço de Popularização — foto 2"></button><button class="gl-item" style="--r:2.1122" data-full="fotos/mostra-03.jpg" data-sec="Mostra e Espaço de Popularização"><img src="fotos/thumbs/mostra-03.jpg" width="640" height="303" loading="lazy" decoding="async" alt="Mostra e Espaço de Popularização — foto 3"></button><button class="gl-item" style="--r:2.1122" data-full="fotos/mostra-04.jpg" data-sec="Mostra e Espaço de Popularização"><img src="fotos/thumbs/mostra-04.jpg" width="640" height="303" loading="lazy" decoding="async" alt="Mostra e Espaço de Popularização — foto 4"></button><button class="gl-item" style="--r:2.1122" data-full="fotos/mostra-05.jpg" data-sec="Mostra e Espaço de Popularização"><img src="fotos/thumbs/mostra-05.jpg" width="640" height="303" loading="lazy" decoding="async" alt="Mostra e Espaço de Popularização — foto 5"></button><button class="gl-item" style="--r:2.1122" data-full="fotos/mostra-06.jpg" data-sec="Mostra e Espaço de Popularização"><img src="fotos/thumbs/mostra-06.jpg" width="640" height="303" loading="lazy" decoding="async" alt="Mostra e Espaço de Popularização — foto 6"></button><button class="gl-item" style="--r:2.1122" data-full="fotos/mostra-07.jpg" data-sec="Mostra e Espaço de Popularização"><img src="fotos/thumbs/mostra-07.jpg" width="640" height="303" loading="lazy" decoding="async" alt="Mostra e Espaço de Popularização — foto 7"></button><button class="gl-item" style="--r:0.5625" data-full="fotos/mostra-08.jpg" data-sec="Mostra e Espaço de Popularização"><img src="fotos/thumbs/mostra-08.jpg" width="360" height="640" loading="lazy" decoding="async" alt="Mostra e Espaço de Popularização — foto 8"></button><button class="gl-item" style="--r:1.7778" data-full="fotos/mostra-09.jpg" data-sec="Mostra e Espaço de Popularização"><img src="fotos/thumbs/mostra-09.jpg" width="640" height="360" loading="lazy" decoding="async" alt="Mostra e Espaço de Popularização — foto 9"></button><button class="gl-item" style="--r:1.7778" data-full="fotos/mostra-10.jpg" data-sec="Mostra e Espaço de Popularização"><img src="fotos/thumbs/mostra-10.jpg" width="640" height="360" loading="lazy" decoding="async" alt="Mostra e Espaço de Popularização — foto 10"></button><button class="gl-item" style="--r:1.7778" data-full="fotos/mostra-11.jpg" data-sec="Mostra e Espaço de Popularização"><img src="fotos/thumbs/mostra-11.jpg" width="640" height="360" loading="lazy" decoding="async" alt="Mostra e Espaço de Popularização — foto 11"></button><button class="gl-item" style="--r:1.7778" data-full="fotos/mostra-12.jpg" data-sec="Mostra e Espaço de Popularização"><img src="fotos/thumbs/mostra-12.jpg" width="640" height="360" loading="lazy" decoding="async" alt="Mostra e Espaço de Popularização — foto 12"></button><button class="gl-item" style="--r:0.5625" data-full="fotos/mostra-13.jpg" data-sec="Mostra e Espaço de Popularização"><img src="fotos/thumbs/mostra-13.jpg" width="360" height="640" loading="lazy" decoding="async" alt="Mostra e Espaço de Popularização — foto 13"></button><button class="gl-item" style="--r:0.5625" data-full="fotos/mostra-14.jpg" data-sec="Mostra e Espaço de Popularização"><img src="fotos/thumbs/mostra-14.jpg" width="360" height="640" loading="lazy" decoding="async" alt="Mostra e Espaço de Popularização — foto 14"></button><button class="gl-item" style="--r:0.5625" data-full="fotos/mostra-15.jpg" data-sec="Mostra e Espaço de Popularização"><img src="fotos/thumbs/mostra-15.jpg" width="360" height="640" loading="lazy" decoding="async" alt="Mostra e Espaço de Popularização — foto 15"></button><button class="gl-item" style="--r:1.7778" data-full="fotos/mostra-16.jpg" data-sec="Mostra e Espaço de Popularização"><img src="fotos/thumbs/mostra-16.jpg" width="640" height="360" loading="lazy" decoding="async" alt="Mostra e Espaço de Popularização — foto 16"></button><button class="gl-item" style="--r:1.7778" data-full="fotos/mostra-17.jpg" data-sec="Mostra e Espaço de Popularização"><img src="fotos/thumbs/mostra-17.jpg" width="640" height="360" loading="lazy" decoding="async" alt="Mostra e Espaço de Popularização — foto 17"></button><button class="gl-item" style="--r:1.7778" data-full="fotos/mostra-18.jpg" data-sec="Mostra e Espaço de Popularização"><img src="fotos/thumbs/mostra-18.jpg" width="640" height="360" loading="lazy" decoding="async" alt="Mostra e Espaço de Popularização — foto 18"></button><button class="gl-item" style="--r:1.7778" data-full="fotos/mostra-19.jpg" data-sec="Mostra e Espaço de Popularização"><img src="fotos/thumbs/mostra-19.jpg" width="640" height="360" loading="lazy" decoding="async" alt="Mostra e Espaço de Popularização — foto 19"></button><button class="gl-item" style="--r:2.1122" data-full="fotos/mostra-20.jpg" data-sec="Mostra e Espaço de Popularização"><img src="fotos/thumbs/mostra-20.jpg" width="640" height="303" loading="lazy" decoding="async" alt="Mostra e Espaço de Popularização — foto 20"></button><button class="gl-item" style="--r:2.1122" data-full="fotos/mostra-21.jpg" data-sec="Mostra e Espaço de Popularização"><img src="fotos/thumbs/mostra-21.jpg" width="640" height="303" loading="lazy" decoding="async" alt="Mostra e Espaço de Popularização — foto 21"></button><button class="gl-item" style="--r:2.1122" data-full="fotos/mostra-22.jpg" data-sec="Mostra e Espaço de Popularização"><img src="fotos/thumbs/mostra-22.jpg" width="640" height="303" loading="lazy" decoding="async" alt="Mostra e Espaço de Popularização — foto 22"></button><button class="gl-item" style="--r:2.1122" data-full="fotos/mostra-23.jpg" data-sec="Mostra e Espaço de Popularização"><img src="fotos/thumbs/mostra-23.jpg" width="640" height="303" loading="lazy" decoding="async" alt="Mostra e Espaço de Popularização — foto 23"></button><button class="gl-item" style="--r:0.4734" data-full="fotos/mostra-24.jpg" data-sec="Mostra e Espaço de Popularização"><img src="fotos/thumbs/mostra-24.jpg" width="303" height="640" loading="lazy" decoding="async" alt="Mostra e Espaço de Popularização — foto 24"></button><button class="gl-item" style="--r:0.4734" data-full="fotos/mostra-25.jpg" data-sec="Mostra e Espaço de Popularização"><img src="fotos/thumbs/mostra-25.jpg" width="303" height="640" loading="lazy" decoding="async" alt="Mostra e Espaço de Popularização — foto 25"></button><button class="gl-item" style="--r:2.1122" data-full="fotos/mostra-26.jpg" data-sec="Mostra e Espaço de Popularização"><img src="fotos/thumbs/mostra-26.jpg" width="640" height="303" loading="lazy" decoding="async" alt="Mostra e Espaço de Popularização — foto 26"></button><button class="gl-item" style="--r:2.1122" data-full="fotos/mostra-27.jpg" data-sec="Mostra e Espaço de Popularização"><img src="fotos/thumbs/mostra-27.jpg" width="640" height="303" loading="lazy" decoding="async" alt="Mostra e Espaço de Popularização — foto 27"></button><button class="gl-item" style="--r:2.1122" data-full="fotos/mostra-28.jpg" data-sec="Mostra e Espaço de Popularização"><img src="fotos/thumbs/mostra-28.jpg" width="640" height="303" loading="lazy" decoding="async" alt="Mostra e Espaço de Popularização — foto 28"></button><button class="gl-item" style="--r:2.1122" data-full="fotos/mostra-29.jpg" data-sec="Mostra e Espaço de Popularização"><img src="fotos/thumbs/mostra-29.jpg" width="640" height="303" loading="lazy" decoding="async" alt="Mostra e Espaço de Popularização — foto 29"></button><button class="gl-item" style="--r:1.3333" data-full="fotos/mostra-30.jpg" data-sec="Mostra e Espaço de Popularização"><img src="fotos/thumbs/mostra-30.jpg" width="640" height="480" loading="lazy" decoding="async" alt="Mostra e Espaço de Popularização — foto 30"></button><button class="gl-item" style="--r:1.3333" data-full="fotos/mostra-31.jpg" data-sec="Mostra e Espaço de Popularização"><img src="fotos/thumbs/mostra-31.jpg" width="640" height="480" loading="lazy" decoding="async" alt="Mostra e Espaço de Popularização — foto 31"></button><button class="gl-item" style="--r:1.7778" data-full="fotos/mostra-32.jpg" data-sec="Mostra e Espaço de Popularização"><img src="fotos/thumbs/mostra-32.jpg" width="640" height="360" loading="lazy" decoding="async" alt="Mostra e Espaço de Popularização — foto 32"></button><button class="gl-item" style="--r:0.5625" data-full="fotos/mostra-33.jpg" data-sec="Mostra e Espaço de Popularização"><img src="fotos/thumbs/mostra-33.jpg" width="360" height="640" loading="lazy" decoding="async" alt="Mostra e Espaço de Popularização — foto 33"></button><button class="gl-item" style="--r:2.1122" data-full="fotos/mostra-34.jpg" data-sec="Mostra e Espaço de Popularização"><img src="fotos/thumbs/mostra-34.jpg" width="640" height="303" loading="lazy" decoding="async" alt="Mostra e Espaço de Popularização — foto 34"></button><button class="gl-item" style="--r:2.1122" data-full="fotos/mostra-35.jpg" data-sec="Mostra e Espaço de Popularização"><img src="fotos/thumbs/mostra-35.jpg" width="640" height="303" loading="lazy" decoding="async" alt="Mostra e Espaço de Popularização — foto 35"></button><button class="gl-item" style="--r:1.3333" data-full="fotos/mostra-36.jpg" data-sec="Mostra e Espaço de Popularização"><img src="fotos/thumbs/mostra-36.jpg" width="640" height="480" loading="lazy" decoding="async" alt="Mostra e Espaço de Popularização — foto 36"></button><button class="gl-item" style="--r:1.3333" data-full="fotos/mostra-37.jpg" data-sec="Mostra e Espaço de Popularização"><img src="fotos/thumbs/mostra-37.jpg" width="640" height="480" loading="lazy" decoding="async" alt="Mostra e Espaço de Popularização — foto 37"></button><button class="gl-item" style="--r:0.4719" data-full="fotos/mostra-38.jpg" data-sec="Mostra e Espaço de Popularização"><img src="fotos/thumbs/mostra-38.jpg" width="302" height="640" loading="lazy" decoding="async" alt="Mostra e Espaço de Popularização — foto 38"></button><button class="gl-item" style="--r:0.4719" data-full="fotos/mostra-39.jpg" data-sec="Mostra e Espaço de Popularização"><img src="fotos/thumbs/mostra-39.jpg" width="302" height="640" loading="lazy" decoding="async" alt="Mostra e Espaço de Popularização — foto 39"></button><button class="gl-item" style="--r:0.4719" data-full="fotos/mostra-40.jpg" data-sec="Mostra e Espaço de Popularização"><img src="fotos/thumbs/mostra-40.jpg" width="302" height="640" loading="lazy" decoding="async" alt="Mostra e Espaço de Popularização — foto 40"></button></div>
+</div></section><section class="gl-sec" id="bolhas" data-key="bolhas"><div class="wrap">
+  <div class="gl-sec-h"><h2>Bolhas de sabão e superfícies mínimas</h2><span class="n">31 fotos</span><p>Películas de sabão em armações impressas em 3D.</p></div>
+  <div class="gl-grid"><button class="gl-item" style="--r:0.7500" data-full="fotos/bolhas-01.jpg" data-sec="Bolhas de sabão e superfícies mínimas"><img src="fotos/thumbs/bolhas-01.jpg" width="480" height="640" loading="lazy" decoding="async" alt="Bolhas de sabão e superfícies mínimas — foto 1"></button><button class="gl-item" style="--r:0.7500" data-full="fotos/bolhas-02.jpg" data-sec="Bolhas de sabão e superfícies mínimas"><img src="fotos/thumbs/bolhas-02.jpg" width="480" height="640" loading="lazy" decoding="async" alt="Bolhas de sabão e superfícies mínimas — foto 2"></button><button class="gl-item" style="--r:0.7500" data-full="fotos/bolhas-03.jpg" data-sec="Bolhas de sabão e superfícies mínimas"><img src="fotos/thumbs/bolhas-03.jpg" width="480" height="640" loading="lazy" decoding="async" alt="Bolhas de sabão e superfícies mínimas — foto 3"></button><button class="gl-item" style="--r:0.7500" data-full="fotos/bolhas-04.jpg" data-sec="Bolhas de sabão e superfícies mínimas"><img src="fotos/thumbs/bolhas-04.jpg" width="480" height="640" loading="lazy" decoding="async" alt="Bolhas de sabão e superfícies mínimas — foto 4"></button><button class="gl-item" style="--r:0.7500" data-full="fotos/bolhas-05.jpg" data-sec="Bolhas de sabão e superfícies mínimas"><img src="fotos/thumbs/bolhas-05.jpg" width="480" height="640" loading="lazy" decoding="async" alt="Bolhas de sabão e superfícies mínimas — foto 5"></button><button class="gl-item" style="--r:0.7500" data-full="fotos/bolhas-06.jpg" data-sec="Bolhas de sabão e superfícies mínimas"><img src="fotos/thumbs/bolhas-06.jpg" width="480" height="640" loading="lazy" decoding="async" alt="Bolhas de sabão e superfícies mínimas — foto 6"></button><button class="gl-item" style="--r:0.7500" data-full="fotos/bolhas-07.jpg" data-sec="Bolhas de sabão e superfícies mínimas"><img src="fotos/thumbs/bolhas-07.jpg" width="480" height="640" loading="lazy" decoding="async" alt="Bolhas de sabão e superfícies mínimas — foto 7"></button><button class="gl-item" style="--r:0.7500" data-full="fotos/bolhas-08.jpg" data-sec="Bolhas de sabão e superfícies mínimas"><img src="fotos/thumbs/bolhas-08.jpg" width="480" height="640" loading="lazy" decoding="async" alt="Bolhas de sabão e superfícies mínimas — foto 8"></button><button class="gl-item" style="--r:0.7500" data-full="fotos/bolhas-09.jpg" data-sec="Bolhas de sabão e superfícies mínimas"><img src="fotos/thumbs/bolhas-09.jpg" width="480" height="640" loading="lazy" decoding="async" alt="Bolhas de sabão e superfícies mínimas — foto 9"></button><button class="gl-item" style="--r:0.7500" data-full="fotos/bolhas-10.jpg" data-sec="Bolhas de sabão e superfícies mínimas"><img src="fotos/thumbs/bolhas-10.jpg" width="480" height="640" loading="lazy" decoding="async" alt="Bolhas de sabão e superfícies mínimas — foto 10"></button><button class="gl-item" style="--r:1.2774" data-full="fotos/bolhas-11.jpg" data-sec="Bolhas de sabão e superfícies mínimas"><img src="fotos/thumbs/bolhas-11.jpg" width="640" height="501" loading="lazy" decoding="async" alt="Bolhas de sabão e superfícies mínimas — foto 11"></button><button class="gl-item" style="--r:0.7500" data-full="fotos/bolhas-12.jpg" data-sec="Bolhas de sabão e superfícies mínimas"><img src="fotos/thumbs/bolhas-12.jpg" width="480" height="640" loading="lazy" decoding="async" alt="Bolhas de sabão e superfícies mínimas — foto 12"></button><button class="gl-item" style="--r:0.7500" data-full="fotos/bolhas-13.jpg" data-sec="Bolhas de sabão e superfícies mínimas"><img src="fotos/thumbs/bolhas-13.jpg" width="480" height="640" loading="lazy" decoding="async" alt="Bolhas de sabão e superfícies mínimas — foto 13"></button><button class="gl-item" style="--r:0.7500" data-full="fotos/bolhas-14.jpg" data-sec="Bolhas de sabão e superfícies mínimas"><img src="fotos/thumbs/bolhas-14.jpg" width="480" height="640" loading="lazy" decoding="async" alt="Bolhas de sabão e superfícies mínimas — foto 14"></button><button class="gl-item" style="--r:0.7500" data-full="fotos/bolhas-15.jpg" data-sec="Bolhas de sabão e superfícies mínimas"><img src="fotos/thumbs/bolhas-15.jpg" width="480" height="640" loading="lazy" decoding="async" alt="Bolhas de sabão e superfícies mínimas — foto 15"></button><button class="gl-item" style="--r:0.7500" data-full="fotos/bolhas-16.jpg" data-sec="Bolhas de sabão e superfícies mínimas"><img src="fotos/thumbs/bolhas-16.jpg" width="480" height="640" loading="lazy" decoding="async" alt="Bolhas de sabão e superfícies mínimas — foto 16"></button><button class="gl-item" style="--r:1.0063" data-full="fotos/bolhas-17.jpg" data-sec="Bolhas de sabão e superfícies mínimas"><img src="fotos/thumbs/bolhas-17.jpg" width="640" height="636" loading="lazy" decoding="async" alt="Bolhas de sabão e superfícies mínimas — foto 17"></button><button class="gl-item" style="--r:1.3333" data-full="fotos/bolhas-18.jpg" data-sec="Bolhas de sabão e superfícies mínimas"><img src="fotos/thumbs/bolhas-18.jpg" width="640" height="480" loading="lazy" decoding="async" alt="Bolhas de sabão e superfícies mínimas — foto 18"></button><button class="gl-item" style="--r:1.1918" data-full="fotos/bolhas-19.jpg" data-sec="Bolhas de sabão e superfícies mínimas"><img src="fotos/thumbs/bolhas-19.jpg" width="640" height="537" loading="lazy" decoding="async" alt="Bolhas de sabão e superfícies mínimas — foto 19"></button><button class="gl-item" style="--r:1.3333" data-full="fotos/bolhas-20.jpg" data-sec="Bolhas de sabão e superfícies mínimas"><img src="fotos/thumbs/bolhas-20.jpg" width="640" height="480" loading="lazy" decoding="async" alt="Bolhas de sabão e superfícies mínimas — foto 20"></button><button class="gl-item" style="--r:1.0997" data-full="fotos/bolhas-21.jpg" data-sec="Bolhas de sabão e superfícies mínimas"><img src="fotos/thumbs/bolhas-21.jpg" width="640" height="582" loading="lazy" decoding="async" alt="Bolhas de sabão e superfícies mínimas — foto 21"></button><button class="gl-item" style="--r:1.0323" data-full="fotos/bolhas-22.jpg" data-sec="Bolhas de sabão e superfícies mínimas"><img src="fotos/thumbs/bolhas-22.jpg" width="640" height="620" loading="lazy" decoding="async" alt="Bolhas de sabão e superfícies mínimas — foto 22"></button><button class="gl-item" style="--r:0.9359" data-full="fotos/bolhas-23.jpg" data-sec="Bolhas de sabão e superfícies mínimas"><img src="fotos/thumbs/bolhas-23.jpg" width="599" height="640" loading="lazy" decoding="async" alt="Bolhas de sabão e superfícies mínimas — foto 23"></button><button class="gl-item" style="--r:1.0978" data-full="fotos/bolhas-24.jpg" data-sec="Bolhas de sabão e superfícies mínimas"><img src="fotos/thumbs/bolhas-24.jpg" width="640" height="583" loading="lazy" decoding="async" alt="Bolhas de sabão e superfícies mínimas — foto 24"></button><button class="gl-item" style="--r:0.9594" data-full="fotos/bolhas-25.jpg" data-sec="Bolhas de sabão e superfícies mínimas"><img src="fotos/thumbs/bolhas-25.jpg" width="614" height="640" loading="lazy" decoding="async" alt="Bolhas de sabão e superfícies mínimas — foto 25"></button><button class="gl-item" style="--r:1.3333" data-full="fotos/bolhas-26.jpg" data-sec="Bolhas de sabão e superfícies mínimas"><img src="fotos/thumbs/bolhas-26.jpg" width="640" height="480" loading="lazy" decoding="async" alt="Bolhas de sabão e superfícies mínimas — foto 26"></button><button class="gl-item" style="--r:1.3333" data-full="fotos/bolhas-27.jpg" data-sec="Bolhas de sabão e superfícies mínimas"><img src="fotos/thumbs/bolhas-27.jpg" width="640" height="480" loading="lazy" decoding="async" alt="Bolhas de sabão e superfícies mínimas — foto 27"></button><button class="gl-item" style="--r:1.3333" data-full="fotos/bolhas-28.jpg" data-sec="Bolhas de sabão e superfícies mínimas"><img src="fotos/thumbs/bolhas-28.jpg" width="640" height="480" loading="lazy" decoding="async" alt="Bolhas de sabão e superfícies mínimas — foto 28"></button><button class="gl-item" style="--r:1.3333" data-full="fotos/bolhas-29.jpg" data-sec="Bolhas de sabão e superfícies mínimas"><img src="fotos/thumbs/bolhas-29.jpg" width="640" height="480" loading="lazy" decoding="async" alt="Bolhas de sabão e superfícies mínimas — foto 29"></button><button class="gl-item" style="--r:1.3333" data-full="fotos/bolhas-30.jpg" data-sec="Bolhas de sabão e superfícies mínimas"><img src="fotos/thumbs/bolhas-30.jpg" width="640" height="480" loading="lazy" decoding="async" alt="Bolhas de sabão e superfícies mínimas — foto 30"></button><button class="gl-item" style="--r:1.3333" data-full="fotos/bolhas-31.jpg" data-sec="Bolhas de sabão e superfícies mínimas"><img src="fotos/thumbs/bolhas-31.jpg" width="640" height="480" loading="lazy" decoding="async" alt="Bolhas de sabão e superfícies mínimas — foto 31"></button></div>
+</div></section><section class="gl-sec" id="roda" data-key="roda"><div class="wrap">
+  <div class="gl-sec-h"><h2>Roda de conversa no quiosque</h2><span class="n">13 fotos</span><p>Encontro e conversa com participantes e visitantes.</p></div>
+  <div class="gl-grid"><button class="gl-item" style="--r:1.3333" data-full="fotos/roda-01.jpg" data-sec="Roda de conversa no quiosque"><img src="fotos/thumbs/roda-01.jpg" width="640" height="480" loading="lazy" decoding="async" alt="Roda de conversa no quiosque — foto 1"></button><button class="gl-item" style="--r:1.3333" data-full="fotos/roda-02.jpg" data-sec="Roda de conversa no quiosque"><img src="fotos/thumbs/roda-02.jpg" width="640" height="480" loading="lazy" decoding="async" alt="Roda de conversa no quiosque — foto 2"></button><button class="gl-item" style="--r:1.3333" data-full="fotos/roda-03.jpg" data-sec="Roda de conversa no quiosque"><img src="fotos/thumbs/roda-03.jpg" width="640" height="480" loading="lazy" decoding="async" alt="Roda de conversa no quiosque — foto 3"></button><button class="gl-item" style="--r:1.3333" data-full="fotos/roda-04.jpg" data-sec="Roda de conversa no quiosque"><img src="fotos/thumbs/roda-04.jpg" width="640" height="480" loading="lazy" decoding="async" alt="Roda de conversa no quiosque — foto 4"></button><button class="gl-item" style="--r:0.5625" data-full="fotos/roda-05.jpg" data-sec="Roda de conversa no quiosque"><img src="fotos/thumbs/roda-05.jpg" width="360" height="640" loading="lazy" decoding="async" alt="Roda de conversa no quiosque — foto 5"></button><button class="gl-item" style="--r:2.1122" data-full="fotos/roda-06.jpg" data-sec="Roda de conversa no quiosque"><img src="fotos/thumbs/roda-06.jpg" width="640" height="303" loading="lazy" decoding="async" alt="Roda de conversa no quiosque — foto 6"></button><button class="gl-item" style="--r:2.1122" data-full="fotos/roda-07.jpg" data-sec="Roda de conversa no quiosque"><img src="fotos/thumbs/roda-07.jpg" width="640" height="303" loading="lazy" decoding="async" alt="Roda de conversa no quiosque — foto 7"></button><button class="gl-item" style="--r:2.1122" data-full="fotos/roda-08.jpg" data-sec="Roda de conversa no quiosque"><img src="fotos/thumbs/roda-08.jpg" width="640" height="303" loading="lazy" decoding="async" alt="Roda de conversa no quiosque — foto 8"></button><button class="gl-item" style="--r:2.1122" data-full="fotos/roda-09.jpg" data-sec="Roda de conversa no quiosque"><img src="fotos/thumbs/roda-09.jpg" width="640" height="303" loading="lazy" decoding="async" alt="Roda de conversa no quiosque — foto 9"></button><button class="gl-item" style="--r:0.4719" data-full="fotos/roda-10.jpg" data-sec="Roda de conversa no quiosque"><img src="fotos/thumbs/roda-10.jpg" width="302" height="640" loading="lazy" decoding="async" alt="Roda de conversa no quiosque — foto 10"></button><button class="gl-item" style="--r:0.4719" data-full="fotos/roda-11.jpg" data-sec="Roda de conversa no quiosque"><img src="fotos/thumbs/roda-11.jpg" width="302" height="640" loading="lazy" decoding="async" alt="Roda de conversa no quiosque — foto 11"></button><button class="gl-item" style="--r:0.4719" data-full="fotos/roda-12.jpg" data-sec="Roda de conversa no quiosque"><img src="fotos/thumbs/roda-12.jpg" width="302" height="640" loading="lazy" decoding="async" alt="Roda de conversa no quiosque — foto 12"></button><button class="gl-item" style="--r:0.4719" data-full="fotos/roda-13.jpg" data-sec="Roda de conversa no quiosque"><img src="fotos/thumbs/roda-13.jpg" width="302" height="640" loading="lazy" decoding="async" alt="Roda de conversa no quiosque — foto 13"></button></div>
+</div></section><section class="gl-sec" id="equipes" data-key="equipes"><div class="wrap">
+  <div class="gl-sec-h"><h2>Equipes e encontros</h2><span class="n">15 fotos</span><p>Fotos de grupo de equipes, orientadores e organização.</p></div>
+  <div class="gl-grid"><button class="gl-item" style="--r:1.3333" data-full="fotos/equipes-01.jpg" data-sec="Equipes e encontros"><img src="fotos/thumbs/equipes-01.jpg" width="640" height="480" loading="lazy" decoding="async" alt="Equipes e encontros — foto 1"></button><button class="gl-item" style="--r:1.3333" data-full="fotos/equipes-02.jpg" data-sec="Equipes e encontros"><img src="fotos/thumbs/equipes-02.jpg" width="640" height="480" loading="lazy" decoding="async" alt="Equipes e encontros — foto 2"></button><button class="gl-item" style="--r:2.1122" data-full="fotos/equipes-03.jpg" data-sec="Equipes e encontros"><img src="fotos/thumbs/equipes-03.jpg" width="640" height="303" loading="lazy" decoding="async" alt="Equipes e encontros — foto 3"></button><button class="gl-item" style="--r:0.7500" data-full="fotos/equipes-04.jpg" data-sec="Equipes e encontros"><img src="fotos/thumbs/equipes-04.jpg" width="480" height="640" loading="lazy" decoding="async" alt="Equipes e encontros — foto 4"></button><button class="gl-item" style="--r:2.1122" data-full="fotos/equipes-05.jpg" data-sec="Equipes e encontros"><img src="fotos/thumbs/equipes-05.jpg" width="640" height="303" loading="lazy" decoding="async" alt="Equipes e encontros — foto 5"></button><button class="gl-item" style="--r:2.1122" data-full="fotos/equipes-06.jpg" data-sec="Equipes e encontros"><img src="fotos/thumbs/equipes-06.jpg" width="640" height="303" loading="lazy" decoding="async" alt="Equipes e encontros — foto 6"></button><button class="gl-item" style="--r:2.1122" data-full="fotos/equipes-07.jpg" data-sec="Equipes e encontros"><img src="fotos/thumbs/equipes-07.jpg" width="640" height="303" loading="lazy" decoding="async" alt="Equipes e encontros — foto 7"></button><button class="gl-item" style="--r:2.1122" data-full="fotos/equipes-08.jpg" data-sec="Equipes e encontros"><img src="fotos/thumbs/equipes-08.jpg" width="640" height="303" loading="lazy" decoding="async" alt="Equipes e encontros — foto 8"></button><button class="gl-item" style="--r:2.1122" data-full="fotos/equipes-09.jpg" data-sec="Equipes e encontros"><img src="fotos/thumbs/equipes-09.jpg" width="640" height="303" loading="lazy" decoding="async" alt="Equipes e encontros — foto 9"></button><button class="gl-item" style="--r:2.1122" data-full="fotos/equipes-10.jpg" data-sec="Equipes e encontros"><img src="fotos/thumbs/equipes-10.jpg" width="640" height="303" loading="lazy" decoding="async" alt="Equipes e encontros — foto 10"></button><button class="gl-item" style="--r:0.4734" data-full="fotos/equipes-11.jpg" data-sec="Equipes e encontros"><img src="fotos/thumbs/equipes-11.jpg" width="303" height="640" loading="lazy" decoding="async" alt="Equipes e encontros — foto 11"></button><button class="gl-item" style="--r:0.4734" data-full="fotos/equipes-12.jpg" data-sec="Equipes e encontros"><img src="fotos/thumbs/equipes-12.jpg" width="303" height="640" loading="lazy" decoding="async" alt="Equipes e encontros — foto 12"></button><button class="gl-item" style="--r:2.1122" data-full="fotos/equipes-13.jpg" data-sec="Equipes e encontros"><img src="fotos/thumbs/equipes-13.jpg" width="640" height="303" loading="lazy" decoding="async" alt="Equipes e encontros — foto 13"></button><button class="gl-item" style="--r:2.1122" data-full="fotos/equipes-14.jpg" data-sec="Equipes e encontros"><img src="fotos/thumbs/equipes-14.jpg" width="640" height="303" loading="lazy" decoding="async" alt="Equipes e encontros — foto 14"></button><button class="gl-item" style="--r:2.1122" data-full="fotos/equipes-15.jpg" data-sec="Equipes e encontros"><img src="fotos/thumbs/equipes-15.jpg" width="640" height="303" loading="lazy" decoding="async" alt="Equipes e encontros — foto 15"></button></div>
+</div></section><section class="gl-sec" id="arena" data-key="arena"><div class="wrap">
+  <div class="gl-sec-h"><h2>Arena e espaço externo</h2><span class="n">9 fotos</span><p>Atividades ao ar livre e caminhos do campus.</p></div>
+  <div class="gl-grid"><button class="gl-item" style="--r:0.4719" data-full="fotos/arena-01.jpg" data-sec="Arena e espaço externo"><img src="fotos/thumbs/arena-01.jpg" width="302" height="640" loading="lazy" decoding="async" alt="Arena e espaço externo — foto 1"></button><button class="gl-item" style="--r:0.4719" data-full="fotos/arena-02.jpg" data-sec="Arena e espaço externo"><img src="fotos/thumbs/arena-02.jpg" width="302" height="640" loading="lazy" decoding="async" alt="Arena e espaço externo — foto 2"></button><button class="gl-item" style="--r:2.1122" data-full="fotos/arena-03.jpg" data-sec="Arena e espaço externo"><img src="fotos/thumbs/arena-03.jpg" width="640" height="303" loading="lazy" decoding="async" alt="Arena e espaço externo — foto 3"></button><button class="gl-item" style="--r:2.1122" data-full="fotos/arena-04.jpg" data-sec="Arena e espaço externo"><img src="fotos/thumbs/arena-04.jpg" width="640" height="303" loading="lazy" decoding="async" alt="Arena e espaço externo — foto 4"></button><button class="gl-item" style="--r:2.1122" data-full="fotos/arena-05.jpg" data-sec="Arena e espaço externo"><img src="fotos/thumbs/arena-05.jpg" width="640" height="303" loading="lazy" decoding="async" alt="Arena e espaço externo — foto 5"></button><button class="gl-item" style="--r:2.1122" data-full="fotos/arena-06.jpg" data-sec="Arena e espaço externo"><img src="fotos/thumbs/arena-06.jpg" width="640" height="303" loading="lazy" decoding="async" alt="Arena e espaço externo — foto 6"></button><button class="gl-item" style="--r:0.4719" data-full="fotos/arena-07.jpg" data-sec="Arena e espaço externo"><img src="fotos/thumbs/arena-07.jpg" width="302" height="640" loading="lazy" decoding="async" alt="Arena e espaço externo — foto 7"></button><button class="gl-item" style="--r:2.1122" data-full="fotos/arena-08.jpg" data-sec="Arena e espaço externo"><img src="fotos/thumbs/arena-08.jpg" width="640" height="303" loading="lazy" decoding="async" alt="Arena e espaço externo — foto 8"></button><button class="gl-item" style="--r:0.4734" data-full="fotos/arena-09.jpg" data-sec="Arena e espaço externo"><img src="fotos/thumbs/arena-09.jpg" width="303" height="640" loading="lazy" decoding="async" alt="Arena e espaço externo — foto 9"></button></div>
+</div></section><section class="gl-sec" id="feira" data-key="feira"><div class="wrap">
+  <div class="gl-sec-h"><h2>Feira de artesanato</h2><span class="n">7 fotos</span><p>Expositores de artesanato no quiosque.</p></div>
+  <div class="gl-grid"><button class="gl-item" style="--r:1.3333" data-full="fotos/feira-01.jpg" data-sec="Feira de artesanato"><img src="fotos/thumbs/feira-01.jpg" width="640" height="480" loading="lazy" decoding="async" alt="Feira de artesanato — foto 1"></button><button class="gl-item" style="--r:0.7500" data-full="fotos/feira-02.jpg" data-sec="Feira de artesanato"><img src="fotos/thumbs/feira-02.jpg" width="480" height="640" loading="lazy" decoding="async" alt="Feira de artesanato — foto 2"></button><button class="gl-item" style="--r:1.3333" data-full="fotos/feira-03.jpg" data-sec="Feira de artesanato"><img src="fotos/thumbs/feira-03.jpg" width="640" height="480" loading="lazy" decoding="async" alt="Feira de artesanato — foto 3"></button><button class="gl-item" style="--r:1.3333" data-full="fotos/feira-04.jpg" data-sec="Feira de artesanato"><img src="fotos/thumbs/feira-04.jpg" width="640" height="480" loading="lazy" decoding="async" alt="Feira de artesanato — foto 4"></button><button class="gl-item" style="--r:1.3333" data-full="fotos/feira-05.jpg" data-sec="Feira de artesanato"><img src="fotos/thumbs/feira-05.jpg" width="640" height="480" loading="lazy" decoding="async" alt="Feira de artesanato — foto 5"></button><button class="gl-item" style="--r:2.1122" data-full="fotos/feira-06.jpg" data-sec="Feira de artesanato"><img src="fotos/thumbs/feira-06.jpg" width="640" height="303" loading="lazy" decoding="async" alt="Feira de artesanato — foto 6"></button><button class="gl-item" style="--r:2.1122" data-full="fotos/feira-07.jpg" data-sec="Feira de artesanato"><img src="fotos/thumbs/feira-07.jpg" width="640" height="303" loading="lazy" decoding="async" alt="Feira de artesanato — foto 7"></button></div>
+</div></section>
+<div style="height:40px"></div>
+</main>
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Foto ampliada">
+  <img id="lbImg" alt="">
+  <button class="x" id="lbX" aria-label="Fechar">×</button>
+  <button class="pv" id="lbP" aria-label="Foto anterior">‹</button>
+  <button class="nx" id="lbN" aria-label="Próxima foto">›</button>
+  <div class="cap" id="lbC"></div>
+</div>
+<footer>
+  <div class="wrap footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <svg width="24" height="24" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M2 30 C 8 14, 14 14, 20 24 C 26 14, 32 14, 38 30" stroke="url(#gradB)" stroke-width="4.4" stroke-linecap="round" fill="none"/><defs><linearGradient id="gradB" x1="0" y1="0" x2="40" y2="0"><stop offset="0" stop-color="#5FB6FF"/><stop offset="0.5" stop-color="#F6A623"/><stop offset="1" stop-color="#4DE0A0"/></linearGradient></defs></svg>
+        Festival Goiano de Matemática
+      </div>
+      <a class="btn btn-ghost-light btn-sm" href="https://docs.google.com/forms/d/e/1FAIpQLSeGHVFz3LSZ3Un_aQV2isS8X2BnbuooKhaLV29_2bZttRC1Yg/viewform?usp=publish-editor" target="_blank" rel="noopener">Inscreva-se agora</a>
+    </div>
+    <p class="footer-orgs">Realização: IME/UFG · LEMAT · PETMAT/UFG · ProfMat/UFG · PROEX/UFG · PROGRAD/UFG · CNPq · FNDCT · MCTI · MEC · Programa Pop Ciência · Programa Escola em Tempo Integral</p>
+    <div class="footer-bottom">
+      <span>© 2026 Festival Goiano de Matemática — IME/UFG</span>
+      <a href="https://ime.ufg.br/n/204623-inscricoes-e-submissoes-para-o-festival-goianio-de-matematica" target="_blank" rel="noopener">Página oficial em ime.ufg.br</a>
+    </div>
+  </div>
+</footer>
+<script>
+  (function(){
+    var burger = document.getElementById('burgerBtn');
+    var panel = document.getElementById('mobilePanel');
+    if(!burger || !panel) return;
+    burger.addEventListener('click', function(){
+      var open = panel.classList.toggle('open');
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    panel.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        panel.classList.remove('open');
+        burger.setAttribute('aria-expanded','false');
+      });
+    });
+
+    var header = document.querySelector('header.site');
+    if(header){
+      window.addEventListener('scroll', function(){
+        if(window.scrollY > 6){
+          header.style.boxShadow = '0 8px 20px -16px rgba(13,59,102,0.5)';
+        } else {
+          header.style.boxShadow = 'none';
+        }
+      }, {passive:true});
+    }
+  })();
+</script>
+<script>
+(function(){
+  var h=document.querySelector('header.site');function top(){if(h)document.documentElement.style.setProperty('--gl-top',h.offsetHeight+'px');}top();window.addEventListener('resize',top);
+  var chips=document.querySelectorAll('.gl-chip'),secs=document.querySelectorAll('.gl-sec');
+  chips.forEach(function(c){c.addEventListener('click',function(){var f=c.dataset.f;
+    chips.forEach(function(o){o.setAttribute('aria-pressed',o===c?'true':'false');});
+    secs.forEach(function(s){s.hidden=!(f==='all'||s.dataset.key===f);});
+    var bar=document.querySelector('.gl-bar');window.scrollTo({top:bar.offsetTop-(h?h.offsetHeight:0)+2,behavior:'smooth'});
+  });});
+  var lb=document.getElementById('lb'),img=document.getElementById('lbImg'),cap=document.getElementById('lbC'),list=[],idx=0;
+  function vis(){return Array.prototype.filter.call(document.querySelectorAll('.gl-item'),function(b){return !b.closest('.gl-sec').hidden;});}
+  function show(i){idx=(i+list.length)%list.length;var b=list[idx];img.src=b.dataset.full;img.alt=b.querySelector('img').alt;
+    cap.innerHTML=b.dataset.sec+' · '+(idx+1)+' de '+list.length+' · <a href="'+b.dataset.full+'" download>baixar</a>';}
+  document.querySelectorAll('.gl-item').forEach(function(b){b.addEventListener('click',function(){list=vis();show(list.indexOf(b));lb.classList.add('open');document.body.style.overflow='hidden';});});
+  function close(){lb.classList.remove('open');document.body.style.overflow='';img.src='';}
+  document.getElementById('lbX').onclick=close;document.getElementById('lbP').onclick=function(){show(idx-1);};document.getElementById('lbN').onclick=function(){show(idx+1);};
+  lb.addEventListener('click',function(e){if(e.target===lb)close();});
+  document.addEventListener('keydown',function(e){if(!lb.classList.contains('open'))return;if(e.key==='Escape')close();if(e.key==='ArrowLeft')show(idx-1);if(e.key==='ArrowRight')show(idx+1);});
+  var sx=null;lb.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;},{passive:true});
+  lb.addEventListener('touchend',function(e){if(sx===null)return;var d=e.changedTouches[0].clientX-sx;if(Math.abs(d)>50)show(idx+(d<0?1:-1));sx=null;});
+})();
+</script>
+</body>
+</html>
