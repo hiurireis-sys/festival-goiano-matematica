@@ -609,6 +609,8 @@
   .ct-card.part{border-left-color:var(--green)}
   .ct-card .k{font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; font-weight:800; color:var(--blue)}
   .ct-card.part .k{color:var(--green-deep)}
+  .ct-card.mon{border-left-color:var(--orange)}
+  .ct-card.mon .k{color:var(--orange-deep)}
   .ct-card h3{margin:2px 0 0; font-size:1rem; color:var(--blue-deep); line-height:1.35}
   .ct-card > div{flex:1 1 300px}
   .ct-dl{font:inherit; font-weight:700; font-size:.92rem; border:0; border-radius:999px; padding:10px 18px; cursor:pointer; color:#fff; background:var(--blue-deep); display:inline-flex; align-items:center; gap:8px; white-space:nowrap}
@@ -675,7 +677,7 @@
     <div class="section-head">
       <span class="eyebrow" style="justify-content:center;">Certificados · 26 e 27 de outubro de 2026</span>
       <h1>Baixe seus certificados</h1>
-      <p>Todos os participantes inscritos recebem o certificado de participação no Festival (10 horas). Quem apresentou trabalho na Mostra Científica ou atividade no Espaço de Popularização recebe também o certificado de apresentação.</p>
+      <p>Todos os participantes inscritos recebem o certificado de participação no Festival. Quem apresentou trabalho na Mostra Científica ou atividade no Espaço de Popularização recebe também o certificado de apresentação, e os monitores, o certificado de monitoria.</p>
     </div>
     <div class="ct-box">
       <label for="ct-q">Busque pelo seu nome</label>
@@ -748,6 +750,9 @@
   // visitantes inscritos: só certificado de participação
   var ja = {}; nomes.forEach(function(n){ ja[norm(n)] = 1; });
   (window.FGM_VISITANTES || []).forEach(function(n){ var k = norm(n); if(!ja[k]){ ja[k] = 1; P[n] = []; nomes.push(n); } });
+  // monitores: certificado de monitoria + participação
+  var MON = {};
+  (window.FGM_MONITORES || []).forEach(function(n){ var k = norm(n), achado = null; nomes.forEach(function(x){ if(norm(x) === k) achado = x; }); if(!achado){ achado = n; P[n] = []; nomes.push(n); ja[k] = 1; } MON[achado] = 1; });
   nomes.sort(function(a,b){ return a.localeCompare(b,'pt-BR'); });
   var idx = nomes.map(function(n){ return {n:n, k:norm(n)}; });
 
@@ -764,7 +769,7 @@
       return;
     }
     res.innerHTML = achados.slice(0,25).map(function(o){
-      var n = P[o.n].length;
+      var n = certs(o.n).length - 1;
       return '<button type="button" class="ct-name" data-n="'+esc(o.n)+'">'+esc(o.n)+'<small>'+(n+1)+' certificado'+(n+1>1?'s':'')+' →</small></button>';
     }).join('') + (achados.length>25 ? '<p class="ct-hint">Mostrando 25 de '+achados.length+' resultados. Digite mais do seu nome para refinar.</p>' : '');
   }
@@ -773,17 +778,19 @@
 
   function certs(nome){
     var lista = P[nome].map(function(w){ return {tipo:'apresentacao', w:w}; });
+    if(MON[nome]) lista.push({tipo:'monitoria'});
     lista.push({tipo:'participacao'});
     return lista;
   }
   function rotulo(c){
-    if(c.tipo==='participacao') return {k:'Certificado de participação', h:'Festival Goiano de Matemática · 10 horas'};
+    if(c.tipo==='participacao') return {k:'Certificado de participação', h:'Festival Goiano de Matemática'};
+    if(c.tipo==='monitoria') return {k:'Certificado de monitoria', h:'Monitoria do Festival Goiano de Matemática'};
     return {k:'Certificado de apresentação · '+(c.w.tag==='Mostra Científica'?'Mostra Científica':'Popularização'), h:c.w.t};
   }
   function mostrar(nome){
     res.innerHTML=''; var L = certs(nome);
     box.innerHTML = '<h2>'+esc(nome)+'</h2><p>'+L.length+' certificado'+(L.length>1?'s':'')+' disponíve'+(L.length>1?'is':'l')+'.</p><div class="ct-list">'+
-      L.map(function(c,i){ var r=rotulo(c); return '<div class="ct-card'+(c.tipo==='participacao'?' part':'')+'"><div><span class="k">'+esc(r.k)+'</span><h3>'+esc(r.h)+'</h3></div><button type="button" class="ct-dl" data-i="'+i+'">'+ICON+'Baixar PDF</button></div>'; }).join('')+
+      L.map(function(c,i){ var r=rotulo(c); return '<div class="ct-card'+(c.tipo==='participacao'?' part':c.tipo==='monitoria'?' mon':'')+'"><div><span class="k">'+esc(r.k)+'</span><h3>'+esc(r.h)+'</h3></div><button type="button" class="ct-dl" data-i="'+i+'">'+ICON+'Baixar PDF</button></div>'; }).join('')+
       '</div><div class="ct-actions">'+(L.length>1?'<button type="button" class="ct-dl ct-all" data-i="all">'+ICON+'Baixar todos</button>':'')+'<button type="button" class="ct-link" id="ct-back">← Buscar outro nome</button></div><div class="ct-err" id="ct-err" hidden></div>';
     box.hidden = false;
     box.querySelectorAll('.ct-dl').forEach(function(b){ b.addEventListener('click', function(){ baixar(nome, L, b); }); });
@@ -823,7 +830,7 @@
       var itens = sel==='all' ? L : [L[+sel]];
       var doc = novoDoc();
       itens.forEach(function(c,i){ if(i) doc.addPage('a4','landscape'); desenhar(doc, nome, c); });
-      var base = sel==='all' ? 'Certificados' : (itens[0].tipo==='participacao' ? 'Certificado-Participacao' : 'Certificado-Apresentacao' + (P[nome].length>1 ? '-'+(+sel+1) : ''));
+      var base = sel==='all' ? 'Certificados' : (itens[0].tipo==='participacao' ? 'Certificado-Participacao' : itens[0].tipo==='monitoria' ? 'Certificado-Monitoria' : 'Certificado-Apresentacao' + (P[nome].length>1 ? '-'+(+sel+1) : ''));
       doc.save(base + '-FGM2026-' + norm(nome).replace(/[^a-z0-9]+/g,'-') + '.pdf');
     }).catch(function(e){
       err.textContent = 'Não foi possível gerar o PDF agora. Verifique sua conexão e tente de novo.'; err.hidden = false; console.error(e);
@@ -872,11 +879,13 @@
     var y0 = 92;
     doc.setFont('Poppins','bold'); doc.setFontSize(27); doc.setTextColor.apply(doc,AZUL);
     doc.text('CERTIFICADO', W/2, y0, {align:'center', charSpace:2.2});
-    doc.setFont('Poppins','medium'); doc.setFontSize(11.5); doc.setTextColor.apply(doc, c.tipo==='participacao'?VERDE:AZUL2);
-    doc.text(c.tipo==='participacao'?'DE PARTICIPAÇÃO':'DE APRESENTAÇÃO', W/2, y0+7.5, {align:'center', charSpace:1.6});
+    doc.setFont('Poppins','medium'); doc.setFontSize(11.5); doc.setTextColor.apply(doc, c.tipo==='participacao'?VERDE:c.tipo==='monitoria'?[201,117,20]:AZUL2);
+    doc.text(c.tipo==='participacao'?'DE PARTICIPAÇÃO':c.tipo==='monitoria'?'DE MONITORIA':'DE APRESENTAÇÃO', W/2, y0+7.5, {align:'center', charSpace:1.6});
     var partes;
     if(c.tipo==='participacao'){
       partes=[{t:'Certificamos que '},{t:nome,b:1},{t:' participou do Festival Goiano de Matemática, '+EVENTO+', com carga horária total de '},{t:'10 (dez) horas',b:1},{t:'.'}];
+    } else if(c.tipo==='monitoria'){
+      partes=[{t:'Certificamos que '},{t:nome,b:1},{t:' atuou na monitoria do Festival Goiano de Matemática, '+EVENTO+', com carga horária total de '},{t:'30 (trinta) horas',b:1},{t:'.'}];
     } else {
       partes=[{t:'Certificamos que '},{t:nome,b:1},{t:' apresentou o trabalho '},{t:'“'+c.w.t+'”',b:1}].concat(modalidade(c.w)).concat([{t:' durante o Festival Goiano de Matemática, '+EVENTO+'.'}]);
     }
