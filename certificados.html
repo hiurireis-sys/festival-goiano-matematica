@@ -675,7 +675,7 @@
     <div class="section-head">
       <span class="eyebrow" style="justify-content:center;">Certificados · 26 e 27 de outubro de 2026</span>
       <h1>Baixe seus certificados</h1>
-      <p>Quem apresentou trabalho na Mostra Científica ou atividade no Espaço de Popularização recebe o certificado de apresentação de cada trabalho e o certificado de participação no Festival (10 horas).</p>
+      <p>Todos os participantes inscritos recebem o certificado de participação no Festival (10 horas). Quem apresentou trabalho na Mostra Científica ou atividade no Espaço de Popularização recebe também o certificado de apresentação.</p>
     </div>
     <div class="ct-box">
       <label for="ct-q">Busque pelo seu nome</label>
@@ -745,6 +745,9 @@
   // índice: nome -> trabalhos
   var P = {}, nomes = [];
   T.forEach(function(w){ w.p.forEach(function(n){ if(!P[n]){ P[n]=[]; nomes.push(n); } P[n].push(w); }); });
+  // visitantes inscritos: só certificado de participação
+  var ja = {}; nomes.forEach(function(n){ ja[norm(n)] = 1; });
+  (window.FGM_VISITANTES || []).forEach(function(n){ var k = norm(n); if(!ja[k]){ ja[k] = 1; P[n] = []; nomes.push(n); } });
   nomes.sort(function(a,b){ return a.localeCompare(b,'pt-BR'); });
   var idx = nomes.map(function(n){ return {n:n, k:norm(n)}; });
 
@@ -904,3 +907,4 @@
 </script>
 </body>
 </html>
+x
